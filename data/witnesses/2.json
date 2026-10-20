@@ -1,0 +1,12 @@
+{
+  "N": 2,
+  "sequence": "01",
+  "E": 1,
+  "F_exact": "2",
+  "canonical": "00",
+  "source": "https://arxiv.org/html/1512.02475",
+  "source_file": "data/sources/optimal.html",
+  "by": "Elementary parity bound",
+  "updated": "2016-04-01",
+  "optimum": true
+}

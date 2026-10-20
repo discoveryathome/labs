@@ -1,0 +1,8 @@
+{
+  "lengths": [92, 99, 107, 119, 450, 451, 518, 573],
+  "seeds": [11, 29, 47, 71, 101],
+  "arms": [["hill", "random"], ["tabu", "random"], ["hill", "published"], ["tabu", "published"]],
+  "evaluations": 2000000,
+  "order_seed": 20261020,
+  "run_timeout_seconds": 60
+}

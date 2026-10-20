@@ -1,0 +1,4129 @@
+Prioritizing Search Space Regions in the Low Autocorrelation Binary Sequences Problem
+// Restore the saved color scheme preference, or
+  // enact the browser preference if "automatic", 
+  // without expecting DOM load to have completed.
+  //
+  // Also restore any saved readingmode and ToC display preferences.
+  function initializeReadingPreferences() {
+    let saved_theme = localStorage.getItem("ar5iv_theme") || "automatic";
+    if (saved_theme === "automatic") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        saved_theme = "dark";
+      }
+    }
+    if (saved_theme == "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    const tocDisplay = localStorage.getItem('arxiv_html_paper_toc_display');
+    if (tocDisplay) {
+      document.documentElement.setAttribute("data-toc-display", tocDisplay);
+    }
+    const readingMode = localStorage.getItem('arxiv_html_paper_reading_mode');
+    if (readingMode) {
+      document.documentElement.setAttribute("data-reading-mode", readingMode);
+    }
+    // Pre-apply spinout-banner dismissal here, before the banner paints, so it
+    // never flashes in only to be hidden later by the deferred arxiv-header.js.
+    // Key matches arxiv-header.js: "arxiv-banner-dismissed:" + data-banner-name.
+    if (localStorage.getItem('arxiv-banner-dismissed:spinout-nonprofit')) {
+      document.documentElement.setAttribute("data-banner-dismissed", "");
+    }
+  }
+  // Run as soon as JS starts, to minimize repainting
+  initializeReadingPreferences();
+/* Banner pre-dismissal (set above before paint -> no flash-then-hide) and
+     reading-mode chrome hiding. */
+  html[data-banner-dismissed] .ds-announcement { display: none; }
+  html[data-reading-mode="enabled"] .ds-announcement,
+  html[data-reading-mode="enabled"] .ds-site-footer { display: none; }
+  /* Print keeps the reader header's logo, not its controls: the theme's own print rule
+     (header, nav { display: none }) sits in a layer that its header layer outranks. */
+  @media print { .arxiv-html-header .html-header-nav { display: none; } }
+  /* Keep the announcement text dark on the Open-Blue band in both colour themes
+     (otherwise it inherits the paper's warm-wash text in dark mode and washes out). */
+  .ds-announcement-text { color: var(--arxiv-ink, #1c1a17); }
+Report GitHub Issue
+×
+Title:
+Content selection saved. Describe the issue below:
+Description:
+Submit without GitHub
+Submit in GitHub
+arXiv is now an independent nonprofit!
+Learn more
+×
+Back to arXiv
+Why HTML?
+Report Issue
+Back to Abstract
+Download PDF
+Abstract
+References
+License: CC BY 4.0
+arXiv:2607.09688v1 [cs.LG] 17 Jun 2026
+Prioritizing Search Space Regions in the Low Autocorrelation Binary Sequences Problem
+Blaž Pšeničnik
+Affiliation:
+Computer Architecture and Languages Laboratory
+Affiliation:
+Faculty of Electrical Engineering and Computer Science
+Affiliation:
+University of Maribor
+Email:
+blaz.psenicnik1@um.si
+Borko Bošković
+Affiliation:
+Computer Architecture and Languages Laboratory
+Affiliation:
+Faculty of Electrical Engineering and Computer Science
+Affiliation:
+University of Maribor
+Email:
+borko.boskovic@um.si
+Jan Popič
+Affiliation:
+Computer Architecture and Languages Laboratory
+Affiliation:
+Faculty of Electrical Engineering and Computer Science
+Affiliation:
+University of Maribor
+Email:
+jan.popic1@um.si
+Janez Brest
+Affiliation:
+Computer Architecture and Languages Laboratory
+Affiliation:
+Faculty of Electrical Engineering and Computer Science
+Affiliation:
+University of Maribor
+Email:
+janez.brest@um.si
+Abstract
+Low autocorrelation binary sequences problem (LABS) is a hard combinatorial optimization challenge with important applications in communications, signal processing, and satellite navigation. This paper proposes a hybrid search framework that combines Thompson sampling with parallel self-avoiding walks to adaptively allocate computational effort across restriction classes of the LABS search space. By modeling partitions as arms in a multi-armed bandit setting, the proposed method dynamically shifts search resources toward partitions that empirically produce higher merit factors while maintaining exploration of less-sampled regions. The approach is further accelerated through GPU-parallel execution, shared posterior updates, efficient neighborhood evaluation, and a Bloom filter for cycle prevention. In addition, we use a two-stage optimization strategy that first searches constrained partitioned skew-symmetric spaces and then refines the best candidates in the unrestricted space. Experiments on long binary sequences show that the proposed method improves the previously best-known results for 35 sequence lengths in the range
+450
+≤
+L
+≤
+527
+450\leq L\leq 527
+and for
+L
+=
+573
+L=573
+. In particular, we report a new longest sequence with merit factor exceeding
+8.0
+8.0
+, obtained for
+L
+=
+451
+L=451
+. The results also show that Thompson sampling effectively prioritizes partitions with better observed performance, confirming the value of online, data-driven resource allocation in LABS optimization. Overall, the proposed framework provides a scalable and effective strategy for high-performance merit factor maximization.
+August 24, 2026
+K
+eywords
+LABS, merit factor, reinforcement learning, Thompson sampling
+Introduction
+The study of low autocorrelation binary sequences (LABS) is recognized as a highly challenging computational problem, belonging to the class of hard binary combinatorial problems. It was formally introduced in 1972 by Golay
+[
+1
+]
+. Earlier groundwork was laid by Littlewood
+[
+2
+]
+, a mathematician, who examined polynomials with coefficients restricted to
+±
+1
+\pm 1
+on the unit circle in the complex plane, a problem closely related to LABS. Sequences with low autocorrelation are valuable across a range of practical contexts. In digital communications, they help distinguish signals from background noise more effectively
+[
+3
+,
+4
+]
+and are critical for packet detection and bit alignment
+[
+5
+]
+, especially for low
+-
+power Internet of Things receivers. Beyond that, their usefulness extends to areas such as physics
+[
+6
+]
+, chemistry, and cryptography. A broader overview of additional applications and theoretical developments can be found in the survey literature on this topic
+[
+3
+]
+. A particularly striking application involved their role in highly accurate interplanetary radar experiments designed to test the curvature of space-time
+[
+7
+]
+. In global navigation satellite systems (GNSS), sequences with low autocorrelation play a crucial role; when combined with additional desirable properties, they are known as spreading codes
+[
+8
+]
+. For example, the
+Global Positioning System L1 C/A signal
+uses a set of
+63
+63
+distinct spreading codes, each of length
+1023
+1023
+[
+8
+]
+. These types of codes are also important in low Earth orbit (LEO) satellite applications
+[
+9
+]
+. In recent years, interest in this problem has grown further with the emergence of quantum computing, as such combinatorial optimization challenges are seen as promising candidates for quantum algorithms
+[
+10
+,
+11
+]
+.
+In the literature, binary sequences are commonly analyzed using two forms of autocorrelation: periodic and aperiodic autocorrelation functions
+[
+12
+]
+. The aperiodic autocorrelation is often regarded as a more realistic characterization of sequence behavior in practical systems
+[
+13
+]
+. A binary sequence of length
+L
+L
+is defined as
+S
+⁡
+(
+L
+)
+=
+{
+s
+1
+,
+s
+2
+,
+…
+,
+s
+L
+}
+S(L)=\{s_{1},s_{2},\ldots,s_{L}\}
+, where element satisfies
+s
+i
+∈
+{
++
+1
+,
+−
+1
+}
+s_{i}\in\{+1,-1\}
+. The aperiodic autocorrelation function is given by:
+C
+k
+​
+(
+S
+)
+=
+∑
+i
+=
+1
+L
+−
+k
+s
+i
+​
+s
+i
++
+k
+,
+k
+∈
+{
+1
+,
+…
+,
+L
+}
+.
+C_{k}(S)=\sum_{i=1}^{L-k}s_{i}s_{i+k},\quad k\in\{1,\dots,L\}.
+(1)
+The sequence energy is defined as
+E
+⁡
+(
+S
+)
+=
+∑
+k
+=
+1
+L
+−
+1
+C
+k
+2
+​
+(
+S
+)
+E(S)=\sum_{k=1}^{L-1}C_{k}^{2}(S)
+, i.e., the sum of squared aperiodic autocorrelation values over all non-zero shifts
+k
+k
+. Sequence search and design methods in the literature typically follow two principal optimization criteria. The first aims to minimize the peak sidelobe level (PSL), while the second seeks to maximize the merit factor (
+F
+F
+)
+[
+14
+]
+, defined as:
+F
+⁡
+(
+S
+)
+=
+L
+2
+2
+​
+E
+​
+(
+S
+)
+.
+F(S)=\frac{L^{2}}{2E(S)}.
+(2)
+These two objectives constitute a trade-off, making their simultaneous optimization generally infeasible. Accordingly, practical sequence design does not attempt to balance PSL and MF; instead, it focuses on optimizing either PSL or
+F
+F
+, depending on the application and design requirements
+[
+15
+]
+. The goal of the LABS problem is to identify a binary sequence
+S
+∗
+S^{*}
+that, for a given length
+L
+L
+, achieves the maximum possible merit factor
+F
+F
+:
+S
+∗
+=
+arg
+​
+max
+S
+∈
+{
+−
+1
+,
+1
+}
+L
+​
+F
+​
+(
+S
+)
+.
+S^{*}=\underset{S\in\{-1,1\}^{L}}{\operatorname{arg\max}}F(S).
+(3)
+In other words, the objective is to find a sequence that maximizes the merit factor defined in Equation (
+2
+), thereby minimizing the associated autocorrelation energy.
+Since LABS is a binary combinatorial optimization problem, the size of the search space grows exponentially with the sequence length
+L
+L
+, specifically as
+2
+L
+2^{L}
+. The landscape is characterized by an exponentially increasing number of local minima as
+L
+L
+increases, while the global minima are extremely rare, highly isolated, and sharply defined, resembling the shape of a golf hole
+[
+16
+]
+. Figure
+1
+illustrates the distribution of global and local optima using a two-dimensional projection of the search space. This projection is obtained via UMAP (Uniform Manifold Approximation and Projection)
+[
+17
+]
+, a dimensionality reduction technique, for sequence lengths
+L
+=
+12
+,
+15
+,
+17
+L=12,\,15,\,17
+. The values
+C
+k
+​
+(
+S
+)
+C_{k}(S)
+in Equation
+1
+remain unchanged if the sign of each sequence element is flipped (i.e., multiplied by
+−
+1
+-1
+) or if the sequence is reversed. Under these transformations, the sequence energy remains invariant
+[
+18
+]
+. If alternating elements of the sequence are complemented, correlations with odd indices
+k
+k
+remain unchanged, while correlations with even indices only change sign. Hence, all sequences of length
+L
+L
+can be can be grouped into eight mutually equivalent classes. Consequently, the number of nonequivalent sequences is slightly greater than
+2
+(
+L
+−
+3
+)
+2^{(L-3)}
+[
+18
+]
+. In Figure
+1
+, these symmetry classes are visible as distinct clusters for each sequence length.
+Figure 1:
+Two-dimensional projection of the search space for sequence lengths
+L
+=
+12
+,
+15
+,
+17
+L=12,\,15,\,17
+using the dimensionality reduction method UMAP
+[
+17
+]
+. Red points represent global minima, green points represent local minima, and blue points correspond to all other sequences.
+Due to the exponential growth of the problem’s search space, its reduction can be highly advantageous. A binary sequence of odd length
+L
+=
+2
+​
+k
++
+1
+L=2k+1
+is called skew-symmetric
+[
+1
+]
+if it satisfies the following condition:
+s
+(
+k
++
+1
+)
++
+i
+=
+(
+−
+1
+)
+i
+s
+(
+k
++
+1
+)
+−
+i
+,
+i
+=
+1
+,
+2
+,
+⋯
+,
+k
+.
+s_{(k+1)+i}=(-1)^{i}s_{(k+1)-i},\quad i=1,2,\,\cdots,k.
+(4)
+This constraint effectively reduces the search space to
+2
+(
+(
+L
++
+1
+)
+/
+2
+)
+2^{((L+1)/2)}
+and ensures that all sidelobes corresponding to odd shifts vanish, i.e.,
+C
+k
+=
+0
+C_{k}=0
+for all odd
+k
+k
+. As a consequence, the total energy
+E
+E
+is reduced, which in turn increases the merit factor
+F
+F
+. For sequence lengths
+L
+≤
+66
+L\leq 66
+, only
+22
+22
+optimal sequences
+S
+∗
+S^{*}
+are also skew-symmetric
+[
+18
+]
+.
+Since exhaustive search becomes computationally intractable for large values of
+L
+L
+, restriction classes have been introduced
+[
+19
+]
+. This approach enables a decomposition of the search space into multiple disjoint regions, which can then be explored in parallel. The search space can in turn be reduced to
+2
+(
+L
+/
+2
+−
+p
+)
+2^{(L/2-p)}
+by fixing the first
+p
+p
+elements of the sequence. The first
+p
+p
+elements are determined using partitions (restriction classes)
+[
+19
+]
+of length
+g
+g
+(number of summands) with minimal or normalized potentials. The next
+k
+−
+p
++
+1
+k-p+1
+elements are free, while the last
+k
+k
+elements are determined using a skew-symmetry rule, as shown in Equation
+5
+. This effectively assigns some elements in the autocorrelation function to small values, thereby reducing the total energy. To order the partitions, the authors in
+[
+19
+]
+suggested potentials and normalized potentials for each partition. This reduction of the search space, based on group theory, provides a more efficient approach for finding sequences with desired properties compared to considering all possible restriction classes.
+S
+⁡
+(
+L
+)
+=
+s
+1
+s
+2
+⋯
+s
+p
+⏟
+p
+​
+s
+p
++
+1
+s
+p
++
+2
+⋯
+s
+k
+−
+1
+s
+k
+s
+k
++
+1
+⏟
+k
+−
+p
++
+1
+​
+s
+k
++
+2
+s
+k
++
+3
+⋯
+s
+L
+−
+1
+s
+L
+⏟
+k
+S(L)=\underbrace{s_{1}s_{2}\cdots s_{p}}_{p}\underbrace{s_{p+1}s_{p+2}\cdots s_{k-1}s_{k}s_{k+1}}_{k-p+1}\underbrace{s_{k+2}s_{k+3}\cdots s_{L-1}s_{L}}_{k}
+(5)
+In this work, we address the challenge of efficiently exploring the exponentially large search space of binary sequences in the LABS problem while maintaining a strong balance between exploration and exploitation. We propose a hybrid framework that combines Thompson sampling–based online decision making with parallel self-avoiding walks to dynamically allocate computational resources across restriction classes. Each restriction class is treated as an arm in a multi-armed bandit setting, enabling adaptive focus toward regions of the search space that empirically yield higher merit factors, while still preserving sufficient exploration of under-sampled partitions. The resulting search procedure is further accelerated through GPU-parallel execution of independent walks, shared global posterior updates, and efficient neighborhood evaluation with linear-time flip operations and a Bloom filter for cycle prevention. In addition, we incorporate a two-stage optimization strategy that first explores constrained partitioned symmetric search spaces and subsequently refines high-quality candidates in an unconstrained setting, improving solution quality. Together, these components form a scalable and data-driven search strategy that leverages stochastic decision-making and high-performance parallel computation to significantly enhance the effectiveness of merit factor maximization.
+Accordingly, the main contributions of this paper are as follows:
+•
+We propose an online method for prioritizing regions of the search space in the low autocorrelation binary sequence problem, in which computational effort is dynamically allocated during the search process.
+•
+We develop a novel algorithm that incorporates the proposed prioritization strategy.
+•
+We report new best-known solutions for several sequence lengths.
+•
+We present the longest binary sequence with a merit factor exceeding
+8.0
+8.0
+.
+The remainder of this paper is organized as follows. We begin with a review of related work and background on low autocorrelation binary sequences. This is followed by the presentation of the proposed method for prioritizing regions of the search space and the corresponding algorithm. We then report the experimental results, including improved best-known solutions and a newly obtained sequence with a merit factor exceeding
+8.0
+8.0
+. The paper concludes with a summary of findings and directions for future research.
+Related work
+Finding optimal sequences
+S
+∗
+S^{*}
+is computationally feasible only for shorter lengths; nevertheless, several methods have been proposed in literature. In
+[
+20
+]
+, the authors introduced a branch-and-bound algorithm that systematically explores the solution space. To reduce its size, they fixed the
+m
+m
+leftmost and rightmost elements based on symmetry rules. The lower bound of the energy function was obtained via relaxation, accounting for interactions between fixed and free elements. This approach enabled the computation of optimal sequences up to
+L
+≤
+44
+L\leq 44
+, with an estimated time complexity of
+O
+⁡
+(
+1.85
+L
+)
+O(1.85^{L})
+. The quality of the lower bound in
+[
+20
+]
+depends on random assignments of the central
+L
+−
+2
+​
+m
+L-2m
+free elements. To address this,
+[
+21
+]
+introduced the concept of free products, where terms are considered only if both elements are unfixed. This idea was refined in
+[
+22
+]
+by incorporating additional interactions between fixed and free elements, reducing the complexity to
+O
+⁡
+(
+1.80
+L
+)
+O(1.80^{L})
+. In
+[
+23
+]
+, it was observed that conjugating a sequence element changes the energy sum by
+±
+4
+\pm 4
+, leading to a tighter lower bound. Finally,
+[
+18
+]
+introduced a combined lower bound that further improved efficiency to
+O
+⁡
+(
+1.729
+L
+)
+O(1.729^{L})
+. An exact lower bound was also derived; however, it was not used in practice due to its high computational cost. Using this method, optimal sequences were obtained up to
+L
+≤
+66
+L\leq 66
+, with an estimated runtime of approximately
+55
+55
+days on a
+248
+248
+-core system for
+L
+=
+66
+L=66
+. Additionally, optimal skew-symmetric sequences were reported for lengths up to
+L
+≤
+119
+L\leq 119
+.
+As an alternative, construction methods can be used to efficiently generate sequences of a given quality. In
+[
+24
+]
+, it was shown that the merit factor of any rotated Legendre sequence satisfies
+1.5
+≤
+F
+≤
+6.0
+1.5\leq F\leq 6.0
+, attaining its maximum when the rotation parameter is approximately
+r
+≈
+1
+4
+r\approx\frac{1}{4}
+. A Legendre sequence, defined for prime length
+L
+L
+, whose elements are given by the Legendre symbol and take values
+±
+1
+\pm 1
+depending on quadratic residuosity (cf. quadratic residue modulo)
+[
+25
+]
+. Furthermore,
+[
+25
+]
+demonstrated that sequences of arbitrary length with
+F
+≥
+6.0
+F\geq 6.0
+can be systematically constructed. Specifically, by appending
+⌊
+t
+^
+​
+L
+⌋
+\lfloor{\hat{t}L}\rfloor
+elements of a rotated Legendre sequence to the end, and tuning parameters within
+0.20
+≤
+r
+≤
+0.24
+0.20\leq r\leq 0.24
+and
+0.055
+≤
+t
+^
+≤
+0.063
+0.055\leq\hat{t}\leq 0.063
+, one can achieve sequences with merit factor
+F
+≈
+6.3421
+F\approx 6.3421
+. Further improvements using the steep descent algorithm and modified Jacobi sequences increased the merit factor to approximately
+F
+≈
+6.44
+F\approx 6.44
+[
+26
+]
+. A survey in
+[
+27
+]
+unified these results and identified sequence classes with asymptotic merit factors above
+6.34
+6.34
+.
+Despite these advances in construction methods, there remains a significant gap between asymptotic guarantees and best-known computationally obtained merit factors. The literature employed several stochastic approaches, including local search
+[
+28
+,
+29
+]
+, tabu search
+[
+30
+]
+, a combination of evolutionary algorithms with tabu search
+[
+31
+]
+, self-avoiding walks
+[
+32
+,
+33
+]
+, and search control using a priority queue
+[
+34
+,
+35
+]
+, among others. Local search methods in
+[
+32
+,
+19
+]
+have produced sequences with a merit factor exceeding
+8.0
+8.0
+for
+172
+≤
+L
+≤
+268
+172\leq L\leq 268
+, and exceeding
+7.0
+7.0
+for
+172
+≤
+L
+≤
+527
+172\leq L\leq 527
+. In
+[
+35
+]
+, all skew-symmetric sequences with lengths in the interval
+201
+≤
+L
+≤
+303
+201\leq L\leq 303
+achieving a merit factor of at least
+F
+≥
+8.0
+F\geq 8.0
+were reported. Because exhaustive search becomes intractable for large values of
+L
+L
+, the authors in
+[
+19
+]
+introduced restriction classes, which allowed the search space to be divided into disjoint regions that can be explored in parallel. Analysis of a stochastic algorithm on short sequences enables the establishment of a predictive model for stopping conditions
+[
+36
+]
+. Using this and parallel computation on graphics processing units
+[
+33
+]
+, the stochastic algorithm found some optimal skew-symmetric sequences with an estimated probability of
+99
+%
+99\%
+for
+171
+≤
+L
+≤
+223
+171\leq L\leq 223
+, and skew-symmetric sequences with a merit factor greater than
+9.0
+9.0
+for lengths
+225
+≤
+L
+≤
+247
+225\leq L\leq 247
+.
+Using noiseless simulations with up to 40 qubits, the authors in
+[
+11
+]
+show that the quantum approximate optimization algorithm (QAOA) with fixed parameters achieves a time-to-solution scaling of
+O
+⁡
+(
+1.46
+L
+)
+O(1.46^{L})
+on the problem, which improves to
+O
+⁡
+(
+1.21
+L
+)
+O(1.21^{L})
+when combined with quantum minimum finding, outperforming the best classical heuristic. These results provide evidence that QAOA can serve as a useful algorithmic component for achieving quantum speedups in optimization problems in a fault-tolerant setting. In
+[
+10
+]
+, the authors extend the Pauli Correlation Encoding (PCE) framework to the LABS problem. Their variational quantum solver achieves a time-to-solution scaling of approximately
+O
+⁡
+(
+1.33
+L
+)
+O(1.33^{L})
+, and they project that quantum advantage could appear for instance sizes on the order of thousands.
+In
+[
+37
+]
+, GPU parallelization was shown to significantly speed up discrete optimization problems like LABS and the Golomb ruler, achieving about a
+13
+×
+13\times
+speedup using steepest descent local search for sequences of length
+L
+=
+201
+L=201
+. In
+[
+38
+]
+, a hybrid memetic evolutionary multi-agent system (EMAS) uses GPUs to accelerate fitness evaluation, reaching a
+46
+×
+46\times
+speedup for
+L
+=
+128
+L=128
+compared to CPU-only execution. The authors in
+[
+39
+]
+used a deep neural network as a tabu support. They replaced the heuristic selection of the tabu parameter with an LSTM neural network that predicts values of the parameter for a given input sequence and its energy. In
+[
+40
+]
+a framework for the massive parallelization of the memetic algorithm with tabu search was presented. In
+[
+41
+]
+, a quantum-enhanced memetic tabu search achieved the scaling of
+O
+⁡
+(
+1.24
+L
+)
+O(1.24^{L})
+. In
+[
+33
+]
+, the authors presented a new stochastic algorithm for LABS, which organizes the search process as a series of parallel self-avoiding walks over sequences with skew-symmetry. The algorithm achieved a
+387
+387
+-fold speedup compared to a sequential program, since the individual self-avoiding walks are trivially parallelizable. The algorithm achieved a time complexity of
+O
+⁡
+(
+1.34
+L
+)
+O(1.34^{L})
+and
+O
+⁡
+(
+1.15
+L
+)
+O(1.15^{L})
+for skew-symmetric sequences. In
+[
+42
+]
+, the solver was improved to use partitions (restriction classes) and a two-step targeted refinement strategy was suggested to explore the whole unrestricted search space and mitigate constraints imposed by skew-symmetry and restriction classes.
+Method
+Achieving high merit factors for long binary sequences requires careful selection of integer partitions, as exhaustively optimizing sequences for all partitions for a given length
+p
+p
+is computationally infeasible. Until now, potentials and normalized potentials of partitions have been used as heuristic methods to rank partitions
+[
+19
+]
+, enabling the prioritization of promising regions of the search space. In this paper, we propose a novel method for dynamic allocation of search effort, which is modeled as an online decision problem. The proposed method dynamically allocates computational resources to partitions based on their observed performance, enabling efficient exploration and exploitation of the search space.
+An online decision problem is a setting where a decision-maker (often called an agent) must make decisions sequentially over time without knowing future inputs. The agent only sees information available at the current time step and must act immediately. This process happens over discrete time stamps
+t
+=
+1
+,
+2
+,
+3
+,
+…
+,
+T
+t=1,2,3,\dots,T
+, where at each time step an action is chosen based on past and current observations. After taking an action
+a
+t
+a_{t}
+, the agent receives a reward
+r
+t
+r_{t}
+. The effectiveness of online decision-making algorithms is commonly evaluated and compared using regret plots. The regret incurred at time
+t
+t
+is defined as the difference between the expected reward of the optimal action and the expected reward of the action chosen by the algorithm
+[
+43
+]
+. The objective is therefore to minimize cumulative regret over time.
+We model the partition resource allocation problem as a multi-armed bandit problem
+[
+44
+]
+, where each partition corresponds to an arm. At each decision step, the algorithm selects partitions and allocates computational resources to them. Feedback is then received in the form of the best merit factor achieved after partitioning the sequence and performing a self-avoiding walk
+[
+33
+]
+on the partitioned sequence. Since we can only obtain an optimized merit factor of a partitioned sequence after performing the walk (and spending computation time), and because its value is random due to the stochastic nature of the search process, this problem involves a balance between exploration and exploitation. The goal is therefore to allocate resources to partitions, that are likely to yield high merit factors, while still exploring less-sampled partitions to avoid prematurely discarding potentially promising regions of the search space. To address this trade-off, we employ Thompson sampling
+[
+45
+,
+46
+]
+, which was chosen due to the low computational overhead compared to other reinforcement learning methods and strong empirical performance
+[
+47
+,
+48
+]
+.
+Formally, let
+K
+K
+be the number of available partitions for a given sequence length. Each arm
+k
+∈
+{
+1
+,
+2
+,
+…
+,
+K
+}
+k\in\{1,2,\ldots,K\}
+corresponds to a partition and is associated with an unknown parameter
+θ
+k
+\theta_{k}
+, representing the expected merit factor
+F
+F
+obtainable from that partition. We place a prior distribution
+p
+⁡
+(
+θ
+k
+)
+p(\theta_{k})
+over each
+θ
+k
+\theta_{k}
+to encode our initial belief about the quality of partition
+k
+k
+. A common choice for a prior distribution is the Beta distribution:
+θ
+k
+∼
+B
+​
+e
+​
+t
+​
+a
+​
+(
+α
+k
+,
+β
+k
+)
+,
+\theta_{k}\sim Beta(\alpha_{k},\beta_{k}),
+(6)
+as it provides a convenient conjugate prior for bounded rewards in
+[
+0
+,
+1
+]
+[0,1]
+and enables efficient posterior updates. Here,
+α
+k
+\alpha_{k}
+and
+β
+k
+\beta_{k}
+correspond to the number of observed successes and failures, respectively, in a Bernoulli bandit framework. We initialize all arms with
+α
+k
+=
+1
+\alpha_{k}=1
+and
+β
+k
+=
+1
+\beta_{k}=1
+, corresponding to a uniform prior.
+However, since the merit factor
+F
+F
+is a continuous quantity, the reward
+r
+t
+r_{t}
+at time
+t
+t
+cannot be effectively treated as a binary outcome. To address this, we employ an extension of Thompson sampling, proposed in
+[
+49
+]
+, which accommodates general reward distributions and thus enables modeling the full stochastic bandit problem. Specifically, for a reward
+r
+t
+∈
+[
+0
+,
+1
+]
+r_{t}\in[0,1]
+, one can simulate a Bernoulli trial with success probability
+r
+t
+r_{t}
+to map the reward to a binary outcome. An alternative, more direct approach allows updates with the actual reward value
+r
+t
+∈
+[
+0
+,
+1
+]
+r_{t}\in[0,1]
+without performing a Bernoulli trial. This method, while not analyzed due to limitations
+[
+49
+]
+, is adopted here for efficiency. Under Fractional Thompson sampling, the parameters for arm
+k
+k
+are updated as:
+(
+α
+k
+,
+β
+k
+)
+←
+{
+(
+α
+k
+,
+β
+k
+)
+,
+if
+​
+a
+t
+≠
+k
+(
+α
+k
+,
+β
+k
+)
++
+(
+r
+t
+,
+1
+−
+r
+t
+)
+,
+if
+​
+a
+t
+=
+k
+(\alpha_{k},\beta_{k})\leftarrow\begin{cases}(\alpha_{k},\beta_{k}),&\text{if }a_{t}\neq k\\
+(\alpha_{k},\beta_{k})+(r_{t},1-r_{t}),&\text{if }a_{t}=k\end{cases}
+(7)
+Using fractional updates avoids the inefficiency of simulating Bernoulli trials for continuous rewards while preserving the core advantages of Thompson sampling. We scale the observed merit factor to
+r
+t
+∈
+[
+0
+,
+1
+]
+r_{t}\in[0,1]
+for compatibility with the bandit framework, using the formula
+r
+t
+=
+c
+​
+l
+​
+a
+​
+m
+​
+p
+​
+(
+F
+/
+7
+)
+r_{t}=clamp(F/7)
+based on the expected range of merit factors
+[
+42
+]
+.
+At each decision step
+t
+t
+, a partition is chosen according to Thompson sampling. For each arm
+k
+∈
+{
+1
+,
+2
+,
+…
+,
+K
+}
+k\in\{1,2,\dots,K\}
+, we draw a sample
+θ
+~
+k
+\tilde{\theta}_{k}
+which represents a plausible estimate of the expected reward for partition
+k
+k
+under the current posterior distribution. The selected arm is then given by
+a
+t
+=
+arg
+⁡
+max
+k
+⁡
+θ
+~
+k
+.
+a_{t}=\arg\max_{k}\tilde{\theta}_{k}.
+(8)
+Once a partition is selected, computational resources are allocated to it by performing a self-avoiding walk on the corresponding partitioned sequence. This gives a reward
+r
+t
+r_{t}
+, defined as the normalized merit factor obtained during the search. The parameters of the chosen arm are then updated using the fractional Thompson sampling rule described above. This process repeats until the stopping condition is achieved.
+Based on the proposed approach, we introduce a new algorithm for generating binary sequences with high merit factors, called TS-SAW. The pseudo-code of the algorithm is presented in Algorithm
+1
+, while a flowchart illustrating the overall procedure is provided in Figure
+2
+. To reduce the time and memory complexity of the proposed method, and to enable efficient use of multi-threading on modern processors and graphical processing units, the
+𝙱𝙴𝚂𝚃
+​
+_
+​
+𝙽𝙴𝙸𝙶𝙷𝙱𝙾𝚄𝚁
+\mathtt{BEST\_NEIGHBOUR}
+function employs lightweight flip probing of skew-symmetric binary sequences with linear time and space complexity, as suggested in
+[
+29
+]
+. This results in a total complexity of
+O
+⁡
+(
+(
+L
+/
+2
+−
+p
+)
+⋅
+L
+)
+=
+O
+⁡
+(
+L
+2
+)
+O((L/2-p)\cdot L)=O(L^{2})
+for each call, enabling an efficient neighborhood evaluation mechanism requiring minimal memory. The neighborhood of a binary sequence consists of all sequences that differ from the original by a single element. Once all neighbors of the current pivot (current sequence in the self-avoiding walk) have been evaluated, the new pivot is selected as the unvisited neighbor with the minimum energy. In the same work
+[
+29
+]
+, an in-memory flip algorithm for skew-symmetric binary sequences with linear time and space complexity was also proposed, and is adopted here. The function maintains skew-symmetry and flips the elements at indexes
+i
+i
+and
+(
+L
+−
+q
+)
+−
+1
+(L-q)-1
+.
+Algorithm 1
+Pseudocode of the proposed TS-SAW algorithm for generating binary sequences with high merit factors using search space prioritization.
+1:
+𝔹
+​
+𝔽
+←
+e
+​
+m
+​
+p
+​
+t
+​
+y
+\mathbb{BF}\leftarrow empty
+⊳
+\triangleright
+Create an empty Bloom Filter
+2:
+for
+k
+=
+1
+,
+…
+,
+K
+k=1,\dots,K
+do
+3:
+θ
+^
+k
+∼
+Beta
+​
+(
+α
+k
+,
+β
+k
+)
+\hat{\theta}_{k}\sim\text{Beta}(\alpha_{k},\beta_{k})
+4:
+end
+for
+5:
+a
+t
+=
+arg
+⁡
+max
+k
+⁡
+θ
+~
+k
+a_{t}=\arg\max_{k}\tilde{\theta}_{k}
+⊳
+\triangleright
+Select a promising search region
+6:
+s
+​
+e
+​
+q
+←
+init_partitioned_sequence
+​
+(
+a
+t
+)
+seq\leftarrow\textsc{init\_partitioned\_sequence}(a_{t})
+7:
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+←
+s
+​
+e
+​
+q
+seq_{best}\leftarrow seq
+8:
+𝔹
+​
+𝔽
+.
+insert
+​
+(
+s
+​
+e
+​
+q
+)
+\mathbb{BF}.\textsc{insert}(seq)
+9:
+e
+←
+energy
+​
+(
+s
+​
+e
+​
+q
+)
+e\leftarrow\textsc{energy}(seq)
+10:
+e
+b
+​
+e
+​
+s
+​
+t
+←
+e
+e_{best}\leftarrow e
+11:
+i
+​
+t
+←
+0
+it\leftarrow 0
+12:
+while
+i
+​
+t
+<
+T
+i
+it<T_{i}
+do
+⊳
+\triangleright
+Self-avoiding walk of length
+T
+i
+T_{i}
+13:
+i
+​
+t
+←
+i
+​
+t
++
+1
+it\leftarrow it+1
+14:
+i
+,
+d
+​
+e
+​
+l
+​
+t
+​
+a
+←
+best_neighbour
+​
+(
+s
+​
+e
+​
+q
+)
+i,delta\leftarrow\textsc{best\_neighbour}(seq)
+15:
+if
+i
+=
+−
+1
+i=-1
+then
+16:
+break
+17:
+end
+if
+18:
+sequence_flip_skew
+​
+(
+s
+​
+e
+​
+q
+,
+i
+)
+\textsc{sequence\_flip\_skew}(seq,i)
+19:
+𝔹
+​
+𝔽
+.
+insert
+​
+(
+s
+​
+e
+​
+q
+)
+\mathbb{BF}.\textsc{insert}(seq)
+20:
+e
+←
+e
++
+d
+​
+e
+​
+l
+​
+t
+​
+a
+e\leftarrow e+delta
+21:
+if
+e
+<
+e
+b
+​
+e
+​
+s
+​
+t
+e<e_{best}
+then
+22:
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+←
+s
+​
+e
+​
+q
+seq_{best}\leftarrow seq
+23:
+e
+b
+​
+e
+​
+s
+​
+t
+←
+e
+e_{best}\leftarrow e
+24:
+end
+if
+25:
+end
+while
+26:
+r
+t
+←
+calculate_reward
+​
+(
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+)
+r_{t}\leftarrow\textsc{calculate\_reward}(seq_{best})
+27:
+(
+α
+a
+t
+,
+β
+a
+t
+)
+←
+(
+α
+a
+t
+,
+β
+a
+t
+)
++
+(
+r
+t
+,
+1
+−
+r
+t
+)
+(\alpha_{a_{t}},\beta_{a_{t}})\leftarrow(\alpha_{a_{t}},\beta_{a_{t}})+(r_{t},1-r_{t})
+⊳
+\triangleright
+Update beliefs about the selected search region
+Figure 2:
+Flowchart illustrating the main steps of the proposed TS-SAW algorithm for generating binary sequences with high merit factors.
+To prevent cycling in the search process, the algorithm stores sequences’ hashes, which limits the walk length
+T
+i
+T_{i}
+due to memory constraints. Since high performance depends on a small memory footprint, so the data can fit in fast GPU shared memory and CPU cache, we use a Bloom filter
+[
+50
+]
+in the suggested algorithm. This reduces memory usage and allows longer walks, while still providing a fast lookup for previously visited sequences, with a negligible chance of error.
+Based on our previous research
+[
+33
+,
+42
+]
+, graphical processing units offer several advantages for the LABS problem. Each walk is independent, allowing efficient parallelization with minimal synchronization overhead. In our implementation, each self-avoiding walk, as described in Algorithm
+1
+, is executed within a CUDA block with multiple threads, enabling multiple walks to run concurrently. This allows micro and macro parallelization of the algorithm, which improves efficiency and speed. To share information across walks and reduce entropy, a single global belief, represented by
+α
+k
+\alpha_{k}
+and
+β
+k
+\beta_{k}
+parameters of each arm, is obtained and updated after each walk. Each walk can therefore be seen as an independent agent, sampling from the shared posterior and selecting a trajectory accordingly, which promotes exploration diversity. The global belief is then updated using the aggregated outcomes of all walks. While updates are delayed due to batching, shared observations accelerate learning and improve overall efficiency.
+In
+[
+42
+]
+, we showed that combining parallel stochastic search with targeted refinement is an effective strategy for solving extremely challenging combinatorial optimization problems such as LABS. Statistical tests further confirmed that this two-step method significantly outperforms single-step approaches. In this work, we adopt the same overall approach, but modify the transition between the two steps. Instead of filtering candidate solutions for the second step using a fixed merit factor threshold, we select
+m
+m
+best candidates based on the second-step capacity. These candidates are chosen by ranking all parallel self-avoiding walks according to their merit factor and selecting the top subset using the quickselect algorithm, which operates in expected linear time. Although the second step itself remains unchanged from the original paper, its pseudocode is provided in Algorithm
+2
+for completeness. The purpose of the second step is to explore the full search space without imposing the skew-symmetry and partition constraints used in the first step in the hopes of improving the solution quality further. For clarity, the overall approach is depicted in Figure
+3
+. The
+𝚂𝙴𝚀𝚄𝙴𝙽𝙲𝙴
+​
+_
+​
+𝙵𝙻𝙸𝙿
+\mathtt{SEQUENCE\_FLIP}
+function flips the
+i
+i
+-th element of a sequence in linear time and space complexity. It differs from the
+𝚂𝙴𝚀𝚄𝙴𝙽𝙲𝙴
+​
+_
+​
+𝙵𝙻𝙸𝙿
+​
+_
+​
+𝚂𝙺𝙴𝚆
+\mathtt{SEQUENCE\_FLIP\_SKEW}
+function in that it modifies only a single element and does not preserve skew-symmetry. The
+𝙼𝙰𝙺𝙴
+​
+_
+​
+𝚁𝙾𝚃𝙰𝚃𝙸𝙾𝙽𝚂
+\mathtt{MAKE\_ROTATIONS}
+function generates multiple variants of a given pivoting sequence by rotating it left and right by up to
+T
+r
+T_{r}
+positions, where each rotation shifts elements cyclically while preserving the sequence length:
+s
+′
+​
+[
+i
+]
+=
+s
+⁡
+[
+(
+i
++
+r
+)
+mod
+L
+]
+.
+s^{\prime}[i]=s[(i+r)\bmod\,L].
+(9)
+Because these rotations only rearrange the positions of elements without changing their values, the resulting sequences typically have similar energy (or merit factor) to the original sequence. Each rotated sequence is then inserted into the priority queue for further evaluation. Unlike transformations used in the first step, this function does not preserve skew-symmetry or the restriction class as well, which allows the algorithm to explore a broader region of the search space.
+This design enables continuous and efficient utilization of computational resources, since both steps can run in parallel, allowing the system to maintain high throughput while minimizing idle CPU and GPU time.
+Figure 3:
+Two-step optimization pipeline combining parallel stochastic search and unconstrained refinement. The top
+m
+m
+candidates are selected via quickselect and passed to a second phase for further improvement.
+Algorithm 2
+Second step using a priority queue
+1:
+c
+​
+a
+​
+n
+​
+d
+​
+i
+​
+d
+​
+a
+​
+t
+​
+e
+candidate
+⊳
+\triangleright
+Candidate from the first phase (SAW)
+2:
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+seq_{best}
+⊳
+\triangleright
+Binary sequence with the best merit factor found
+3:
+ℙ
+​
+ℚ
+,
+ℍ
+←
+e
+​
+m
+​
+p
+​
+t
+​
+y
+,
+e
+​
+m
+​
+p
+​
+t
+​
+y
+\mathbb{PQ},\mathbb{H}\leftarrow empty,empty\
+⊳
+\triangleright
+Empty priority queue and hash set
+4:
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+←
+c
+​
+a
+​
+n
+​
+d
+​
+i
+​
+d
+​
+a
+​
+t
+​
+e
+seq_{best}\leftarrow candidate
+5:
+e
+b
+​
+e
+​
+s
+​
+t
+←
+energy
+​
+(
+c
+​
+a
+​
+n
+​
+d
+​
+i
+​
+d
+​
+a
+​
+t
+​
+e
+)
+e_{best}\leftarrow\textsc{energy}(candidate)
+6:
+ℙ
+​
+ℚ
+.
+push
+​
+(
+c
+​
+a
+​
+n
+​
+d
+​
+i
+​
+d
+​
+a
+​
+t
+​
+e
+)
+\mathbb{PQ}.\textsc{push}(candidate)
+7:
+u
+←
+0
+u\leftarrow 0
+8:
+while
+u
+<
+T
+u
+u<T_{u}
+do
+9:
+u
+←
+u
++
+1
+u\leftarrow u+1
+10:
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+←
+ℙ
+​
+ℚ
+.
+pop
+​
+(
+CLOSE
+seq_{current}\leftarrow\mathbb{PQ}.\textsc{pop}(
+)
+11:
+for
+each
+​
+i
+∈
+0
+.
+.
+L
+\textbf{each}\ i\in 0..L
+do
+⊳
+\triangleright
+Neighborhood search
+12:
+h
+​
+a
+​
+s
+​
+h
+←
+hash_flip
+​
+(
+i
+)
+hash\leftarrow\textsc{hash\_flip}(i)
+13:
+if
+ℍ
+.
+contains
+​
+(
+h
+​
+a
+​
+s
+​
+h
+)
+\mathbb{H}.\textsc{contains}(hash)
+then
+14:
+continue
+15:
+end
+if
+16:
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+←
+sequence_flip
+​
+(
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+,
+i
+)
+seq_{current}\leftarrow\textsc{sequence\_flip}(seq_{current},i)
+17:
+ℙ
+​
+ℚ
+.
+push
+​
+(
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+)
+\mathbb{PQ}.\textsc{push}(seq_{current})
+18:
+ℍ
+.
+insert
+​
+(
+h
+​
+a
+​
+s
+​
+h
+)
+\mathbb{H}.\textsc{insert}(hash)
+19:
+e
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+←
+energy
+​
+(
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+)
+e_{current}\leftarrow\textsc{energy}(seq_{current})
+20:
+if
+e
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+<
+e
+b
+​
+e
+​
+s
+​
+t
+e_{current}<e_{best}
+then
+21:
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+←
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+seq_{best}\leftarrow seq_{current}
+⊳
+\triangleright
+New best sequence found
+22:
+e
+b
+​
+e
+​
+s
+​
+t
+←
+e
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+e_{best}\leftarrow e_{current}
+23:
+u
+←
+0
+u\leftarrow 0
+⊳
+\triangleright
+Reset
+u
+u
+to support dynamic depth
+24:
+end
+if
+25:
+make_rotations
+​
+(
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+,
+ℙ
+​
+ℚ
+,
+ℍ
+,
+T
+r
+)
+\textsc{make\_rotations}(seq_{current},\mathbb{PQ},\mathbb{H},T_{r})
+26:
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+←
+sequence_flip
+​
+(
+s
+​
+e
+​
+q
+c
+​
+u
+​
+r
+​
+r
+​
+e
+​
+n
+​
+t
+,
+i
+)
+seq_{current}\leftarrow\textsc{sequence\_flip}(seq_{current},i)
+27:
+end
+for
+28:
+end
+while
+29:
+return
+s
+​
+e
+​
+q
+b
+​
+e
+​
+s
+​
+t
+seq_{best}
+⊳
+\triangleright
+Best sequence found
+To extend the improvements achieved for odd-length binary sequences to the even-length case, sequence operators
+[
+19
+]
+can be systematically employed. These operators act by appending or removing elements at either end of a given sequence, thereby generating new candidate sequences of modified length while possibly preserving key properties. In particular, starting from optimized odd-length sequences, such transformations enable the construction of both odd- and even-length variants with comparable merit factor
+F
+F
+. The resulting sequences are subsequently reintroduced into the second optimization step, where they serve as promising initial candidates for further refinement.
+In summary, the proposed method integrates adaptive resource allocation with large-scale parallel stochastic search to efficiently navigate the combinatorial space of binary sequences. By combining Thompson sampling–based partition selection, GPU-accelerated self-avoiding walks, and a two-step refinement strategy, the approach enables both effective exploration of constrained subspaces and thorough exploitation of promising candidates in the unconstrained domain. The inclusion of sequence operators further extends the applicability of the method to sequences of arbitrary length, ensuring a unified framework for both odd- and even-length cases. This design provides a practical and scalable foundation for high-performance optimization in the LABS problem.
+Results
+We implemented the proposed method and Algorithm
+1
+in the C++ programming language using CUDA Toolkit version 13.2. Algorithm
+2
+was implemented in the Rust programming language (version 1.95). All experiments were conducted on the Vega grid computing environment, Slovenia’s petascale supercomputer, using
+NVIDIA A100-SXM4-40GB
+GPUs. Unless stated otherwise, all experimental parameters were adopted from our previous study
+[
+42
+]
+, in which they were systematically tuned.
+To evaluate the partitions (restriction classes) for required values of
+p
+p
+, we employed the algorithm presented in
+[
+51
+]
+. The potentials and normalized potentials were then computed as described in
+[
+19
+]
+; by partitioning a sequence of sufficient length and setting the middle
+k
+−
+p
++
+1
+k-p+1
+free elements to the neutral element
+0
+0
+, as shown in Equation
+5
+. In addition, the number of summands
+g
+g
+for each partition was recorded. As a note, the potential and normalized potential are invariant of the sequence length
+L
+L
+. For transparency and reproducibility, top partitions ordered by increasing normalized potential for
+p
+=
+81
+p=81
+and
+q
+=
+7
+q=7
+together with their corresponding potential and normalized potential values are reported in Table
+1
+.
+Rank
+Partition
+p
+p
+q
+q
+Potential
+Normalized potential
+1
+1
+30  11  9  6  6  4
+30\ \ 11\ \ 9\ \ 6\ \ 6\ \ 4
+81
+81
+7
+7
+17,745
+17,\!745
+5,073
+5,\!073
+2
+2
+30  13  12  8  6  6  6
+30\ \ 13\ \ 12\ \ 8\ \ 6\ \ 6\ \ 6
+81
+81
+7
+7
+17,513
+17,\!513
+5,081
+5,\!081
+3
+3
+30  15  12  8  6  6  4
+30\ \ 15\ \ 12\ \ 8\ \ 6\ \ 6\ \ 4
+81
+81
+7
+7
+17,857
+17,\!857
+5,089
+5,\!089
+4
+4
+32  13  12  8  6  6  4
+32\ \ 13\ \ 12\ \ 8\ \ 6\ \ 6\ \ 4
+81
+81
+7
+7
+17,961
+17,\!961
+5,121
+5,\!121
+5
+5
+32  14  11  8  6  6  4
+32\ \ 14\ \ 11\ \ 8\ \ 6\ \ 6\ \ 4
+81
+81
+7
+7
+17,921
+17,\!921
+5,129
+5,\!129
+Table 1:
+Partitions for
+p
+=
+81
+p=81
+and
+q
+=
+7
+q=7
+, ordered by increasing normalized potential, together with their corresponding potential and normalized potential values.
+To improve the best binary sequences reported in the literature, we applied the proposed approach to all odd-length binary sequences in the range
+450
+≤
+L
+≤
+527
+450\leq L\leq 527
+, as well as to
+L
+=
+573
+L=573
+, using
+100,000
+100,\!000
+iterations. An iteration corresponds to a single execution across all blocks of Algorithm
+1
+, in which block-size parallel self-avoiding walks are performed. Then the best
+m
+m
+sequences are selected and optimized with the second step. In this work, we set
+m
+=
+15
+m=15
+, mainly considering the computational constraints of a single node in the computing grid and the runtime of an iteration of the first step, without performing any parameter tuning. To extend the improvements to even lengths, the resulting partitioned skew-symmetric sequences were transformed to even lengths using sequence operators and then reintroduced to the second step as show in Figure
+3
+. Overall, this procedure led to improvements for
+35
+35
+sequences. The resulting improved binary sequences and their corresponding merit factors, in comparison with the previously best reported results in literature
+[
+42
+,
+19
+]
+, are presented in Figure
+4
+and summarized in Table
+3
+. It should also be noted that in Figure
+4
+, the x-axis (sequence length interval) is not continuous, as only selected discrete lengths are included for which improvements were obtained. In Table
+3
+, each hexadecimal digit is mapped to a
+4
+4
+-bit binary representation (i.e.,
+0
+=
+0000
+0=0000
+,
+1
+=
+0001
+1=0001
+,
+…
+\dots
+,
+F
+=
+1111
+F=1111
+). To obtain the correct sequence length, leading zero-padding introduced by this encoding must be removed. Finally, the binary sequences are reconstructed by mapping each binary digit to its corresponding bipolar value, specifically by converting every
+0
+→
+−
+1
+0\rightarrow-1
+.
+Figure 4:
+Record merit factors achieved by the improved sequences, together with the previously best-known merit factors reported in the literature
+[
+42
+,
+19
+]
+, for sequence lengths in the interval
+450
+≤
+L
+≤
+527
+450\leq L\leq 527
+and for
+L
+=
+573
+L=573
+.
+The largest improvement was achieved for
+L
+=
+451
+L=451
+, where the previously best-known merit factor was increased by
+0.8248
+0.8248
+. The resulting sequence attains a merit factor of
+F
+=
+8.0555
+F=8.0555
+, making it the longest sequence reported in the literature with
+F
+≥
+8.0
+F\geq 8.0
+. Previously, the longest known sequence satisfying this condition was the sequence of length
+L
+=
+309
+L=309
+reported in
+[
+19
+]
+. In addition,
+L
+=
+573
+L=573
+is the longest sequence in the literature with a merit factor above
+7.0
+7.0
+, for which we achieved an improvement of
+0.2564
+0.2564
+. For
+L
+=
+518
+L=518
+, the merit factor was also improved; notably, this was the only sequence in the considered interval that was not improved by the solver in
+[
+42
+]
+. Across all improved sequences, the mean increase in merit factor was
+0.1967
+0.1967
+. These results demonstrate the effectiveness of the proposed method in discovering high-quality binary sequences with large merit factors, particularly for longer sequence lengths. The consistent improvements observed across a broad range of lengths suggest that prioritizing promising regions of the search space provides a robust, practical, and scalable foundation for high-performance optimization of the LABS problem.
+To show how Thompson sampling affects partition selection, we conducted an additional experiment with sequence length
+L
+=
+461
+L=461
+, limiting the proposed optimizer to
+80,000
+80,\!000
+iterations. We selected partition parameters
+p
+=
+67
+p=67
+and
+g
+=
+5
+g=5
+based on the sequence length. For that pair, the number of unique partitions is
+8056
+8056
+. The goal of this experiment was to analyze how the probabilistic selection mechanism influences exploration and exploitation of the partition space over time, and whether it leads to a bias toward higher-quality regions of the search space. In particular, we tracked the frequency with which individual partitions were sampled and their
+(
+α
+k
+,
+β
+k
+)
+(\alpha_{k},\beta_{k})
+values during optimization. Table
+2
+presents the most frequently sampled partitions, along with the number of times each partition was selected, its ranking according to normalized potential, and the corresponding normalized potential value. The table includes the three most frequently sampled partitions and the three highest-ranked partitions according to normalized potential. It is evident that a clear mismatch occurs between the number of times a partition was selected and its rank when ordered by the normalized potential. This result indicates that partitions with the highest normalized potential are not necessarily the most effective during optimization. Thompson sampling progressively favors partitions that produce better empirical results, even when their normalized potential ranking is lower. Consequently, the sampling process is guided not only by the heuristic estimate (in case not every partition of a given pair is used), but also by the observed optimization performance of each partition. To provide further insight, we analyzed the probability density functions (PDFs) corresponding to the best-ranked partition, the most frequently sampled partition, and a partition with rank 4, representing average performance. As a note, a PDF describes the distribution of a continuous random variable by assigning relative likelihoods to its possible values. Probabilities are obtained by integrating the PDF over an interval, with the total area under the function equal to one.
+Partition
+Sample rank
+Pulls
+Rank
+Norm. potential
+28  13  12  8  6
+28\ \ 13\ \ 12\ \ 8\ \ 6
+1
+1
+3,738,900
+3,\!738,\!900
+205
+205
+5,131
+5,\!131
+28  13  12  9  5
+28\ \ 13\ \ 12\ \ 9\ \ 5
+2
+2
+3,712,249
+3,\!712,\!249
+274
+274
+5,203
+5,\!203
+27  14  11  9  6
+27\ \ 14\ \ 11\ \ 9\ \ 6
+3
+3
+3,173,369
+3,\!173,\!369
+309
+309
+5,227
+5,\!227
+28  16  11  8  4
+28\ \ 16\ \ 11\ \ 8\ \ 4
+334
+334
+3,861
+3,\!861
+1
+1
+4,707
+4,\!707
+28  15  12  8  4
+28\ \ 15\ \ 12\ \ 8\ \ 4
+49
+49
+20,602
+20,\!602
+2
+2
+4,715
+4,\!715
+29  15  11  8  4
+29\ \ 15\ \ 11\ \ 8\ \ 4
+16
+16
+76,072
+76,\!072
+3
+3
+4,723
+4,\!723
+Table 2:
+Most frequently sampled and top ranked partitions by normalized potential for
+L
+=
+461
+L=461
+after
+80,000
+80,\!000
+iterations for pair
+p
+=
+67
+p=67
+and
+g
+=
+5
+g=5
+. The table shows sampling rank, sampling frequency, normalized potential rank, and normalized potential value, comparing empirical selection with heuristic ranking under Thompson sampling.
+Figure 5:
+Probability density functions at different iterations for selected partitions for
+L
+=
+461
+L=461
+and pair
+p
+=
+67
+p=67
+and
+g
+=
+5
+g=5
+.
+During the early stages of the search, when only a limited number of observations are available, the posterior distributions exhibit substantial overlap, indicating considerable uncertainty regarding the relative quality of the selected partitions. As additional observations are collected, the distributions become increasingly concentrated and better separated, reflecting reduced uncertainty and more accurate estimates of expected rewards. By iteration
+7200
+7200
+, the posterior distribution corresponding to the most frequently sampled partition is clearly centered at the highest expected value, with minimal overlap with the other distributions, indicating that it is the most promising candidate. Initially, all three partitions are sampled at similar rates due to the high level of uncertainty. As the search progresses and confidence in the reward estimates increases, the sampling process gradually shifts toward the partition with the highest estimated reward, illustrating the balance between exploration and exploitation achieved by Thompson sampling.
+In general, the results show that the proposed framework gradually shifts from uniform exploration toward partitions that yield higher observed rewards. In early iterations, a broad range of partitions is sampled, while later stages focus on a smaller subset of consistently high-performing partitions. This effect is most pronounced in regions associated with high-quality sequences, while less promising partitions are increasingly suppressed, reducing wasted computation. Overall, this provides a good balance between exploration and exploitation, concentrating search effort on promising regions while maintaining diversity in the early phase.
+Despite the improvements reported in this work, the results also confirm the increasing difficulty of achieving substantial merit-factor gains as the sequence length grows. For larger values of
+L
+L
+, improvements become smaller and less frequent, consistent with the increasingly rugged optimization landscape of the LABS problem. Nevertheless, obtaining improvements for long sequences, including
+L
+=
+573
+L=573
+, demonstrates the scalability of the proposed framework and its suitability for large-scale parallel computing environments. These results further indicate that partition-guided large-scale stochastic optimization remains a promising direction for advancing the state-of-the-art in the LABS problem.
+Table 3:
+Improved binary sequences and their merit factor values in the interval
+450
+≤
+L
+≤
+527
+450\leq L\leq 527
+and for
+L
+=
+573
+L=573
+, and the previously best-known merit factor values reported in
+[
+42
+,
+19
+]
+.
+L
+L
+Previous
+F
+F
+[
+42
+,
+19
+]
+Our
+F
+F
+Sequence
+450
+450
+7.0230
+7.0230
+7.7831
+\mathbf{7.7831}
+3ffffff8003ff03c3831ce6730c1fe0f187c3e133393e85ce798b1c9b9c93d9a6c85eb1b3316b4a592d6a94d3266c935b4b52ab555aaaaaaa
+451
+451
+7.2307
+7.2307
+8.0555
+\mathbf{8.0555}
+7ffffff8003ff03c3831ce6730c1fe0f187c3e133393e85ce798b1c9b9c93d9a6c85eb1b3316b4a592d6a94d3266c935b4b52ab555aaaaaaa
+452
+452
+7.3459
+7.3459
+7.8134
+\mathbf{7.8134}
+fffffff0007fe07870639cce6183fc1e30f87c266727d0b9cf31639373927b34d90bd636662d694b25ad529a64cd926b696a556aab5555555
+455
+455
+7.7835
+7.7835
+7.9362
+\mathbf{7.9362}
+7ffffff0007f83f0664dcd81b31fe30f31e4b253ca6693ce2f06cbd2c4f0bce52f6cb1e67cb073c6932d36a933958c8c6652b5aa5552aaaaaa
+456
+456
+7.6290
+7.6290
+7.8242
+\mathbf{7.8242}
+fffffff0007f83f0664dcd81b31fe30f31e4b253ca6693ce2f06cbd2c4f0bce52f6cb1e67cb073c6932d36a933958c8c6652b5aa5552aaaaaa
+457
+457
+7.5082
+7.5082
+7.7169
+\mathbf{7.7169}
+1ffffffe000ff07e0cc9b9b03663fc61e63c964a794cd279c5e0d97a589e179ca5ed963ccf960e78d265a6d52672b1918cca56b54aaa5555555
+458
+458
+7.4295
+7.4295
+7.5798
+\mathbf{7.5798}
+3ffffffc001fe0fc199373606cc7f8c3cc792c94f299a4f38bc1b2f4b13c2f394bdb2c799f2c1cf1a4cb4daa4ce563231994ad6a9554aaaaaaa
+459
+459
+7.4199
+7.4199
+7.4704
+\mathbf{7.4704}
+7ffffffe000ff07e0cc9b9b03663fc61e63c964a794cd279c5e0d97a589e179ca5ed963ccf960e78d265a6d52672b1918cca56b54aaa5555555
+460
+460
+7.5302
+7.5302
+7.6280
+\mathbf{7.6280}
+fffffff0007ff803e1e3d83d387661b631e9c6b4cc3cc399390ed99b6363998ed1b19b4cb4cc3e49e936396625b0b58b696b55aaa5552aaaaaa
+461
+461
+7.6435
+7.6435
+7.8282
+\mathbf{7.8282}
+1ffffffe000fff007c3c7b07a70ecc36c63d38d6998798732721db336c6c7331da363369969987c93d26c72cc4b616b16d2d6ab554aaa5555555
+462
+462
+7.5098
+7.5098
+7.7273
+\mathbf{7.7273}
+3ffffffc001ffe00f878f60f4e1d986d8c7a71ad330f30e64e43b666d8d8e663b46c66d32d330f927a4d8e59896c2d62da5ad56aa9554aaaaaab
+463
+463
+7.3885
+7.3885
+7.4233
+\mathbf{7.4233}
+7ffffff0007fd80787e13f04f0dc393c8e58276cb978e466c3ce727932731a726cb4e646da1bce27586dcb1b48d2c52b16a5a558aa5552aaaaaa
+464
+464
+7.2617
+7.2617
+7.4569
+\mathbf{7.4569}
+fffffff0007fd80787e13f04f0dc393c8e58276cb978e466c3ce727932731a726cb4e646da1bce27586dcb1b48d2c52b16a5a558aa5552aaaaaa
+465
+465
+7.3807
+7.3807
+7.5413
+\mathbf{7.5413}
+1ffffffe000ffb00f0fc27c09e1b872791cb04ed972f1c8cd879ce4f264e634e4d969cc8db4379c4eb0db963691a58ad62d4b4ab154aaa5555555
+475
+475
+7.3748
+7.3748
+7.4233
+\mathbf{7.4233}
+7fffffe0007fe00fc0f1e278f0078cdb90e639e370e5a7331b0f2c6636cbce3664f2d39332786d2369b66d1b8cda552da7692d4ad56aa5556aaaaaa
+476
+476
+7.3004
+7.3004
+7.4976
+\mathbf{7.4976}
+ffffffe0007fe00fc0f1e278f0078cdb90e639e370e5a7331b0f2c6636cbce3664f2d39332786d2369b66d1b8cda552da7692d4ad56aa5556aaaaaa
+477
+477
+7.2973
+7.2973
+7.5732
+\mathbf{7.5732}
+1ffffffc000ffc01f81e3c4f1e00f19b721cc73c6e1cb4e66361e58cc6d979c6cc9e5a72664f0da46d36cda3719b4aa5b4ed25a95aad54aaad555555
+478
+478
+7.2956
+7.2956
+7.5582
+\mathbf{7.5582}
+3ffffffe0007fe00fc0f1e278f0078cdb90e639e370e5a7331b0f2c6636cbce3664f2d39332786d2369b66d1b8cda552da7692d4ad56aa5556aaaaaa
+479
+479
+7.4152
+7.4152
+7.6445
+\mathbf{7.6445}
+7ffffffc000ffc01f81e3c4f1e00f19b721cc73c6e1cb4e66361e58cc6d979c6cc9e5a72664f0da46d36cda3719b4aa5b4ed25a95aad54aaad555555
+480
+480
+7.3922
+7.3922
+7.5989
+\mathbf{7.5989}
+fffffff8001ff803f03c789e3c01e336e4398e78dc3969ccc6c3cb198db2f38d993cb4e4cc9e1b48da6d9b46e336954b69da4b52b55aa9555aaaaaaa
+481
+481
+7.3701
+7.3701
+7.7038
+\mathbf{7.7038}
+1fffffff0003ff007e078f13c7803c66dc8731cf1b872d3998d8796331b65e71b327969c9993c3691b4db368dc66d2a96d3b496a56ab552aab5555555
+482
+482
+7.4154
+7.4154
+7.6579
+\mathbf{7.6579}
+3fffffff0003ff007e078f13c7803c66dc8731cf1b872d3998d8796331b65e71b327969c9993c3691b4db368dc66d2a96d3b496a56ab552aab5555555
+483
+483
+7.4691
+7.4691
+7.6134
+\mathbf{7.6134}
+7ffffffe0007fe00fc0f1e278f0078cdb90e639e370e5a7331b0f2c6636cbce3664f2d39332786d2369b66d1b8cda552da7692d4ad56aa5556aaaaaaa
+484
+484
+7.3842
+7.3842
+7.4861
+\mathbf{7.4861}
+7ffffffe0007fe00fc0f1e278f0078cdb90e639e370e5a7331b0f2c6636cbce3664f2d39332786d2369b66d1b8cda552da7692d4ad56aa5556aaaaaaa
+490
+490
+7.4229
+7.4229
+7.5008
+\mathbf{7.5008}
+3ffffff8001ff80fc0f0f0f86cd09fe1666487ec3332de794b6c9cf3169b667187b34d8c70f965c3332c568e667a558bcc694b4b4ad4a955aaa95555555
+491
+491
+7.5239
+7.5239
+7.5541
+\mathbf{7.5541}
+7ffffff8001ff80fc0f0f0f86cd09fe1666487ec3332de794b6c9cf3169b667186b34d8c70f965c3332c568e667a558bcc694b4b4ad4a955aaa95555555
+494
+494
+7.6247
+7.6247
+7.6476
+\mathbf{7.6476}
+3fffffff8001ff80fc0f0f0f86cd09fe1666487ed3332de794b6c9cf3069b667187b34d8c70f965c3332c568e667a558bcc694b4b4ad4a955aaa95555555
+495
+495
+7.4780
+7.4780
+7.5836
+\mathbf{7.5836}
+7ffffffe0007fe03f03c3c3e1b3427f8599921fb0cccb79e52db273cc1a6d99c61acd3631c3e5970cccf15a3999e9562f31a52d2d2b52a556aaa55555555
+496
+496
+7.2941
+7.2941
+7.5428
+\mathbf{7.5428}
+ffffffff0003ff01f81e1e1f0d9a13fc2ccc90fda6665bcf296d939e60d36cce30d669b18e1f2cb866658ad1cccf4ab1798d2969695a952ab5552aaaaaaa
+497
+497
+7.3236
+7.3236
+7.4544
+\mathbf{7.4544}
+1fffffffe0007fe03f03c3c3e1b3427f8599921fb0cccb79e52db273cc1a6d99c61acd3631c3e5970cccf15a3999e9562f31a52d2d2b52a556aaa55555555
+498
+498
+7.3007
+7.3007
+7.3701
+\mathbf{7.3701}
+3fffffffe0007fe03f03c3c3e1b3427f8599921fb0cccb79e52db273cc1a6d99c61acd3631c3e5970cccf15a3999e9562f31a52d2d2b52a556aaa55555555
+516
+516
+7.1860
+7.1860
+7.2835
+\mathbf{7.2835}
+fffffff0001ffc007f01fc0f631b1c1cc3c63725a72d92ccc792cc9a58198791b91a5985879ccf1a4ccf18f27872364b4c94939362d4a952a554aa95552aaaaaa
+517
+517
+7.3198
+7.3198
+7.3633
+\mathbf{7.3633}
+1ffffffe0003ff800fe03f81ec6363839878c6e4b4e5b25998f259934b0330f237234b30b0f399e34999e31e4f0e46c9699292726c5a952a54aa9552aaa5555555
+518
+518
+7.2072
+7.2072
+7.2665
+\mathbf{7.2665}
+3ffffffe0003ff800fe03f81ec6363839878c6e4b4e5b25998f259934b0330f237234b30b0f399e34999e31e4f0e46c9699292726c5a952a54aa9552aaa5555555
+573
+573
+7.0210
+7.0210
+7.2774
+\mathbf{7.2774}
+1fffffffc0003ffc01fc07e1c99a136c3c330e64e485e72d9878c7e1276338c5a1e739273639365a1ec932763a56c9699c365e8e4e64b32d2c73a198da56ad5aad552aaad5555555
+Conclusion
+In this work, we addressed the problem of low autocorrelation binary sequences (LABS). The problem is characterized by an exponentially growing search space and a highly rugged landscape. We proposed a hybrid framework that combines Thompson sampling–based online decision-making with parallel self-avoiding walks to allocate dynamically computational resources across restriction classes (partitions). The main idea of the proposed approach is to model the partitions as a stochastic decision-making problem in Thompson sampling. This allows the framework to dynamically allocate computational resources to promising regions of the search space. The resulting method effectively balanced exploration and exploitation while maintaining scalability through parallel execution.
+We proposed an algorithm based on the above method to improve the results. Experimental results on longer binary sequences show improvements over previously best-known solutions across a wide range of sequence lengths. We report new best-known sequences for multiple lengths in the range
+450
+≤
+L
+≤
+527
+450\leq L\leq 527
+and
+L
+=
+573
+L=573
+, including the longest sequence with a merit factor exceeding
+8.0
+8.0
+, for
+L
+=
+451
+L=451
+. We also showed that Thompson sampling effectively shifts search effort toward partitions that yield higher merit factors. This allowed us to empirically measure partition quality instead of relying on heuristics. Overall, the results confirm that integrating probabilistic decision-making with large-scale parallel stochastic search is an effective strategy for LABS optimization. Although improvements become more challenging as sequence length increases, the proposed approach remains effective, even in higher dimensions, and continues to yield state-of-the-art results.
+We plan to further investigate the proposed online decision-based prioritization of search regions by applying it to other difficult combinatorial optimization problems beyond LABS. A key direction is to study problem classes in which the search space can be meaningfully divided into structured subregions, so that computational effort can be adjusted dynamically according to their observed performance during the search. We also intend to explore how the design insights obtained from LABS optimization can be adapted for the construction of spreading codes in satellite communication systems. Since low autocorrelation binary sequences are closely related to spreading code design used in GNSS and similar applications. As a conclusion, we believe that the proposed framework opens a pathway toward adaptive, data-driven search strategies for a wider class of combinatorial optimization problems.
+References
+[1]
+M. Golay
+(1972)
+A class of finite binary sequences with alternate auto-correlation values equal to zero (corresp.)
+.
+IEEE Transactions on Information Theory
+18
+(
+3
+),
+pp. 449–450
+.
+External Links:
+Document
+Cited by:
+Introduction
+,
+Introduction
+.
+[2]
+J. E. Littlewood
+(1966)
+On polynomials
+∑
+n
+±
+z
+m
+,
+∑
+n
+e
+a
+m
+​
+i
+z
+m
+,
+z
+=
+e
+0
+​
+i
+\sum^{n}\pm z^{m},\sum^{n}e^{a_{m}i}z^{m},z=e^{0i}
+.
+Journal of the London Mathematical Society
+s1-41
+(
+1
+),
+pp. 367–376
+.
+External Links:
+Document
+Cited by:
+Introduction
+.
+[3]
+J. Jedwab
+(2004)
+A survey of the merit factor problem for binary sequences
+.
+In
+International Conference on Sequences and Their Applications
+,
+pp. 30–55
+.
+Cited by:
+Introduction
+.
+[4]
+D. J. Katz and M. E. Ramirez
+(2024)
+Moments of autocorrelation demerit factors of binary sequences
+.
+Designs, Codes and Cryptography
+,
+pp. 1–45
+.
+Cited by:
+Introduction
+.
+[5]
+M. Skula, M. Pies, R. Hajovsky, J. Velicka, and D. Vala
+(2026)
+Multi-criteria selection of a synchronisation word for low-power iot receivers based on the iqrf standard
+.
+Scientific Reports
+16
+(
+1
+),
+pp. 8777
+.
+External Links:
+Document
+,
+Link
+Cited by:
+Introduction
+.
+[6]
+J. Bernasconi
+(1987)
+Low autocorrelation binary sequences: statistical mechanics and configuration space analysis
+.
+J. Physsique
+48
+,
+pp. 559–567
+.
+Cited by:
+Introduction
+.
+[7]
+I. I. Shapiro, G. H. Pettengill, M. E. Ash, M. L. Stone, W. B. Smith, R. P. Ingalls, and R. A. Brockelman
+(1968)
+Fourth test of general relativity: preliminary results
+.
+Phys. Rev. Lett.
+20
+,
+pp. 1265–1269
+.
+External Links:
+Document
+Cited by:
+Introduction
+.
+[8]
+A. Yang, T. Mina, S. Boyd, and G. Gao
+(2024)
+Large-scale gnss spreading code optimization
+.
+In
+Proceedings of the 37th International Technical Meeting of the Satellite Division of The Institute of Navigation (ION GNSS+ 2024)
+,
+pp. 948–957
+.
+Cited by:
+Introduction
+.
+[9]
+A. Yang, T. Mina, and G. Gao
+(2024)
+Spreading code optimization for low-earth orbit satellites via mixed-integer convex programming
+.
+EURASIP Journal on Advances in Signal Processing
+2024
+(
+1
+),
+pp. 67
+.
+Cited by:
+Introduction
+.
+[10]
+M. Sciorilli, G. Camilo, T. O. Maciel, A. Canabarro, L. Borges, and L. Aolita
+(2025)
+A competitive nisq and qubit-efficient solver for the labs problem
+.
+arXiv preprint arXiv:2506.17391
+.
+Cited by:
+Introduction
+,
+Related work
+.
+[11]
+R. Shaydulin, C. Li, S. Chakrabarti, M. DeCross, D. Herman, N. Kumar, J. Larson, D. Lykov, P. Minssen, Y. Sun,
+et al.
+(2024)
+Evidence of scaling advantage for the quantum approximate optimization algorithm on a classically intractable problem
+.
+Science Advances
+10
+(
+22
+),
+pp. eadm6761
+.
+Cited by:
+Introduction
+,
+Related work
+.
+[12]
+K. Schmidt
+(2016)
+Sequences with small correlation
+.
+Designs, Codes and Cryptography
+78
+,
+pp.
+.
+External Links:
+Document
+Cited by:
+Introduction
+.
+[13]
+K. Kettunen
+(1997)
+Code selection for CDMA systems
+.
+Department of Information Studies, University of Tampere, Finland
+.
+Cited by:
+Introduction
+.
+[14]
+G. L. Mullen and D. Panario
+(2013)
+Other correlation measures
+.
+In
+Handbook of Finite Fields
+,
+pp. 322–324
+.
+External Links:
+ISBN 143987378X
+Cited by:
+Introduction
+.
+[15]
+J. Brest, A. Brest, B. Pšeničnik, J. Popič, and B. Borko
+(2025)
+Oddaljenost neperiodičnih binarnih zaporedij glede na dve meri avtokorelacijskih lastnosti
+.
+Elektrotehniski Vestnik
+92
+(
+3
+),
+pp. 97–103
+.
+Note:
+(In Slovene)
+Cited by:
+Introduction
+.
+[16]
+V. M. de Oliveira, J. F. Fontanari, and P. F. Stadler
+(1999)
+Metastable states in short-ranged p-spin glasses
+.
+Journal of Physics A: Mathematical and General
+32
+(
+50
+),
+pp. 8793
+.
+External Links:
+Document
+Cited by:
+Introduction
+.
+[17]
+J. Healy and L. McInnes
+(2024)
+Uniform manifold approximation and projection
+.
+Nature Reviews Methods Primers
+4
+(
+1
+),
+pp. 82
+.
+External Links:
+ISSN 2662-8449
+,
+Document
+,
+Link
+Cited by:
+Figure 1
+,
+Introduction
+.
+[18]
+T. Packebusch and S. Mertens
+(2016)
+Low autocorrelation binary sequences
+.
+Journal of Physics A: Mathematical and Theoretical
+49
+(
+16
+),
+pp. 165001
+.
+Cited by:
+Introduction
+,
+Introduction
+,
+Related work
+.
+[19]
+M. Dimitrov
+(2022)
+New classes of binary sequences with high merit factor
+.
+arXiv preprint arXiv:2206.12070
+.
+Cited by:
+Introduction
+,
+Related work
+,
+Method
+,
+Method
+,
+Figure 4
+,
+Table 3
+,
+Table 3
+,
+Results
+,
+Results
+,
+Results
+.
+[20]
+S. Mertens
+(1996)
+Exhaustive search for low-autocorrelation binary sequences
+.
+Journal of Physics A: Mathematical and General
+29
+(
+18
+),
+pp. L473
+.
+Cited by:
+Related work
+.
+[21]
+S. Prestwich
+(2007)
+Exploiting relaxation in local search for labs
+.
+Annals of Operations Research
+156
+,
+pp. 129–141
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[22]
+S. D. Prestwich
+(2013)
+Improved branch-and-bound for low autocorrelation binary sequences
+.
+arXiv preprint arXiv:1305.6187
+.
+Cited by:
+Related work
+.
+[23]
+J. Wiggenbrock
+(2010)
+Parallele optimierungsstrategien des labs-problems in einem gpu-grid
+.
+Bachelor’s thesis
+,
+Fachhochschule Südwestfalen
+(
+German
+).
+Note:
+(In German)
+Cited by:
+Related work
+.
+[24]
+T. Hoholdt and H.E. Jensen
+(1988)
+Determination of the merit factor of legendre sequences
+.
+IEEE Transactions on Information Theory
+34
+(
+1
+),
+pp. 161–164
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[25]
+P. Borwein, K.-K.S. Choi, and J. Jedwab
+(2004)
+Binary sequences with merit factor greater than 6.34
+.
+IEEE Transactions on Information Theory
+50
+(
+12
+),
+pp. 3234–3249
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[26]
+J. M. Baden
+(2011)
+Efficient Optimization of the Merit Factor of Long Binary Sequences
+.
+IEEE Transactions on Information Theory
+57
+(
+12
+),
+pp. 8084–8094
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[27]
+J. Jedwab, D. J. Katz, and K. Schmidt
+(2013)
+Advances in the merit factor problem for binary sequences
+.
+Journal of Combinatorial Theory, Series A
+120
+(
+4
+),
+pp. 882–906
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[28]
+K. Farnane, K. Minaoui, and D. Aboutajdine
+(2018)
+Local search algorithm for low autocorrelation binary sequences
+.
+In
+2018 4th International Conference on Optimization and Applications (ICOA)
+,
+Vol.
+,
+pp. 1–5
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[29]
+M. Dimitrov
+(2025)
+On the skew-symmetric binary sequences and the merit factor problem
+.
+Digital Signal Processing
+156
+,
+pp. 104793
+.
+External Links:
+ISSN 1051-2004
+,
+Document
+,
+Link
+Cited by:
+Related work
+,
+Method
+.
+[30]
+S. Halim, R. H. C. Yap, and F. Halim
+(2008)
+Engineering Stochastic Local Search for the Low Autocorrelation Binary Sequence Problem
+.
+In
+Principles and Practice of Constraint Programming
+,
+P. J. Stuckey (Ed.)
+,
+Berlin, Heidelberg
+,
+pp. 640–645
+.
+Cited by:
+Related work
+.
+[31]
+J. E. Gallardo, C. Cotta, and A. J. Fernández
+(2009)
+Finding low autocorrelation binary sequences with memetic algorithms
+.
+Applied Soft Computing
+9
+(
+4
+),
+pp. 1252–1262
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[32]
+B. Bošković, F. Brglez, and J. Brest
+(2017)
+Low-autocorrelation binary sequences: On improved merit factors and runtime predictions to achieve them
+.
+Applied Soft Computing
+56
+,
+pp. 262–285
+.
+External Links:
+ISSN 1568-4946
+,
+Document
+Cited by:
+Related work
+.
+[33]
+B. Bošković, J. Herzog, and J. Brest
+(2024)
+Parallel self-avoiding walks for a low-autocorrelation binary sequences problem
+.
+Journal of Computational Science
+77
+,
+pp. 102260
+.
+Cited by:
+Related work
+,
+Related work
+,
+Method
+,
+Method
+.
+[34]
+J. Brest and B. Bošković
+(2018)
+A Heuristic Algorithm for a Low Autocorrelation Binary Sequence Problem With Odd Length and High Merit Factor
+.
+IEEE Access
+6
+(
+),
+pp. 4127–4134
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[35]
+J. Brest and B. Bošković
+(2022)
+Computational Search of Long Skew-symmetric Binary Sequences with High Merit Factors
+.
+MENDEL
+28
+(
+2
+),
+pp. 17–24
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[36]
+J. Herzog, J. Brest, and B. Bošković
+(2023)
+Analysis based on statistical distributions: a practical approach for stochastic solvers using discrete and continuous problems
+.
+Information Sciences
+633
+,
+pp. 469–490
+.
+External Links:
+ISSN 0020-0255
+,
+Document
+Cited by:
+Related work
+.
+[37]
+D. Żurek, K. Piętak, M. Pietroń, and M. Kisiel-Dorohinicki
+(2017)
+Toward hybrid platform for evolutionary computations of hard discrete problems
+.
+Procedia Computer Science
+108
+,
+pp. 877–886
+.
+External Links:
+ISSN 1877-0509
+,
+Document
+Cited by:
+Related work
+.
+[38]
+K. Piętak, D. Żurek, M. Pietroń, A. Dymara, and M. Kisiel-Dorohinicki
+(2019)
+Striving for performance of discrete optimisation via memetic agent-based systems in a hybrid CPU/GPU environment
+.
+Journal of Computational Science
+31
+,
+pp. 151–162
+.
+External Links:
+ISSN 1877-7503
+,
+Document
+Cited by:
+Related work
+.
+[39]
+D. Żurek, M. Pietroń, K. Piętak, and M. Kisiel-Dorohinicki
+(2022)
+A deep neural network as a tabu support in solving labs problem
+.
+In
+International Conference on Computational Science
+,
+pp. 237–243
+.
+Cited by:
+Related work
+.
+[40]
+Z. Zhang, J. Shen, N. Kumar, and M. Pistoia
+(2025)
+New improvements in solving large labs instances using massively parallelizable memetic tabu search
+.
+arXiv preprint arXiv:2504.00987
+.
+Cited by:
+Related work
+.
+[41]
+A. G. Cadavid, P. Chandarana, S. V. Romero, J. Trautmann, E. Solano, T. L. Patti, and N. N. Hegade
+(2025)
+Scaling advantage with quantum-enhanced memetic tabu search for labs
+.
+arXiv preprint arXiv:2511.04553
+.
+External Links:
+Document
+Cited by:
+Related work
+.
+[42]
+B. Pšeničnik, R. Mlinarič, J. Brest, and B. Bošković
+(2025)
+Dual-step optimization for binary sequences with high merit factors
+.
+Digital Signal Processing
+165
+,
+pp. 105316
+.
+External Links:
+ISSN 1051-2004
+,
+Document
+,
+Link
+Cited by:
+Related work
+,
+Method
+,
+Method
+,
+Method
+,
+Figure 4
+,
+Table 3
+,
+Table 3
+,
+Results
+,
+Results
+,
+Results
+.
+[43]
+D. J. Russo, B. Van Roy, A. Kazerouni, I. Osband, Z. Wen,
+et al.
+(2018)
+A tutorial on thompson sampling
+.
+Foundations and Trends (R) in Machine Learning
+11
+(
+1
+),
+pp. 1–96
+.
+Cited by:
+Method
+.
+[44]
+M. N. Katehakis and A. F. Veinott Jr.
+(1987)
+The multi-armed bandit problem: decomposition and computation
+.
+Mathematics of Operations Research
+12
+(
+2
+),
+pp. 262–268
+.
+External Links:
+Document
+Cited by:
+Method
+.
+[45]
+W. R. Thompson
+(1933)
+On the likelihood that one unknown probability exceeds another in view of the evidence of two samples
+.
+Biometrika
+25
+(
+3/4
+),
+pp. 285–294
+.
+External Links:
+ISSN 00063444
+,
+Link
+Cited by:
+Method
+.
+[46]
+W. R. Thompson
+(1935)
+On the theory of apportionment
+.
+American Journal of Mathematics
+57
+(
+2
+),
+pp. 450–456
+.
+Cited by:
+Method
+.
+[47]
+D. K. Agarwal
+(2010)
+’A modern Bayesian look at the multi-armed bandit’ by Steven L. Scott: Discussion.
+.
+Applied Stochastic Models in Business & Industry
+26
+(
+6
+).
+Cited by:
+Method
+.
+[48]
+O. Chapelle and L. Li
+(2011)
+An empirical evaluation of thompson sampling
+.
+Advances in neural information processing systems
+24
+.
+Cited by:
+Method
+.
+[49]
+S. Agrawal and N. Goyal
+(2012)
+Analysis of thompson sampling for the multi-armed bandit problem
+.
+In
+Conference on learning theory
+,
+pp. 39–1
+.
+Cited by:
+Method
+.
+[50]
+B. H. Bloom
+(1970)
+Space/time trade-offs in hash coding with allowable errors
+.
+Communications of the ACM
+13
+(
+7
+),
+pp. 422–426
+.
+Cited by:
+Method
+.
+[51]
+D. Eppstein
+(2015)
+PADS: python algorithms and data structures
+.
+Note:
+MIT licensed software library
+External Links:
+Link
+Cited by:
+Results
+.
+Experimental support, please
+view the build logs
+for errors. Generated by
+L
+A
+T
+E
+xml
+.
+Instructions for reporting errors
+We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below:
+Click the "Report Issue"
+(
+)
+button, located in the page header.
+Tip:
+You can select the relevant text first, to include it in your report.
+Our team has already identified
+the following issues
+. We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all.
+Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a
+list of packages that need conversion
+, and welcome
+developer contributions
+.
+We gratefully acknowledge support from
+        our
+major funders
+,
+member institutions
+,
+,
+        and all contributors.
+About
+·
+Help
+·
+Contact
+·
+Subscribe
+·
+Copyright
+·
+Privacy
+·
+Accessibility
+·
+Operational Status
+(opens in new tab)
+Major funding support from

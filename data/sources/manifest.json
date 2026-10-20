@@ -1,0 +1,44 @@
+[
+  {
+    "path": "data/sources/2026.html",
+    "url": "https://arxiv.org/html/2607.09688v1",
+    "sha256": "45d15a14fdfc0cee150b8f94dca0edea7d8dcad0c0340d553a60276504cec31d",
+    "accessed": "2026-10-20"
+  },
+  {
+    "path": "data/sources/optimal.html",
+    "url": "https://arxiv.org/html/1512.02475",
+    "sha256": "8e1e744110d63d1c5a6e20621c6a47b45b13945922117698ec719a614396a7b7",
+    "accessed": "2026-10-20"
+  },
+  {
+    "path": "data/sources/2018-skew.txt",
+    "url": "https://raw.githubusercontent.com/borkob/git_labs/1aa123407636e48630174e0bf122037e369c1d68/results-2018/2018-labs-skew.txt",
+    "sha256": "1719cd1cf2544f197a621353795c6eef1600479124714682a06eecf14bedd4c1",
+    "accessed": "2026-10-20"
+  },
+  {
+    "path": "data/sources/2004.txt",
+    "url": "https://raw.githubusercontent.com/borkob/git_labs/1aa123407636e48630174e0bf122037e369c1d68/results-2016/2004-Knauer-original.txt",
+    "sha256": "35538ed93257b4131eb93cc548bdd2d4e9d29b677533cd39f6c0882863df57c7",
+    "accessed": "2026-10-20"
+  },
+  {
+    "path": "data/sources/psl2047.seq",
+    "url": "https://raw.githubusercontent.com/J-Brest/LABS/4232311cb4f3626ab008336f6069cd5af5e3915b/PSL/rezL2047-PSL32.seq",
+    "sha256": "73e2392222c2f0ca1a79f7a21be05a4e9478bd5f04f0eba78f95283d0de3716b",
+    "accessed": "2026-10-20"
+  },
+  {
+    "path": "data/sources/dual-step.html",
+    "url": "https://arxiv.org/html/2409.07222v1",
+    "sha256": "8fc9fc7d6ad7562ddcbd3783be816165c9fa5f812338d85b314196d56b30dd10",
+    "accessed": "2026-10-20"
+  },
+  {
+    "path": "data/sources/memetic2025.html",
+    "url": "https://arxiv.org/html/2504.00987v2",
+    "sha256": "54ffdfab186b6f44d92511c72001936cb09ea63d6d402ef3dd6f10d27d126476",
+    "accessed": "2026-10-20"
+  }
+]

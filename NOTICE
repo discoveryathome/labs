@@ -1,0 +1,32 @@
+Original pilot code and documentation: MIT, see LICENSE.
+
+Published numerical witnesses are attributed per certificate and table row.
+No upstream solver implementation was incorporated or executed.
+
+data/sources/2018-skew.txt and 2004.txt:
+  Borko Bošković, Franc Brglez and Janez Brest, git_labs archive.
+  Repository license retained in data/sources/git_labs.LICENSE (GPL-2.0).
+  The 2004 table is retained as background only; not used as a current frontier.
+
+data/sources/optimal.html and optimal.txt:
+  Tom Packebusch and Stephan Mertens, Low Autocorrelation Binary Sequences,
+  arXiv:1512.02475. Original license/attribution is embedded in the HTML.
+data/sources/memetic2025.html:
+  Zhiwei Zhang, Jiayu Shen, Niraj Kumar and Marco Pistoia,
+  arXiv:2504.00987v2, CC BY 4.0.
+data/sources/dual-step.html:
+  Blaž Pšeničnik, Rene Mlinarič, Janez Brest and Borko Bošković,
+  arXiv:2409.07222v1. Original license/attribution is embedded in the HTML.
+data/sources/2026.html and 2026.txt:
+  Blaž Pšeničnik, Borko Bošković, Jan Popič and Janez Brest,
+  arXiv:2607.09688v1, CC BY 4.0.
+data/sources/psl2047.seq:
+  Janez Brest's LABS archive; mathematical witness used with source attribution.
+  No additional license for that archive was found; do not infer MIT rights over it.
+
+Third-party paper snapshots are research reference materials, not relicensed by
+the pilot's MIT license. Check their original license before redistribution.
+The .txt files are mechanical text extractions of their respective HTML sources.
+
+protocol/: Discovery@Home specification and playbook snapshot, with upstream
+LICENSE and PIN.json. This pilot does not represent Discovery@Home endorsement.

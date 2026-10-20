@@ -1,0 +1,229 @@
+{
+  "schema": "discover-catalog/v0",
+  "priority_revision": 1,
+  "assessed_on": "2026-10-20",
+  "priority_log": "discover/priority-log.md",
+  "status": "Local incubation; review paused",
+  "tracks": [
+    {
+      "id": "sources",
+      "weight": 25,
+      "useful_outcome": "Prevent stale-record claims and resolve source gaps",
+      "tasks": [
+        {
+          "id": "refresh-frontier",
+          "question": "Have any selected-length records changed since the audit?",
+          "starting_points": [
+            "docs/LITERATURE.md",
+            "data/sources/manifest.json"
+          ],
+          "methods": [
+            "Primary-source version audit",
+            "Exact witness reconstruction"
+          ],
+          "acceptance_gate": "Pinned primary source plus exact witness; unsupported claims remain explicitly unverified.",
+          "first_step": {
+            "command": [
+              "python3",
+              "scripts/import_sources.py",
+              "--check"
+            ],
+            "expected": "Imported 319 witnesses; 160 frontier lengths"
+          },
+          "first_experiment": "Check current versions of 2504.00987 and 2607.09688; save new witness only with verified integer E.",
+          "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+          "allowed_variations": [
+            "Seed and length selection within the stated audited set",
+            "Explicitly bounded implementation or source-audit changes"
+          ],
+          "scope_change_triggers": [
+            "New objective such as PSL or periodic energy",
+            "Witness or bound conflicts with a primary source",
+            "Compute exceeds the donated session budget"
+          ],
+          "overlap_terms": [
+            "refresh-frontier",
+            "LABS"
+          ],
+          "claim_kind": [
+            "exact"
+          ],
+          "existing_checks": [
+            {
+              "scope": "Initialization coverage",
+              "evidence": "docs/VERIFY.md",
+              "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
+              "status": "author-checked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verification",
+      "weight": 20,
+      "useful_outcome": "Independent checks and rejection coverage",
+      "tasks": [
+        {
+          "id": "audit-verifier",
+          "question": "Can an independent reviewer confirm the score and provenance contracts?",
+          "starting_points": [
+            "src/verify.py",
+            "scripts/independent_check.py",
+            "docs/VERIFY.md"
+          ],
+          "methods": [
+            "Independent exact arithmetic",
+            "Mutation and malformed-input tests"
+          ],
+          "acceptance_gate": "No false acceptance; complete commands and limitations; identify actual independent reviewer.",
+          "first_step": {
+            "command": [
+              "python3",
+              "scripts/independent_check.py"
+            ],
+            "expected": "PASS: independent XOR/popcount checked 479 certificates"
+          },
+          "first_experiment": "Challenge encodings, claimed E, canonicalization and source padding with adversarial certificates.",
+          "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+          "allowed_variations": [
+            "Seed and length selection within the stated audited set",
+            "Explicitly bounded implementation or source-audit changes"
+          ],
+          "scope_change_triggers": [
+            "New objective such as PSL or periodic energy",
+            "Witness or bound conflicts with a primary source",
+            "Compute exceeds the donated session budget"
+          ],
+          "overlap_terms": [
+            "audit-verifier",
+            "LABS"
+          ],
+          "claim_kind": [
+            "exact"
+          ],
+          "existing_checks": [
+            {
+              "scope": "Initialization coverage",
+              "evidence": "docs/VERIFY.md",
+              "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
+              "status": "author-checked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "algorithms",
+      "weight": 35,
+      "useful_outcome": "Measure held-out algorithm gains without claiming records",
+      "tasks": [
+        {
+          "id": "heldout-tabu",
+          "question": "Which changes improve fixed-compute unrestricted search on held-out seeds?",
+          "starting_points": [
+            "src/search.cpp",
+            "research/pilot/config.json"
+          ],
+          "methods": [
+            "Tabu search",
+            "Restart and tenure ablation",
+            "Interleaved fixed-budget comparison"
+          ],
+          "acceptance_gate": "Save all runs, CPU/wall time, seeds and confidence limitations. State-of-the-art claims require stronger published algorithm comparators.",
+          "first_step": {
+            "command": [
+              "python3",
+              "scripts/check_search.py"
+            ],
+            "expected": "PASS: deterministic A/A and exact search checks"
+          },
+          "first_experiment": "Use new seeds at N=92,99,107,119; compare candidate against unchanged hill and tabu controls.",
+          "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+          "allowed_variations": [
+            "Seed and length selection within the stated audited set",
+            "Explicitly bounded implementation or source-audit changes"
+          ],
+          "scope_change_triggers": [
+            "New objective such as PSL or periodic energy",
+            "Witness or bound conflicts with a primary source",
+            "Compute exceeds the donated session budget"
+          ],
+          "overlap_terms": [
+            "heldout-tabu",
+            "LABS"
+          ],
+          "claim_kind": [
+            "exact",
+            "measured"
+          ],
+          "existing_checks": [
+            {
+              "scope": "Initialization coverage",
+              "evidence": "docs/VERIFY.md",
+              "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
+              "status": "author-checked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "refinement",
+      "weight": 20,
+      "useful_outcome": "Test structured starts at the actual recent frontier",
+      "tasks": [
+        {
+          "id": "published-refinement",
+          "question": "Can bounded unrestricted perturbation improve a recent long-length construction?",
+          "starting_points": [
+            "data/witnesses/451.json",
+            "docs/LITERATURE.md",
+            "src/search.cpp"
+          ],
+          "methods": [
+            "Published-start tabu",
+            "Neighbor-length insertion/deletion",
+            "Structured candidate refinement"
+          ],
+          "acceptance_gate": "Strict E improvement over refreshed published witness; canonical deduplication; two exact checkers; no tie counted as a record.",
+          "first_step": {
+            "command": [
+              "python3",
+              "scripts/check_frontier.py",
+              "--n",
+              "451"
+            ],
+            "expected": "PASS: 1 frontier rows"
+          },
+          "first_experiment": "Draw one of 450,451,518,573; run a new seed and bounded kick schedule or neighbor transfer.",
+          "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+          "allowed_variations": [
+            "Seed and length selection within the stated audited set",
+            "Explicitly bounded implementation or source-audit changes"
+          ],
+          "scope_change_triggers": [
+            "New objective such as PSL or periodic energy",
+            "Witness or bound conflicts with a primary source",
+            "Compute exceeds the donated session budget"
+          ],
+          "overlap_terms": [
+            "published-refinement",
+            "LABS"
+          ],
+          "claim_kind": [
+            "exact"
+          ],
+          "existing_checks": [
+            {
+              "scope": "Initialization coverage",
+              "evidence": "docs/VERIFY.md",
+              "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
+              "status": "author-checked"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

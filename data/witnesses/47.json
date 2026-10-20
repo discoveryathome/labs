@@ -1,0 +1,12 @@
+{
+  "N": 47,
+  "sequence": "11111111100111000011101100010010110110010101010",
+  "E": 135,
+  "F_exact": "2209/270",
+  "canonical": "00000000011000111100010011101101001001101010101",
+  "source": "https://arxiv.org/html/1512.02475",
+  "source_file": "data/sources/optimal.html",
+  "by": "Packebusch and Mertens",
+  "updated": "2016-04-01",
+  "optimum": true
+}

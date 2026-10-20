@@ -1,0 +1,161 @@
+N,E,F_exact,source,by,updated,object,status,bound,audited_on,target
+2,1,2,https://arxiv.org/html/1512.02475,Elementary parity bound,2016-04-01,data/witnesses/2.json,proven-optimal (literature),1,2026-10-20,False
+3,1,9/2,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/3.json,proven-optimal (literature),1,2026-10-20,False
+4,2,4,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/4.json,proven-optimal (literature),2,2026-10-20,False
+5,2,25/4,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/5.json,proven-optimal (literature),2,2026-10-20,False
+6,7,18/7,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/6.json,proven-optimal (literature),7,2026-10-20,False
+7,3,49/6,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/7.json,proven-optimal (literature),3,2026-10-20,False
+8,8,4,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/8.json,proven-optimal (literature),8,2026-10-20,False
+9,12,27/8,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/9.json,proven-optimal (literature),12,2026-10-20,False
+10,13,50/13,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/10.json,proven-optimal (literature),13,2026-10-20,False
+11,5,121/10,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/11.json,proven-optimal (literature),5,2026-10-20,False
+12,10,36/5,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/12.json,proven-optimal (literature),10,2026-10-20,False
+13,6,169/12,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/13.json,proven-optimal (literature),6,2026-10-20,False
+14,19,98/19,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/14.json,proven-optimal (literature),19,2026-10-20,False
+15,15,15/2,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/15.json,proven-optimal (literature),15,2026-10-20,False
+16,24,16/3,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/16.json,proven-optimal (literature),24,2026-10-20,False
+17,32,289/64,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/17.json,proven-optimal (literature),32,2026-10-20,False
+18,25,162/25,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/18.json,proven-optimal (literature),25,2026-10-20,False
+19,29,361/58,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/19.json,proven-optimal (literature),29,2026-10-20,False
+20,26,100/13,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/20.json,proven-optimal (literature),26,2026-10-20,False
+21,26,441/52,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/21.json,proven-optimal (literature),26,2026-10-20,False
+22,39,242/39,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/22.json,proven-optimal (literature),39,2026-10-20,False
+23,47,529/94,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/23.json,proven-optimal (literature),47,2026-10-20,False
+24,36,8,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/24.json,proven-optimal (literature),36,2026-10-20,False
+25,36,625/72,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/25.json,proven-optimal (literature),36,2026-10-20,False
+26,45,338/45,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/26.json,proven-optimal (literature),45,2026-10-20,False
+27,37,729/74,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/27.json,proven-optimal (literature),37,2026-10-20,False
+28,50,196/25,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/28.json,proven-optimal (literature),50,2026-10-20,False
+29,62,841/124,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/29.json,proven-optimal (literature),62,2026-10-20,False
+30,59,450/59,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/30.json,proven-optimal (literature),59,2026-10-20,False
+31,67,961/134,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/31.json,proven-optimal (literature),67,2026-10-20,False
+32,64,8,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/32.json,proven-optimal (literature),64,2026-10-20,False
+33,64,1089/128,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/33.json,proven-optimal (literature),64,2026-10-20,False
+34,65,578/65,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/34.json,proven-optimal (literature),65,2026-10-20,False
+35,73,1225/146,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/35.json,proven-optimal (literature),73,2026-10-20,False
+36,82,324/41,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/36.json,proven-optimal (literature),82,2026-10-20,False
+37,86,1369/172,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/37.json,proven-optimal (literature),86,2026-10-20,False
+38,87,722/87,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/38.json,proven-optimal (literature),87,2026-10-20,False
+39,99,169/22,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/39.json,proven-optimal (literature),99,2026-10-20,False
+40,108,200/27,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/40.json,proven-optimal (literature),108,2026-10-20,False
+41,108,1681/216,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/41.json,proven-optimal (literature),108,2026-10-20,False
+42,101,882/101,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/42.json,proven-optimal (literature),101,2026-10-20,False
+43,109,1849/218,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/43.json,proven-optimal (literature),109,2026-10-20,False
+44,122,484/61,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/44.json,proven-optimal (literature),122,2026-10-20,False
+45,118,2025/236,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/45.json,proven-optimal (literature),118,2026-10-20,False
+46,131,1058/131,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/46.json,proven-optimal (literature),131,2026-10-20,False
+47,135,2209/270,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/47.json,proven-optimal (literature),135,2026-10-20,False
+48,140,288/35,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/48.json,proven-optimal (literature),140,2026-10-20,False
+49,136,2401/272,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/49.json,proven-optimal (literature),136,2026-10-20,False
+50,153,1250/153,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/50.json,proven-optimal (literature),153,2026-10-20,False
+51,153,17/2,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/51.json,proven-optimal (literature),153,2026-10-20,False
+52,166,676/83,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/52.json,proven-optimal (literature),166,2026-10-20,False
+53,170,2809/340,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/53.json,proven-optimal (literature),170,2026-10-20,False
+54,175,1458/175,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/54.json,proven-optimal (literature),175,2026-10-20,False
+55,171,3025/342,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/55.json,proven-optimal (literature),171,2026-10-20,False
+56,192,49/6,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/56.json,proven-optimal (literature),192,2026-10-20,False
+57,188,3249/376,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/57.json,proven-optimal (literature),188,2026-10-20,False
+58,197,1682/197,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/58.json,proven-optimal (literature),197,2026-10-20,False
+59,205,3481/410,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/59.json,proven-optimal (literature),205,2026-10-20,False
+60,218,900/109,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/60.json,proven-optimal (literature),218,2026-10-20,False
+61,226,3721/452,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/61.json,proven-optimal (literature),226,2026-10-20,False
+62,235,1922/235,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/62.json,proven-optimal (literature),235,2026-10-20,False
+63,207,441/46,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/63.json,proven-optimal (literature),207,2026-10-20,False
+64,208,128/13,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/64.json,proven-optimal (literature),208,2026-10-20,False
+65,240,845/96,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/65.json,proven-optimal (literature),240,2026-10-20,False
+66,257,2178/257,https://arxiv.org/html/1512.02475,Packebusch and Mertens,2016-04-01,data/witnesses/66.json,proven-optimal (literature),257,2026-10-20,False
+92,490,2116/245,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/92.json,best-verified-published,,2026-10-20,True
+98,529,4802/529,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/98.json,best-verified-published,,2026-10-20,False
+99,553,9801/1106,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/99.json,best-verified-published,,2026-10-20,True
+104,600,676/75,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/104.json,best-verified-published,,2026-10-20,False
+106,645,5618/645,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/106.json,best-verified-published,,2026-10-20,False
+107,645,11449/1290,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/107.json,best-verified-published,,2026-10-20,True
+108,670,2916/335,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/108.json,best-verified-published,,2026-10-20,False
+109,658,11881/1316,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/109.json,best-verified-published,,2026-10-20,False
+110,707,6050/707,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/110.json,best-verified-published,,2026-10-20,False
+112,728,112/13,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/112.json,best-verified-published,,2026-10-20,False
+113,736,12769/1472,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/113.json,best-verified-published,,2026-10-20,False
+114,777,2166/259,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/114.json,best-verified-published,,2026-10-20,False
+116,802,3364/401,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/116.json,best-verified-published,,2026-10-20,False
+118,807,6962/807,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/118.json,best-verified-published,,2026-10-20,False
+119,787,14161/1574,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/119.json,best-verified-published,,2026-10-20,True
+120,824,900/103,https://arxiv.org/html/2504.00987v2,"Zhang, Shen, Kumar and Pistoia",2025-08-14,data/witnesses/120.json,best-verified-published,,2026-10-20,False
+450,13009,101250/13009,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/450.json,best-verified-published,,2026-10-20,True
+451,12625,203401/25250,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/451.json,best-verified-published,,2026-10-20,True
+452,13074,51076/6537,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/452.json,best-verified-published,,2026-10-20,False
+453,13338,22801/2964,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/453.json,best-verified-published,,2026-10-20,False
+454,13319,103058/13319,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/454.json,best-verified-published,,2026-10-20,False
+455,13043,207025/26086,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/455.json,best-verified-published,,2026-10-20,False
+456,13288,12996/1661,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/456.json,best-verified-published,,2026-10-20,False
+457,13532,208849/27064,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/457.json,best-verified-published,,2026-10-20,False
+458,13837,104882/13837,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/458.json,best-verified-published,,2026-10-20,False
+459,14101,210681/28202,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/459.json,best-verified-published,,2026-10-20,False
+460,13870,10580/1387,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/460.json,best-verified-published,,2026-10-20,False
+461,13574,212521/27148,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/461.json,best-verified-published,,2026-10-20,False
+462,13811,15246/1973,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/462.json,best-verified-published,,2026-10-20,False
+463,14439,214369/28878,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/463.json,best-verified-published,,2026-10-20,False
+464,14436,26912/3609,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/464.json,best-verified-published,,2026-10-20,False
+465,14336,216225/28672,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/465.json,best-verified-published,,2026-10-20,False
+466,14649,108578/14649,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/466.json,best-verified-published,,2026-10-20,False
+467,14713,218089/29426,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/467.json,best-verified-published,,2026-10-20,False
+468,14586,1404/187,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/468.json,best-verified-published,,2026-10-20,False
+469,14626,219961/29252,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/469.json,best-verified-published,,2026-10-20,False
+470,14759,110450/14759,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/470.json,best-verified-published,,2026-10-20,False
+471,14683,221841/29366,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/471.json,best-verified-published,,2026-10-20,False
+472,15088,6962/943,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/472.json,best-verified-published,,2026-10-20,False
+473,14932,223729/29864,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/473.json,best-verified-published,,2026-10-20,False
+474,15125,112338/15125,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/474.json,best-verified-published,,2026-10-20,False
+475,15197,225625/30394,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/475.json,best-verified-published,,2026-10-20,False
+476,15110,56644/7555,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/476.json,best-verified-published,,2026-10-20,False
+477,15022,227529/30044,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/477.json,best-verified-published,,2026-10-20,False
+478,15115,114242/15115,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/478.json,best-verified-published,,2026-10-20,False
+479,15007,229441/30014,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/479.json,best-verified-published,,2026-10-20,False
+480,15160,2880/379,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/480.json,best-verified-published,,2026-10-20,False
+481,15016,231361/30032,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/481.json,best-verified-published,,2026-10-20,False
+482,15169,116162/15169,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/482.json,best-verified-published,,2026-10-20,False
+483,15321,77763/10214,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/483.json,best-verified-published,,2026-10-20,False
+484,15646,58564/7823,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/484.json,best-verified-published,,2026-10-20,False
+485,16106,235225/32212,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/485.json,best-verified-published,,2026-10-20,False
+486,16119,1458/199,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/486.json,best-verified-published,,2026-10-20,False
+487,15927,237169/31854,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/487.json,best-verified-published,,2026-10-20,False
+488,16032,3721/501,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/488.json,best-verified-published,,2026-10-20,False
+489,15796,239121/31592,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/489.json,best-verified-published,,2026-10-20,False
+490,16005,24010/3201,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/490.json,best-verified-published,,2026-10-20,False
+491,15957,241081/31914,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/491.json,best-verified-published,,2026-10-20,False
+492,15822,6724/879,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/492.json,best-verified-published,,2026-10-20,False
+493,15622,243049/31244,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/493.json,best-verified-published,,2026-10-20,False
+494,15955,122018/15955,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/494.json,best-verified-published,,2026-10-20,False
+495,16155,5445/718,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/495.json,best-verified-published,,2026-10-20,False
+496,16308,30752/4077,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/496.json,best-verified-published,,2026-10-20,False
+497,16568,247009/33136,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/497.json,best-verified-published,,2026-10-20,False
+498,16825,124002/16825,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/498.json,best-verified-published,,2026-10-20,False
+499,16925,249001/33850,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/499.json,best-verified-published,,2026-10-20,False
+500,17026,62500/8513,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/500.json,best-verified-published,,2026-10-20,False
+501,16946,251001/33892,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/501.json,best-verified-published,,2026-10-20,False
+502,17039,126002/17039,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/502.json,best-verified-published,,2026-10-20,False
+503,16987,253009/33974,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/503.json,best-verified-published,,2026-10-20,False
+504,17236,31752/4309,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/504.json,best-verified-published,,2026-10-20,False
+505,16996,255025/33992,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/505.json,best-verified-published,,2026-10-20,False
+506,17301,128018/17301,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/506.json,best-verified-published,,2026-10-20,False
+507,17517,85683/11678,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/507.json,best-verified-published,,2026-10-20,False
+508,17698,64516/8849,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/508.json,best-verified-published,,2026-10-20,False
+509,17358,259081/34716,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/509.json,best-verified-published,,2026-10-20,False
+510,17787,43350/5929,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/510.json,best-verified-published,,2026-10-20,False
+511,17887,261121/35774,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/511.json,best-verified-published,,2026-10-20,False
+512,17996,32768/4499,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/512.json,best-verified-published,,2026-10-20,False
+513,18264,87723/12176,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/513.json,best-verified-published,,2026-10-20,False
+514,18249,132098/18249,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/514.json,best-verified-published,,2026-10-20,False
+515,18265,53045/7306,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/515.json,best-verified-published,,2026-10-20,False
+516,18278,66564/9139,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/516.json,best-verified-published,,2026-10-20,False
+517,18150,2209/300,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/517.json,best-verified-published,,2026-10-20,False
+518,18463,3626/499,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/518.json,best-verified-published,,2026-10-20,True
+519,18483,89787/12322,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/519.json,best-verified-published,,2026-10-20,False
+520,18680,3380/467,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/520.json,best-verified-published,,2026-10-20,False
+521,18876,271441/37752,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/521.json,best-verified-published,,2026-10-20,False
+522,18829,136242/18829,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/522.json,best-verified-published,,2026-10-20,False
+523,18917,273529/37834,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/523.json,best-verified-published,,2026-10-20,False
+524,19230,68644/9615,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/524.json,best-verified-published,,2026-10-20,False
+525,18934,275625/37868,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/525.json,best-verified-published,,2026-10-20,False
+526,19123,138338/19123,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/526.json,best-verified-published,,2026-10-20,False
+527,19343,277729/38686,https://arxiv.org/html/2409.07222v1,"Pšeničnik, Mlinarič, Brest and Bošković",2024-09-11,data/witnesses/527.json,best-verified-published,,2026-10-20,False
+573,22558,328329/45116,https://arxiv.org/html/2607.09688v1,"Pšeničnik, Bošković, Popič and Brest",2026-07-14,data/witnesses/573.json,best-verified-published,,2026-10-20,True
