@@ -1,0 +1,24 @@
+{
+  "completed_at": "2026-10-20T13:40:28.432440+00:00",
+  "research_finished_at": "2026-10-20T13:30:57.278917Z",
+  "charged_session_seconds": 2869.251092,
+  "charged_session_minutes": 47.82085153333333,
+  "budget_minutes": 60,
+  "within_budget": true,
+  "continuous_wall_clock_trial": false,
+  "reason": "User interruption; background calibration charged through completion, then remaining budget resumed on explicit user instruction.",
+  "checked_package_commit": "073ad8a9f415180c340dc9903f13f6de81047348",
+  "verification": "Author-run fresh local clone: baseline controls, 739 retained certificate checks, five parent reconstructions, eight deterministic search trajectory replays, and all 225791 transformation evaluations matched.",
+  "search_cpu_seconds": 1499.70608,
+  "additional_fresh_reproduction_cpu_seconds": 220.193439,
+  "model_inference_compute": "Not separately metered; excluded from search CPU denominator.",
+  "candidate_lengths": [
+    108,
+    118,
+    119,
+    463,
+    485
+  ],
+  "independently_accepted_records": 0,
+  "mode": "LOCAL; no remote creation, push, posting, author contact or hub listing"
+}
