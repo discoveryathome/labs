@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-20",
+  "queries": [
+    "LABS \"119\" \"771\" sequence",
+    "low autocorrelation \"108\" \"666\"",
+    "LABS \"485\" \"15970\"",
+    "low autocorrelation binary sequences 2026 best known records",
+    "\"LABS\" \"118\" \"799\"",
+    "\"autocorrelation\" \"14047\"",
+    "\"binary sequences\" \"2026\" \"merit\" \"records\"",
+    "\"low autocorrelation binary sequences\" \"2026\" records",
+    "\"low autocorrelation\" \"2025\" \"119\"",
+    "\"low autocorrelation\" \"485\"",
+    "LABS merit factor records github",
+    "\"Evaluating the Performance of Direct Higher-Order Formulations\" arxiv"
+  ],
+  "scope": "Representative queries from the bounded renewed audit; primary-source reads and exact witness checks summarized in AUDIT.md.",
+  "conclusion": "No superseding same-length verified witness found; incomplete/unindexed records remain a limitation."
+}

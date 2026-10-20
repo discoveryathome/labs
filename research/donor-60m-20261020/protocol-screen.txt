@@ -1,0 +1,19 @@
+Screen of .: 12 finding(s), 0 high.
+- [info] hidden-text data/sources/2026.html: 54 hidden-text lines in this file in all
+- [info] hidden-text data/sources/2026.html:281: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <td class="ltx_eqn_cell ltx_align_center"><math id="Sx1.E1.m1" class="ltx_Math" alttext="C_{k}(S)=\sum_{i=1}^{L-k}s_{i}s_{i+k},\quad k\in\{1,\dots,L\}." display
+- [info] hidden-text data/sources/2026.txt: 290 hidden-text lines in this file in all
+- [info] hidden-text data/sources/2026.txt:239: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <U+200B>
+- [info] hidden-text data/sources/dual-step.html: 41 hidden-text lines in this file in all
+- [info] hidden-text data/sources/dual-step.html:288: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <p id="S1.p2.1" class="ltx_p">A binary sequence of length <math id="S1.p2.m1" class="ltx_Math" alttext="L" display="inline" intent=":literal"><semantics><mi>L</
+- [info] hidden-text data/sources/memetic2025.html: 42 hidden-text lines in this file in all
+- [info] hidden-text data/sources/memetic2025.html:299: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <p id="S1.I1.i1.p1.1" class="ltx_p">A delicate design of a two-level (<math id="S1.I1.i1.p1.m1" class="ltx_Math" alttext="block" display="inline" intent=":liter
+- [info] hidden-text data/sources/optimal.html: 62 hidden-text lines in this file in all
+- [info] hidden-text data/sources/optimal.html:239: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    optimal sequences of length <math id="abstract1.m1" class="ltx_Math" alttext="N" display="inline" intent=":literal"><semantics><mi>N</mi><annotation encoding="a
+- [info] hidden-text data/sources/optimal.txt: 128 hidden-text lines in this file in all
+- [info] hidden-text data/sources/optimal.txt:116: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <U+200B>

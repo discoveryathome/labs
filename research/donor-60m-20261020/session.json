@@ -1,0 +1,38 @@
+{
+  "start": "2026-10-20T06:25:21Z",
+  "deadline": "2026-10-20T07:25:21Z",
+  "base": "033dc75d8c6a6469613a3ffead1d5bfe8ad397d2",
+  "picker_seed": "71ccb4832fdb6916636f1ebbe575a5ff",
+  "card": "heldout-tabu",
+  "scope": "N=92,99,107,119; baseline tabu versus iterated/population tabu; random and published initialization; calibration seeds 3849692671..3849692674, held-out seeds 3849692701..3849692708; up to 300 million neighbor evaluations per run; single-agent 60-minute LOCAL session.",
+  "calibration_seeds": [
+    3849692671,
+    3849692672,
+    3849692673,
+    3849692674
+  ],
+  "heldout_seeds": [
+    3849692701,
+    3849692702,
+    3849692703,
+    3849692704,
+    3849692705,
+    3849692706,
+    3849692707,
+    3849692708
+  ],
+  "success_criteria": {
+    "primary": "E strictly below strongest verified published construction; verify twice and refresh sources before any record claim",
+    "secondary": "held-out paired score comparison at fixed evaluations, with CPU costs; internal algorithm gain is not a record",
+    "experience": "time to working contribution, controls, negative results, useful handoff"
+  },
+  "caveats": [
+    "Same agent built pilot; orientation advantage",
+    "One session cannot estimate a general rare-event success rate"
+  ],
+  "plan": [
+    "First 15 minutes: orientation, implementation, controls, separate calibration",
+    "Next 30 minutes: frozen held-out comparison and published-start attempts",
+    "Final 15 minutes: verification, reproducibility, donor assessment"
+  ]
+}

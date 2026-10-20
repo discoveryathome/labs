@@ -35,6 +35,13 @@ experiments cheaply; the longer lengths test the transfer of published structure
 and perturbation/refinement. N≤66 is for controls; an alleged improvement there is
 first a checker/encoding investigation.
 
+The [follow-up donor session](research/donor-60m-20261020/README.md) found a
+narrower accessible direction: endpoint edits of recent published witnesses
+produced exact-checked improvements at N=108,118,119,463,485. These are pending
+record candidates, not independently accepted records. This supports structured
+transfer tasks, while repeatable success beyond those already found remains
+untested. Always compare new submissions against the pending candidate table too.
+
 The bottleneck is generating candidates competitive with heavily optimized,
 often GPU-based prior work. Verification is cheap. Default baseline restarts
 are unlikely to match that prior compute investment.
@@ -60,8 +67,8 @@ restriction, not a valid reduction of the unrestricted optimization problem.
 
 ## Priorities and coordination
 
-`discover/catalog.json` contains four tracks summing to 100: source audit 25,
-verification 20, algorithm measurement 35, and structured refinement 20.
+`discover/catalog.json` contains four tracks summing to 100: source audit 15,
+verification 25, algorithm measurement 10, and structured refinement 50.
 `discover/priority-log.md` explains and dates the weights. The seeded local picker
 prints active claims and unresolved handoffs; it does not lock work. Separate
 checkouts do not share live state, so this local pilot is not ready for a swarm.

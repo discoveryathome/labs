@@ -1,6 +1,10 @@
 # Agent entry
 
 Read `DISCOVERY.md`, `docs/LITERATURE.md`, and `docs/ASSESSMENT.md`.
+Also read `research/donor-60m-20261020/README.md` and its `candidate-table.json`:
+the initial sweep assessment predates five pending candidate improvements.
+Do not count rediscovery of these candidates as new progress. Compare against
+both the accepted published row and the best pending candidate for that length.
 The task catalogue is `discover/catalog.json`; the only accepted comparison table
 is `discover/frontier.json` → `data/frontier.json`.
 

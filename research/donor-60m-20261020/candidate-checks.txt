@@ -1,0 +1,5 @@
+PASS N=108: parent N=109 E=658 via delete_first; published E=670 -> candidate E=666; F=324/37. Independent novelty review remains pending.
+PASS N=118: parent N=119 E=787 via delete_first; published E=807 -> candidate E=799; F=6962/799. Independent novelty review remains pending.
+PASS N=119: parent N=120 E=824 via delete_last; published E=787 -> candidate E=771; F=14161/1542. Independent novelty review remains pending.
+PASS N=463: parent N=462 E=13811 via prepend_0; published E=14439 -> candidate E=14047; F=214369/28094. Independent novelty review remains pending.
+PASS N=485: parent N=484 E=15646 via append_0; published E=16106 -> candidate E=15970; F=47045/6388. Independent novelty review remains pending.

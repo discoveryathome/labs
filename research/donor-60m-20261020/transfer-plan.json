@@ -1,0 +1,30 @@
+{
+  "registered_at": "2026-10-20T13:10:12.170188+00:00",
+  "scope": "All one-bit insertions/deletions and nonzero cyclic rotations of the 319 pinned published witnesses, comparing only the 95 audited open frontier lengths; keep two non-published symmetry orbits per target length.",
+  "selection": "Select at most 16 distinct lengths, ranked by lowest transformed E / published E. Choose the best new orbit per length. Do not count inherited published ties.",
+  "refinement": {
+    "method": "population",
+    "stagnation": 4,
+    "budget": 100000000,
+    "seeds": [
+      3849692801,
+      3849692802,
+      3849692803,
+      3849692804,
+      3849692805,
+      3849692806,
+      3849692807,
+      3849692808,
+      3849692809,
+      3849692810,
+      3849692811,
+      3849692812,
+      3849692813,
+      3849692814,
+      3849692815,
+      3849692816
+    ]
+  },
+  "stop_at": "2026-10-20T13:37:39Z",
+  "classification": "Exploratory structured search, separate from the frozen held-out algorithm comparison. All unsuccessful transformations remain in the aggregate denominator and group logs."
+}

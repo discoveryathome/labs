@@ -1,13 +1,13 @@
 {
   "schema": "discover-catalog/v0",
-  "priority_revision": 1,
+  "priority_revision": 2,
   "assessed_on": "2026-10-20",
   "priority_log": "discover/priority-log.md",
   "status": "Local incubation; review paused",
   "tracks": [
     {
       "id": "sources",
-      "weight": 25,
+      "weight": 15,
       "useful_outcome": "Prevent stale-record claims and resolve source gaps",
       "tasks": [
         {
@@ -61,7 +61,7 @@
     },
     {
       "id": "verification",
-      "weight": 20,
+      "weight": 25,
       "useful_outcome": "Independent checks and rejection coverage",
       "tasks": [
         {
@@ -70,7 +70,8 @@
           "starting_points": [
             "src/verify.py",
             "scripts/independent_check.py",
-            "docs/VERIFY.md"
+            "docs/VERIFY.md",
+            "research/donor-60m-20261020/AUDIT.md"
           ],
           "methods": [
             "Independent exact arithmetic",
@@ -108,6 +109,12 @@
               "evidence": "docs/VERIFY.md",
               "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
               "status": "author-checked"
+            },
+            {
+              "scope": "Five exact-checked pending record candidates with parent reconstruction",
+              "evidence": "research/donor-60m-20261020/candidate-table.json",
+              "remaining": "An independent reviewer must challenge arithmetic, source encoding, current records and novelty. The original author is not an independent reviewer.",
+              "status": "author-checked"
             }
           ]
         }
@@ -115,7 +122,7 @@
     },
     {
       "id": "algorithms",
-      "weight": 35,
+      "weight": 10,
       "useful_outcome": "Measure held-out algorithm gains without claiming records",
       "tasks": [
         {
@@ -123,7 +130,8 @@
           "question": "Which changes improve fixed-compute unrestricted search on held-out seeds?",
           "starting_points": [
             "src/search.cpp",
-            "research/pilot/config.json"
+            "research/pilot/config.json",
+            "research/donor-60m-20261020/README.md"
           ],
           "methods": [
             "Tabu search",
@@ -163,6 +171,12 @@
               "evidence": "docs/VERIFY.md",
               "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
               "status": "author-checked"
+            },
+            {
+              "scope": "Population/iterated tabu calibration and frozen 32-pair held-out comparison at N=92,99,107,119",
+              "evidence": "research/donor-60m-20261020/analysis.json",
+              "remaining": "Population variant won 14, tied 4, lost 14; no general improvement established. Test a distinct idea with fresh seeds rather than retuning on these held-out outcomes.",
+              "status": "author-checked"
             }
           ]
         }
@@ -170,16 +184,16 @@
     },
     {
       "id": "refinement",
-      "weight": 20,
+      "weight": 50,
       "useful_outcome": "Test structured starts at the actual recent frontier",
       "tasks": [
         {
           "id": "published-refinement",
-          "question": "Can bounded unrestricted perturbation improve a recent long-length construction?",
+          "question": "Can additional structured transformations improve both a published construction and the best pending candidate?",
           "starting_points": [
-            "data/witnesses/451.json",
-            "docs/LITERATURE.md",
-            "src/search.cpp"
+            "research/donor-60m-20261020/candidate-table.json",
+            "research/donor-60m-20261020/transfer.py",
+            "research/donor-60m-20261020/AUDIT.md"
           ],
           "methods": [
             "Published-start tabu",
@@ -190,13 +204,13 @@
           "first_step": {
             "command": [
               "python3",
-              "scripts/check_frontier.py",
+              "research/donor-60m-20261020/check_candidate.py",
               "--n",
-              "451"
+              "119"
             ],
-            "expected": "PASS: 1 frontier rows"
+            "expected": "PASS N=119: parent N=120 E=824 via delete_last; published E=787 -> candidate E=771"
           },
-          "first_experiment": "Draw one of 450,451,518,573; run a new seed and bounded kick schedule or neighbor transfer.",
+          "first_experiment": "Preregister a two-edit endpoint path or alternating-sign orientation followed by insertion/deletion. Use the candidate table as an additional provisional threshold; do not repeat the completed single-edit sweep as a discovery.",
           "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
           "allowed_variations": [
             "Seed and length selection within the stated audited set",
@@ -219,6 +233,12 @@
               "scope": "Initialization coverage",
               "evidence": "docs/VERIFY.md",
               "remaining": "New source changes, held-out experiments, or independent review; do not merely repeat completed controls.",
+              "status": "author-checked"
+            },
+            {
+              "scope": "All insertions, deletions and nonzero rotations of pinned published orientations into 95 audited open lengths: 225791 trials",
+              "evidence": "research/donor-60m-20261020/transfer/summary.json",
+              "remaining": "Five improved lengths already found. Independent novelty review, alternate source orientations, and multistep transformations remain. Energy-preserving alternating signs need not preserve insertion/deletion neighborhoods.",
               "status": "author-checked"
             }
           ]

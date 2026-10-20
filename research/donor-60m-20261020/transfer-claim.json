@@ -1,0 +1,10 @@
+{
+  "v": 0,
+  "kind": "claim",
+  "task": "published-refinement",
+  "scope": "All one-bit insertions/deletions and nonzero cyclic rotations of the 319 pinned published witnesses, comparing only the 95 audited open frontier lengths; keep two non-published symmetry orbits per target length. Then refine the 16 closest distinct lengths with population tabu, 100M evaluations and seeds 3849692801..3849692816.",
+  "base": "033dc75d8c6a6469613a3ffead1d5bfe8ad397d2",
+  "posted_at": "2026-10-20T13:10:12.170188+00:00",
+  "expires": "2026-10-20T13:37:39Z",
+  "evidence_level": "local-only"
+}

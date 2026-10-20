@@ -1,0 +1,9 @@
+{
+  "resumed_at": "2026-10-20T13:04:13Z",
+  "observed_at_heldout_launch_load_average": [
+    3.46435546875,
+    3.87890625,
+    4.3212890625
+  ],
+  "note": "These load values were printed by the held-out launch command. Same Apple M2; not a dedicated benchmark host."
+}

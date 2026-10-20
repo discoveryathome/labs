@@ -1,0 +1,17 @@
+1/16 N=107 population 4 published seed=3849692703 ok E=645 published=645
+2/16 N=99 population 4 published seed=3849692703 ok E=553 published=553
+3/16 N=119 population 4 published seed=3849692704 ok E=787 published=787
+4/16 N=99 population 4 published seed=3849692701 ok E=553 published=553
+5/16 N=92 population 4 published seed=3849692702 ok E=490 published=490
+6/16 N=119 population 4 published seed=3849692701 ok E=787 published=787
+7/16 N=92 population 4 published seed=3849692703 ok E=490 published=490
+8/16 N=119 population 4 published seed=3849692702 ok E=787 published=787
+9/16 N=119 population 4 published seed=3849692703 ok E=787 published=787
+10/16 N=92 population 4 published seed=3849692701 ok E=490 published=490
+11/16 N=99 population 4 published seed=3849692702 ok E=553 published=553
+12/16 N=107 population 4 published seed=3849692704 ok E=645 published=645
+13/16 N=99 population 4 published seed=3849692704 ok E=553 published=553
+14/16 N=107 population 4 published seed=3849692701 ok E=645 published=645
+15/16 N=107 population 4 published seed=3849692702 ok E=645 published=645
+16/16 N=92 population 4 published seed=3849692704 ok E=490 published=490
+{"completed": 16, "planned": 16, "statuses": {"ok": 16, "failed": 0, "timeout": 0, "error": 0}, "candidates": 0, "total_child_cpu_seconds": 167.487572, "wall_seconds": 167.8579121249495, "finish": "2026-10-20T13:15:05.424659+00:00", "unstarted_jobs": []}

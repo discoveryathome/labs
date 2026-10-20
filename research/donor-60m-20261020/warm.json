@@ -1,0 +1,135 @@
+{
+  "name": "warm",
+  "stop_at": "2026-10-20T13:37:39Z",
+  "timeout_seconds": 300,
+  "jobs": [
+    {
+      "N": 107,
+      "seed": 3849692703,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 99,
+      "seed": 3849692703,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 119,
+      "seed": 3849692704,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 99,
+      "seed": 3849692701,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 92,
+      "seed": 3849692702,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 119,
+      "seed": 3849692701,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 92,
+      "seed": 3849692703,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 119,
+      "seed": 3849692702,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 119,
+      "seed": 3849692703,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 92,
+      "seed": 3849692701,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 99,
+      "seed": 3849692702,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 107,
+      "seed": 3849692704,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 99,
+      "seed": 3849692704,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 107,
+      "seed": 3849692701,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 107,
+      "seed": 3849692702,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    },
+    {
+      "N": 92,
+      "seed": 3849692704,
+      "budget": 100000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "published"
+    }
+  ]
+}

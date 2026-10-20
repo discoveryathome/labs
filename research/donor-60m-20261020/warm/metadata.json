@@ -1,0 +1,152 @@
+{
+  "config": {
+    "name": "warm",
+    "stop_at": "2026-10-20T13:37:39Z",
+    "timeout_seconds": 300,
+    "jobs": [
+      {
+        "N": 107,
+        "seed": 3849692703,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 99,
+        "seed": 3849692703,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 119,
+        "seed": 3849692704,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 99,
+        "seed": 3849692701,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 92,
+        "seed": 3849692702,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 119,
+        "seed": 3849692701,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 92,
+        "seed": 3849692703,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 119,
+        "seed": 3849692702,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 119,
+        "seed": 3849692703,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 92,
+        "seed": 3849692701,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 99,
+        "seed": 3849692702,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 107,
+        "seed": 3849692704,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 99,
+        "seed": 3849692704,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 107,
+        "seed": 3849692701,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 107,
+        "seed": 3849692702,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      },
+      {
+        "N": 92,
+        "seed": 3849692704,
+        "budget": 100000000,
+        "method": "population",
+        "stagnation": 4,
+        "start": "published"
+      }
+    ]
+  },
+  "hashes": {
+    "research/donor-60m-20261020/search.cpp": "83d110ce9396035f40c899d5e8bc7b0c8ab01178111e68bebbc96e32935dc61a",
+    "research/donor-60m-20261020/run.py": "98ea0291f2f3914f7bc191fafe6c656c6f1cad7503afdf67aa4e6a48138d2abf",
+    "src/search.cpp": "30b424adc8826d432acba79f0ad34aee11ae227c4fccf613cb3b2158a4336f3a",
+    "src/verify.py": "469ca1fd30511cd3799ef2ef98f662820e171c59d22cf252365c349950603272",
+    "scripts/independent_check.py": "af6f626f2408e522dee8abff8da0a67fdef0576e51dc7c6d2d36ba704210cdeb",
+    "data/frontier.json": "2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738",
+    "build/donor-search": "7c9c2527b88121151a91c38303139d7629cf28cd6cedd6ded5ad09a0f4dac099",
+    "build/search": "c675caed0b11f53b03d1771540c88d26217fe700da74417ef0572f1b96f40d80",
+    "research/donor-60m-20261020/warm.json": "3041eb1c0ebaa3735d88d18c9555af287b059ae7266dd281f0e6cb3ad7b34b56"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "start": "2026-10-20T13:12:17.542720+00:00",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n"
+}

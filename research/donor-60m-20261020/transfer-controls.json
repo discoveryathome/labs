@@ -1,0 +1,12 @@
+{
+  "exhaustive_input_lengths": [
+    2,
+    8
+  ],
+  "energy_comparisons": 15352,
+  "methods": [
+    "delete",
+    "insert",
+    "rotate"
+  ]
+}

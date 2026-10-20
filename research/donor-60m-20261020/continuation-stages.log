@@ -1,0 +1,21 @@
+Starting structured transfer 2026-10-20T13:15:05.822582+00:00
+{"groups": 396, "generated_sequences": 225791, "exhausted": true, "candidate_orbits": 8, "cpu_seconds": 30.289413, "wall_seconds": 30.34223850001581, "finished_at": "2026-10-20T13:15:36.212837+00:00"}
+Starting structured refinement 2026-10-20T13:15:36.221030+00:00
+1 16 463 ok 14047 reference 14439
+2 16 119 ok 771 reference 787
+3 16 118 ok 799 reference 807
+4 16 485 ok 15970 reference 16106
+5 16 108 ok 666 reference 670
+6 16 113 ok 736 reference 736
+7 16 527 ok 19343 reference 19343
+8 16 495 ok 16159 reference 16155
+9 16 452 ok 13074 reference 13074
+10 16 518 ok 18463 reference 18463
+11 16 480 ok 15172 reference 15160
+12 16 526 ok 19123 reference 19123
+13 16 525 ok 18934 reference 18934
+14 16 490 ok 16005 reference 16005
+15 16 471 ok 14683 reference 14683
+16 16 494 ok 15955 reference 15955
+{"completed": 16, "planned": 16, "candidates": 5, "child_cpu_seconds": 835.0395199999999, "wall_seconds": 921.0056319590658, "unstarted_jobs": [], "finished_at": "2026-10-20T13:30:57.278917+00:00"}
+Exploration finished 2026-10-20T13:30:57.286475+00:00

@@ -1,0 +1,72 @@
+[
+  {
+    "N": 108,
+    "published_E": 670,
+    "candidate_E": 666,
+    "F_exact": "324/37",
+    "object": "research/donor-60m-20261020/candidates/108.json",
+    "check": [
+      "python3",
+      "research/donor-60m-20261020/check_candidate.py",
+      "--n",
+      "108"
+    ],
+    "status": "candidate, author-checked, independent novelty review pending"
+  },
+  {
+    "N": 118,
+    "published_E": 807,
+    "candidate_E": 799,
+    "F_exact": "6962/799",
+    "object": "research/donor-60m-20261020/candidates/118.json",
+    "check": [
+      "python3",
+      "research/donor-60m-20261020/check_candidate.py",
+      "--n",
+      "118"
+    ],
+    "status": "candidate, author-checked, independent novelty review pending"
+  },
+  {
+    "N": 119,
+    "published_E": 787,
+    "candidate_E": 771,
+    "F_exact": "14161/1542",
+    "object": "research/donor-60m-20261020/candidates/119.json",
+    "check": [
+      "python3",
+      "research/donor-60m-20261020/check_candidate.py",
+      "--n",
+      "119"
+    ],
+    "status": "candidate, author-checked, independent novelty review pending"
+  },
+  {
+    "N": 463,
+    "published_E": 14439,
+    "candidate_E": 14047,
+    "F_exact": "214369/28094",
+    "object": "research/donor-60m-20261020/candidates/463.json",
+    "check": [
+      "python3",
+      "research/donor-60m-20261020/check_candidate.py",
+      "--n",
+      "463"
+    ],
+    "status": "candidate, author-checked, independent novelty review pending"
+  },
+  {
+    "N": 485,
+    "published_E": 16106,
+    "candidate_E": 15970,
+    "F_exact": "47045/6388",
+    "object": "research/donor-60m-20261020/candidates/485.json",
+    "check": [
+      "python3",
+      "research/donor-60m-20261020/check_candidate.py",
+      "--n",
+      "485"
+    ],
+    "status": "candidate, author-checked, independent novelty review pending"
+  }
+]

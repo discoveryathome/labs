@@ -1,0 +1,27 @@
+COMMAND ["make", "check"]
+python3 -m unittest discover -s tests -v
+test_exhaustive (test_verify.VerifyTests.test_exhaustive) ... ok
+test_independent_and_symmetries (test_verify.VerifyTests.test_independent_and_symmetries) ... ok
+test_known (test_verify.VerifyTests.test_known) ... ok
+test_rejection (test_verify.VerifyTests.test_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.520s
+
+OK
+./build/search --self-test
+PASS: incremental deltas and updates N=2..128
+python3 scripts/check_frontier.py
+PSL control N=2047 E=433843 F=4190209/867686 PSL=32
+PASS: 160 frontier rows; 221 comparison witnesses checked
+COMMAND ["python3", "scripts/check_results.py"]
+PASS: 160 result certificates; 0 distinct frontier improvements
+COMMAND ["python3", "scripts/import_sources.py", "--check"]
+Imported 319 witnesses; 160 frontier lengths
+COMMAND ["python3", "scripts/independent_check.py"]
+PASS: independent XOR/popcount checked 479 certificates
+COMMAND ["python3", "scripts/check_package.py"]
+PASS: 12 pinned package inputs and config
+COMMAND ["python3", "scripts/report.py", "--check"]
+PASS: assessment agrees with archived results
+{"wall_seconds": 5.1319345840020105, "child_cpu_seconds": 4.900967}

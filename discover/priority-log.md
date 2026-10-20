@@ -15,3 +15,18 @@ Review again after the first independent review, after a new source version, or
 after ten additional bounded sessions, whichever comes first. Reconsider
 record-search allocation if the measured improvement rate remains zero. Do not
 launch donor intake until a maintainer consents and shared coordination exists.
+
+## Revision 2 — 2026-10-20
+
+The interrupted 60-minute-budget donor trial produced five exact-checked
+candidate-length improvements through endpoint edits of published witnesses.
+Its frozen population-tabu comparison was inconclusive (14 wins, 4 ties,
+14 losses); published-start tabu added no records. Shift local task allocation
+to sources 15, verification 25, algorithms 10, structured refinement 50. This
+is an incubation routing change, not independent acceptance or launch approval.
+The five already found candidates must be provisional comparison thresholds,
+so new donors cannot score rediscoveries against the older published rows.
+Next checkpoint: independent candidate/novelty review plus a fresh-agent session
+testing a distinct transform family from the updated provisional thresholds.
+Do not extrapolate this finite initial cleanup into a sustainable hit rate.
+Evidence: research/donor-60m-20261020/README.md.

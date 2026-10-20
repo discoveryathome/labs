@@ -30,3 +30,11 @@ The .txt files are mechanical text extractions of their respective HTML sources.
 
 protocol/: Discovery@Home specification and playbook snapshot, with upstream
 LICENSE and PIN.json. This pilot does not represent Discovery@Home endorsement.
+
+research/donor-60m-20261020/audit/:
+  Refreshed primary-source papers retain their original attribution and licenses.
+  Dimitrov, arXiv:2206.12070; Sciorilli et al., arXiv:2506.17391v2;
+  Ikeuchi, Matsuda and Tanaka, arXiv:2510.24237v1 are audit reference materials.
+  Endless Exam benchmark snapshots are from ricolalemon/endless-exam at
+  9fc1ece969c0d9dec056f78ac4e83dbcf2c90a9e, copyright 2026 Muhan Zhang.
+  Its MIT license is retained as audit/endless-LICENSE. No upstream code was run.

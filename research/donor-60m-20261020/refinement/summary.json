@@ -1,0 +1,9 @@
+{
+  "completed": 16,
+  "planned": 16,
+  "candidates": 5,
+  "child_cpu_seconds": 835.0395199999999,
+  "wall_seconds": 921.0056319590658,
+  "unstarted_jobs": [],
+  "finished_at": "2026-10-20T13:30:57.278917+00:00"
+}

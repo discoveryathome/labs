@@ -1,0 +1,45 @@
+{
+  "card": "heldout-tabu",
+  "catalog_revision": 1,
+  "scope": "Segmented 60-minute-budget LOCAL donor trial: frozen tabu comparison plus preregistered structured transfer into 95 audited open lengths and bounded refinement.",
+  "scope_status": "changed",
+  "scope_change_reason": "The held-out comparison did not show a general improvement. An explicitly preregistered, separately claimed neighboring-length transfer experiment yielded five exact-checked frontier improvements. User interruption required two charged time segments.",
+  "budget_minutes": 60,
+  "outcome": "positive",
+  "evidence_level": "author-checked",
+  "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+  "not_checked": [
+    "Independent scientific or novelty review",
+    "Complete coverage of unpublished and poorly indexed records",
+    "Global optimality of any candidate",
+    "A fresh donor agent's orientation experience",
+    "Sustainable improvement rate after these five candidates are incorporated",
+    "All possible symmetry orientations or multistep transformation paths"
+  ],
+  "next_questions": [
+    {
+      "question": "Do the five candidate records survive independent arithmetic, source and novelty review?",
+      "why_it_matters": "A strictly better certificate is not yet an independently accepted record.",
+      "first_step": "Run check_candidate.py --n 119, then all five rows in candidate-table.json; challenge current benchmark coverage.",
+      "blocked_by": "No independent reviewer or consenting maintainer assigned."
+    },
+    {
+      "question": "Can a fresh contributor beat the updated provisional thresholds using alternating-sign orientations or two-edit paths?",
+      "why_it_matters": "The pilot consumed this particular pocket of easy results; launch suitability depends on useful remaining work.",
+      "first_step": "Read candidate-table.json and transfer-plan.json; preregister a new transformation scope and compare against both published and pending best E.",
+      "blocked_by": "Not yet tested; no technical blocker."
+    },
+    {
+      "question": "Does the apparent N=99 algorithm advantage survive another prespecified independent seed set?",
+      "why_it_matters": "The overall 32-pair result was neutral; selecting a favorable length afterwards is exploratory.",
+      "first_step": "Freeze N=99, fresh seeds and equal budgets; compare the unchanged baseline and population variant without retuning.",
+      "blocked_by": "Lower priority than candidate review and structured transfer."
+    }
+  ],
+  "credit": [
+    "Published parent witnesses: Zhang, Shen, Kumar and Pistoia; P\u0161eni\u010dnik, Bo\u0161kovi\u0107, Popi\u010d and Brest.",
+    "Endpoint transformations are established methods, including prior work by Dimitrov.",
+    "Codex: AI-assisted local experiments, implementation, source audit and author checks."
+  ],
+  "ai_assistance": "Same Codex agent as pilot author; no subagents or independent human review."
+}

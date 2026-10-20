@@ -1,0 +1,37 @@
+[
+  {
+    "file": "memetic-abs.html",
+    "url": "https://arxiv.org/abs/2504.00987",
+    "sha256": "51dd46843ebba04b8dc03bd4a28308f440c4af54efe712137a8205f486f0ed66",
+    "retrieved_at": "2026-10-20T13:18:44.953405+00:00",
+    "same_as_original": null
+  },
+  {
+    "file": "partition-abs.html",
+    "url": "https://arxiv.org/abs/2607.09688",
+    "sha256": "c14c75eae85c1e30dcedf2fc98aa5295188e681aef1f15020b5e4e7c45c4420c",
+    "retrieved_at": "2026-10-20T13:18:44.953519+00:00",
+    "same_as_original": null
+  },
+  {
+    "file": "memetic-refreshed.html",
+    "url": "https://arxiv.org/html/2504.00987v2",
+    "sha256": "54ffdfab186b6f44d92511c72001936cb09ea63d6d402ef3dd6f10d27d126476",
+    "retrieved_at": "2026-10-20T13:18:44.944575+00:00",
+    "same_as_original": true
+  },
+  {
+    "file": "partition-refreshed.html",
+    "url": "https://arxiv.org/html/2607.09688v1",
+    "sha256": "45d15a14fdfc0cee150b8f94dca0edea7d8dcad0c0340d553a60276504cec31d",
+    "retrieved_at": "2026-10-20T13:18:44.952335+00:00",
+    "same_as_original": true
+  },
+  {
+    "file": "dual-refreshed.html",
+    "url": "https://arxiv.org/html/2409.07222v1",
+    "sha256": "8fc9fc7d6ad7562ddcbd3783be816165c9fa5f812338d85b314196d56b30dd10",
+    "retrieved_at": "2026-10-20T13:18:45.035690+00:00",
+    "same_as_original": true
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "groups": 396,
+  "generated_sequences": 225791,
+  "exhausted": true,
+  "candidate_orbits": 8,
+  "cpu_seconds": 30.289413,
+  "wall_seconds": 30.34223850001581,
+  "finished_at": "2026-10-20T13:15:36.212837+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "profile": "exact-certificate",
+  "working_directory": "repository root",
+  "network_required": false,
+  "prerequisites": [
+    "Python >=3.10 standard library",
+    "C++17 compiler for trajectory replay"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "make",
+        "check"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_results.py"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "c++",
+        "-O3",
+        "-std=c++17",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "research/donor-60m-20261020/search.cpp",
+        "-o",
+        "build/donor-search"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "./build/donor-search",
+        "--self-test"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "python3",
+        "research/donor-60m-20261020/check.py"
+      ],
+      "timeout_seconds": 180
+    }
+  ],
+  "sample_replay": {
+    "argv": [
+      "python3",
+      "research/donor-60m-20261020/check.py",
+      "--replay",
+      "sample"
+    ],
+    "timeout_seconds": 600,
+    "expected": "All certificates and eight predetermined trajectories match; timings may differ"
+  },
+  "full_replay": {
+    "argv": [
+      "python3",
+      "research/donor-60m-20261020/check.py",
+      "--replay",
+      "all"
+    ],
+    "timeout_seconds": 3600,
+    "expected": "All 136 planned search trajectories and 225791 generated transfer sequences recomputed; no historical phase deadlines apply"
+  },
+  "review_status": "author-checked; independent novelty review pending"
+}

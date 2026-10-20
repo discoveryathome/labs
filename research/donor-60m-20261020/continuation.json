@@ -1,0 +1,10 @@
+{
+  "resumed_at": "2026-10-20T13:04:13Z",
+  "original_deadline": "2026-10-20T07:25:21Z",
+  "background_finished_at": "2026-10-20T06:36:54.818652Z",
+  "charged_first_segment_seconds": 693.818652,
+  "remaining_seconds": 2906.181348,
+  "continuation_deadline": "2026-10-20T13:52:39Z",
+  "search_stop_at": "2026-10-20T13:37:39Z",
+  "reason": "User interrupted then explicitly asked to continue; session is segmented, not an uninterrupted wall-clock trial."
+}

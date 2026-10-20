@@ -1,0 +1,327 @@
+{
+  "name": "calibration",
+  "stop_at": "2026-10-20T06:40:21Z",
+  "timeout_seconds": 45,
+  "jobs": [
+    {
+      "N": 99,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692672,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692671,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "iterated",
+      "stagnation": 4,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "population",
+      "stagnation": 12,
+      "start": "random"
+    },
+    {
+      "N": 119,
+      "seed": 3849692674,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    },
+    {
+      "N": 99,
+      "seed": 3849692673,
+      "budget": 10000000,
+      "method": "tabu",
+      "stagnation": 0,
+      "start": "random"
+    }
+  ]
+}

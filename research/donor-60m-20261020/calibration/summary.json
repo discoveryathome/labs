@@ -1,0 +1,15 @@
+{
+  "completed": 40,
+  "planned": 40,
+  "statuses": {
+    "ok": 40,
+    "failed": 0,
+    "timeout": 0,
+    "error": 0
+  },
+  "candidates": 0,
+  "total_child_cpu_seconds": 90.410834,
+  "wall_seconds": 405.4108518330613,
+  "finish": "2026-10-20T06:36:54.818652+00:00",
+  "unstarted_jobs": []
+}

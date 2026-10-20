@@ -1,0 +1,11 @@
+{
+  "v": 0,
+  "kind": "claim",
+  "task": "heldout-tabu",
+  "scope": "N=92,99,107,119; baseline tabu versus iterated/population tabu; random and published initialization; calibration seeds 3849692671..3849692674, held-out seeds 3849692701..3849692708; up to 300 million neighbor evaluations per run; single-agent 60-minute LOCAL session. Resumed after interruption; at most 60 minutes across two charged segments.",
+  "base": "033dc75d8c6a6469613a3ffead1d5bfe8ad397d2",
+  "posted_at": "2026-10-20T13:04:51.806673+00:00",
+  "expires": "2026-10-20T13:52:39Z",
+  "evidence_level": "local-only",
+  "scope_status": "refined"
+}

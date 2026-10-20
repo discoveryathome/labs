@@ -6,7 +6,10 @@ Merit factor `F=N²/(2E)` is a secondary presentation metric. Smaller integer E 
 
 This is a local research proposal. No remote repository, pushes, hub application,
 or donor launch is configured. **No maintainer has agreed to review submissions.**
-See [the launch assessment](docs/ASSESSMENT.md) for measured outcomes and the recommendation.
+See the [donor-session follow-up](research/donor-60m-20261020/README.md) for the
+latest evidence: five exact-checked candidate improvements from endpoint edits,
+pending independent novelty review. The [initial sweep assessment](docs/ASSESSMENT.md)
+records the earlier unsuccessful baseline experiment.
 
 The authoritative [frontier](discover/frontier.json) indexes
 [160 lengths](data/frontier.json): N=2–66, sixteen recent medium-length cases,
