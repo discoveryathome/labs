@@ -1,11 +1,13 @@
-# LABS: a local Discovery@Home pilot
+# LABS: a Discovery@Home research pilot
 
 Find sequences `s[i] ∈ {-1,+1}` minimizing the **aperiodic** energy
 `E = Σ(k=1..N-1) (Σ(i=0..N-k-1) s[i]s[i+k])²`.
 Merit factor `F=N²/(2E)` is a secondary presentation metric. Smaller integer E wins.
 
-This is a local research proposal. No remote repository, pushes, hub application,
-or donor launch is configured. **No maintainer has agreed to review submissions.**
+This is a public incubation proposal at
+[discoveryathome/labs](https://github.com/discoveryathome/labs), proposed for the
+Discovery@Home hub catalogue. **Donor intake is paused: no scientific maintainer
+has agreed to review submissions.** See [publication status](docs/PUBLICATION.md).
 See the [donor-session follow-up](research/donor-60m-20261020/README.md) for the
 latest evidence: five exact-checked candidate improvements from endpoint edits,
 pending independent novelty review. The [initial sweep assessment](docs/ASSESSMENT.md)

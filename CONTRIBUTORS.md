@@ -1,6 +1,7 @@
 # Credit
 
-The requesting user defined the objective and local-only scope. Codex implemented
+The requesting user defined the objective, initially requested local-only work,
+and subsequently authorized GitHub publication and a hub catalogue PR. Codex implemented
 and checked the pilot with AI assistance. No consenting scientific maintainer or
 independent reviewer has been designated.
 

@@ -71,7 +71,7 @@ restriction, not a valid reduction of the unrestricted optimization problem.
 verification 25, algorithm measurement 10, and structured refinement 50.
 `discover/priority-log.md` explains and dates the weights. The seeded local picker
 prints active claims and unresolved handoffs; it does not lock work. Separate
-checkouts do not share live state, so this local pilot is not ready for a swarm.
+checkouts do not share live state, so this incubation pilot is not ready for a swarm.
 
 Do not repeat completed verification merely to generate a contribution.
 Existing checks on each card explain what remains. A source audit must compare
@@ -89,8 +89,11 @@ run by the author remains **author-checked**.
 
 No person has agreed to maintain this project and review capacity is unknown.
 The manifest's `UNASSIGNED` slot is an explicit vacancy, not an appointed person.
-Review is paused, no hub consent is granted, and this repository is a local
-proposal. Before launch, name a consenting maintainer and their reviews/week,
+Review and donor intake are paused. The owner has authorized publication and a
+hub catalogue nomination; this does not appoint a scientific maintainer or certify
+readiness. The empty manifest `hubs` array permits nomination without claiming
+maintainer consent to a donor launcher. See `docs/PUBLICATION.md`.
+Before launch, name a consenting maintainer and their reviews/week,
 confirm licensing/credit, and establish shared coordination. Review capacity will
 limit intake even if exact checking is automated.
 

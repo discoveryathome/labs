@@ -1,7 +1,7 @@
 {
   "schema": "discover/v0",
-  "title": "Low-Autocorrelation Binary Sequences — local pilot",
-  "summary": "Exact witness verification and bounded search against audited 2025–2026 LABS energy constructions. Local proposal; maintainer unassigned.",
+  "title": "Low-Autocorrelation Binary Sequences (LABS)",
+  "summary": "Exact witness verification and structured search against audited 2025–2026 LABS energy constructions. Five pending record candidates; scientific review and donor intake paused.",
   "domains": [
     "mathematics",
     "algorithms",
@@ -13,7 +13,7 @@
       "name": "UNASSIGNED — vacancy, no consenting maintainer"
     }
   ],
-  "canonical_repo": "urn:discoveryathome:local:labs-pilot",
+  "canonical_repo": "https://github.com/discoveryathome/labs",
   "entry": {
     "agents": "AGENTS.md",
     "project": "DISCOVERY.md",
@@ -42,13 +42,7 @@
     ]
   },
   "verification_profile": "exact-certificate",
-  "hubs": [
-    {
-      "hub": "*",
-      "list": false,
-      "push": []
-    }
-  ],
+  "hubs": [],
   "credit": {
     "policy": "Credit original witness authors per row; credit contributors and AI assistance in result packages and CONTRIBUTORS.md. No authorship promise.",
     "kinds": [
@@ -58,7 +52,7 @@
   },
   "review": {
     "paused": true,
-    "note": "No maintainer has consented; local proposal only, no review capacity declared."
+    "note": "Public incubation proposal. No scientific maintainer has consented and no review capacity is declared; donor intake remains paused."
   },
   "picker": {
     "command": [
