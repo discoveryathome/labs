@@ -1,0 +1,60 @@
+Fresh local clone author-check; not independent scientific review.
+UTC 2026-10-20T06:13:56.969324+00:00
+commit 9eff230735bdab8f2bd356bb54c31dbdfc882833
+$ make check
+mkdir -p build
+c++ -O3 -std=c++17 -Wall -Wextra -pedantic src/search.cpp -o build/search
+python3 -m unittest discover -s tests -v
+test_exhaustive (test_verify.VerifyTests.test_exhaustive) ... ok
+test_independent_and_symmetries (test_verify.VerifyTests.test_independent_and_symmetries) ... ok
+test_known (test_verify.VerifyTests.test_known) ... ok
+test_rejection (test_verify.VerifyTests.test_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.296s
+
+OK
+./build/search --self-test
+PASS: incremental deltas and updates N=2..128
+python3 scripts/check_frontier.py
+PSL control N=2047 E=433843 F=4190209/867686 PSL=32
+PASS: 160 frontier rows; 221 comparison witnesses checked
+
+exit=0
+$ python3 scripts/import_sources.py --check
+Imported 319 witnesses; 160 frontier lengths
+
+exit=0
+$ python3 scripts/independent_check.py
+PASS: independent XOR/popcount checked 479 certificates
+
+exit=0
+$ python3 scripts/check_package.py
+PASS: 12 pinned package inputs and config
+
+exit=0
+$ python3 scripts/check_search.py
+PASS: deterministic A/A and exact search checks
+
+exit=0
+$ python3 scripts/report.py --check
+PASS: assessment agrees with archived results
+
+exit=0
+$ python3 ../session-tools/discover.pyz validate .
+.: conformant: the required files are present and valid
+  frontier table: 160 cases, 95 open
+  conventions followed: weighted task catalogue, priority log, frontier `reproduce` check, review ledger, result packages
+  convention not followed: coordination channel: manifest has no `coordination` channel
+  Conventions are recommended, not required. The stage comes from a hub assessment of
+  the five properties (spec §3), not from this check.
+
+exit=0
+$ python3 scripts/check_results.py --replay
+make: Nothing to be done for `build'.
+PASS: 160 result certificates; 0 distinct frontier improvements; all trajectories replayed
+
+exit=0
+
+Completed UTC 2026-10-20T06:19:09.498300+00:00
+All checks passed. This receipt is the only change after the checked commit.
