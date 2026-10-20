@@ -1,0 +1,135 @@
+Local author-check log 2026-10-20T06:13:31.510851+00:00
+
+$ make check
+python3 -m unittest discover -s tests -v
+test_exhaustive (test_verify.VerifyTests.test_exhaustive) ... ok
+test_independent_and_symmetries (test_verify.VerifyTests.test_independent_and_symmetries) ... ok
+test_known (test_verify.VerifyTests.test_known) ... ok
+test_rejection (test_verify.VerifyTests.test_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.702s
+
+OK
+./build/search --self-test
+PASS: incremental deltas and updates N=2..128
+python3 scripts/check_frontier.py
+PSL control N=2047 E=433843 F=4190209/867686 PSL=32
+PASS: 160 frontier rows; 221 comparison witnesses checked
+
+exit=0
+$ python3 scripts/check_results.py
+PASS: 160 result certificates; 0 distinct frontier improvements
+
+exit=0
+$ python3 scripts/check_package.py
+PASS: 12 pinned package inputs and config
+
+exit=0
+$ python3 scripts/report.py --check
+PASS: assessment agrees with archived results
+
+exit=0
+$ python3 ../session-tools/discover.pyz validate .
+.: conformant: the required files are present and valid
+  frontier table: 160 cases, 95 open
+  conventions followed: weighted task catalogue, priority log, frontier `reproduce` check, review ledger, result packages
+  convention not followed: coordination channel: manifest has no `coordination` channel
+  Conventions are recommended, not required. The stage comes from a hub assessment of
+  the five properties (spec §3), not from this check.
+
+exit=0
+$ python3 ../session-tools/discover.pyz screen .
+Screen of .: 12 finding(s), 0 high.
+- [info] hidden-text data/sources/2026.html: 54 hidden-text lines in this file in all
+- [info] hidden-text data/sources/2026.html:281: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <td class="ltx_eqn_cell ltx_align_center"><math id="Sx1.E1.m1" class="ltx_Math" alttext="C_{k}(S)=\sum_{i=1}^{L-k}s_{i}s_{i+k},\quad k\in\{1,\dots,L\}." display
+- [info] hidden-text data/sources/2026.txt: 290 hidden-text lines in this file in all
+- [info] hidden-text data/sources/2026.txt:239: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <U+200B>
+- [info] hidden-text data/sources/dual-step.html: 41 hidden-text lines in this file in all
+- [info] hidden-text data/sources/dual-step.html:288: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <p id="S1.p2.1" class="ltx_p">A binary sequence of length <math id="S1.p2.m1" class="ltx_Math" alttext="L" display="inline" intent=":literal"><semantics><mi>L</
+- [info] hidden-text data/sources/memetic2025.html: 42 hidden-text lines in this file in all
+- [info] hidden-text data/sources/memetic2025.html:299: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <p id="S1.I1.i1.p1.1" class="ltx_p">A delicate design of a two-level (<math id="S1.I1.i1.p1.m1" class="ltx_Math" alttext="block" display="inline" intent=":liter
+- [info] hidden-text data/sources/optimal.html: 62 hidden-text lines in this file in all
+- [info] hidden-text data/sources/optimal.html:239: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    optimal sequences of length <math id="abstract1.m1" class="ltx_Math" alttext="N" display="inline" intent=":literal"><semantics><mi>N</mi><annotation encoding="a
+- [info] hidden-text data/sources/optimal.txt: 128 hidden-text lines in this file in all
+- [info] hidden-text data/sources/optimal.txt:116: zero-width characters (common in generated HTML; in a file agents read first, look closer)
+    <U+200B>
+
+exit=0
+Card refresh-frontier expected: Imported 319 witnesses; 160 frontier lengths
+$ python3 scripts/import_sources.py --check
+Imported 319 witnesses; 160 frontier lengths
+
+exit=0
+Card audit-verifier expected: PASS: independent XOR/popcount checked 479 certificates
+$ python3 scripts/independent_check.py
+PASS: independent XOR/popcount checked 479 certificates
+
+exit=0
+Card heldout-tabu expected: PASS: deterministic A/A and exact search checks
+$ python3 scripts/check_search.py
+PASS: deterministic A/A and exact search checks
+
+exit=0
+Card published-refinement expected: PASS: 1 frontier rows
+$ python3 scripts/check_frontier.py --n 451
+PASS: 1 frontier rows; 2 comparison witnesses checked
+
+exit=0
+Per-row sample seed=747074d99d49ea10a539eaa6740bbde9; lengths=[110, 479, 472]
+$ python3 scripts/check_frontier.py --n 110
+PASS: 1 frontier rows; 1 comparison witnesses checked
+
+exit=0
+$ python3 scripts/check_frontier.py --n 479
+PASS: 1 frontier rows; 2 comparison witnesses checked
+
+exit=0
+$ python3 scripts/check_frontier.py --n 472
+PASS: 1 frontier rows; 1 comparison witnesses checked
+
+exit=0
+$ python3 scripts/pick.py --seed 0123456789abcdef0123456789abcdef
+{
+  "seed": "0123456789abcdef0123456789abcdef",
+  "track": "verification",
+  "task": "audit-verifier",
+  "suggested_length": 573,
+  "run_seed": 2309737967,
+  "first_step": {
+    "command": [
+      "python3",
+      "scripts/independent_check.py"
+    ],
+    "expected": "PASS: independent XOR/popcount checked 479 certificates"
+  },
+  "live_claims": [],
+  "open_handoffs": [
+    {
+      "v": 0,
+      "kind": "handoff",
+      "id": "local:labs-independent-review-1",
+      "task": "audit-verifier",
+      "scope": "Independent review of the pinned LABS frontier and checker; no remote posting.",
+      "base": "a24185a422a60de274479f71826aaff3f83da5d5",
+      "posted_at": "2026-10-20T06:12:55.551188Z",
+      "evidence_level": "local-only",
+      "request": {
+        "question": "Can a reviewer independently confirm the witness pipeline and source scopes?",
+        "first_step": "Run make check and python3 scripts/import_sources.py --check from a fresh local clone.",
+        "success_test": "Both exact checkers pass; provenance and source encodings audited; limitations recorded in a verification file.",
+        "track": "verification",
+        "est_minutes": 15
+      }
+    }
+  ],
+  "mode": "LOCAL; inspect overlaps before working"
+}
+
+exit=0
+PASS: manifest/frontier/catalog/package/messages validate against current pinned schema files

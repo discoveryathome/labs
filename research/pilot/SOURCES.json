@@ -1,0 +1,71 @@
+{
+  "base_commit": "a24185a422a60de274479f71826aaff3f83da5d5",
+  "note": "Base is the local implementation commit. This result package is a later commit; SHA-256 and Git blob IDs identify exact live inputs.",
+  "files": [
+    {
+      "path": "src/verify.py",
+      "sha256": "469ca1fd30511cd3799ef2ef98f662820e171c59d22cf252365c349950603272",
+      "git_blob": "359a03845b7c88f023a7b9623847adb62a2d1d38"
+    },
+    {
+      "path": "src/search.cpp",
+      "sha256": "30b424adc8826d432acba79f0ad34aee11ae227c4fccf613cb3b2158a4336f3a",
+      "git_blob": "19605c685e500896ea536f197be3779699a7a571"
+    },
+    {
+      "path": "scripts/experiment.py",
+      "sha256": "e84d8747618f4fa3df6b5cb2b80ec861beb55ca8d48a9990e49e14f94c6027e6",
+      "git_blob": "0de07a58955ddcf55b8366f26d1cfa598b267713"
+    },
+    {
+      "path": "scripts/import_sources.py",
+      "sha256": "5f46662dc8ec0e9e8239b168e740034ae66db5c8882a8d8bee7102be90aa40cc",
+      "git_blob": "3391d2de7ad11ac7dc304356f2532ee4a7dea2e1"
+    },
+    {
+      "path": "scripts/independent_check.py",
+      "sha256": "af6f626f2408e522dee8abff8da0a67fdef0576e51dc7c6d2d36ba704210cdeb",
+      "git_blob": "372d88bf00af10b3ec69374f8a3cc68cbfa5805c"
+    },
+    {
+      "path": "data/frontier.json",
+      "sha256": "2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738",
+      "git_blob": "30942979d3f24cb6517cea05d04a61ea809c60a2"
+    },
+    {
+      "path": "data/published.json",
+      "sha256": "74ad2ff1d53f882f6c584a96ffb6e5baab45a04c94371340153d54b676205038",
+      "git_blob": "5cbb01c6819b8e1ae7adb2a8a7b3dbfa6d7ceb9c"
+    },
+    {
+      "path": "data/sources/manifest.json",
+      "sha256": "c1043100997f24f4854e8e45e39c5798f9106c466797a90106346f69b6910b96",
+      "git_blob": "8a6757326cb00209ebbd0ded578ebf8f36c704e0"
+    },
+    {
+      "path": "research/pilot/config.json",
+      "sha256": "303195cb32a23a8906fcb165e7a4a9f4032551cc240673092523f036d1bf28f5",
+      "git_blob": "a7c80bcc13d8824188c4dc803b07ff6858b3a35f"
+    },
+    {
+      "path": "research/pilot/results/runs.jsonl",
+      "sha256": "623f3b31ba3ad3454bb1019496c95b2984b97984f0725d702c1cca7e3a86d35e",
+      "git_blob": "d82f0a84329e3c9c62a1d438847fb7ba6ac0fa0c"
+    },
+    {
+      "path": "research/pilot/results/summary.json",
+      "sha256": "f5c39862bc2a54081b3c4f6474808915cbd6a5dbafaea984aa3d3b10292867e6",
+      "git_blob": "e9f4e791e3d07ff94a2a02b869a0562faf202779"
+    },
+    {
+      "path": "research/pilot/results/environment.json",
+      "sha256": "0974e51d8050b9ce8c5d75cc3bb39977fb5cf0c4a54a46b6e17d7481786e8483",
+      "git_blob": "5bfb6da8038dc2f1386c5500f93bd6f3d3440bb6"
+    }
+  ],
+  "upstream": {
+    "borkob/git_labs": "1aa123407636e48630174e0bf122037e369c1d68",
+    "J-Brest/LABS": "4232311cb4f3626ab008336f6069cd5af5e3915b",
+    "discoveryathome/discover": "90b619582ffecfe953fef520c90916bc6422bf18"
+  }
+}

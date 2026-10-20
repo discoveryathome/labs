@@ -1,0 +1,86 @@
+{
+  "profile": "exact-certificate",
+  "working_directory": "repository root",
+  "prerequisites": [
+    "Python >=3.10, standard library only",
+    "C++17 compiler and make for search replay"
+  ],
+  "network_required": false,
+  "commands": [
+    {
+      "argv": [
+        "make",
+        "check"
+      ],
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/import_sources.py",
+        "--check"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/independent_check.py"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_results.py"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_search.py"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/report.py",
+        "--check"
+      ],
+      "timeout_seconds": 60
+    },
+    {
+      "argv": [
+        "python3",
+        "scripts/check_package.py"
+      ],
+      "timeout_seconds": 60
+    }
+  ],
+  "full_replay": {
+    "argv": [
+      "python3",
+      "scripts/check_results.py",
+      "--replay"
+    ],
+    "timeout_seconds": 900,
+    "expected": "160 deterministic search trajectories match; recorded timings need not match"
+  },
+  "inputs": [
+    "src/verify.py",
+    "src/search.cpp",
+    "scripts/experiment.py",
+    "scripts/import_sources.py",
+    "scripts/independent_check.py",
+    "data/frontier.json",
+    "data/published.json",
+    "data/sources/manifest.json",
+    "research/pilot/config.json",
+    "research/pilot/results/runs.jsonl",
+    "research/pilot/results/summary.json",
+    "research/pilot/results/environment.json"
+  ],
+  "dependency_pins": "No external libraries. Compiler and platform are recorded in results/environment.json; protocol/PIN.json pins the protocol and helper."
+}

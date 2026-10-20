@@ -9,6 +9,7 @@ make check
 python3 scripts/import_sources.py --check
 python3 scripts/independent_check.py
 python3 scripts/check_results.py
+python3 scripts/check_package.py
 ```
 
 `src/verify.py` directly forms every C(k) with Python arbitrary-precision integers.
@@ -21,6 +22,7 @@ python3 src/verify.py --sequence +++++--++-+-+
 python3 src/verify.py --file data/witnesses/99.json
 python3 scripts/check_frontier.py --n 99
 python3 scripts/independent_check.py --file data/witnesses/99.json
+python3 scripts/compare_candidate.py data/witnesses/99.json
 ```
 
 The first command must give N=13, E=6, F=169/12. A certificate with that sequence

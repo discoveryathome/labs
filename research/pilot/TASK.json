@@ -1,0 +1,33 @@
+{
+  "card": "none",
+  "catalog_revision": 1,
+  "scope": "Initialize a LOCAL LABS pilot; audit sources, exact checks and bounded seeded experiments at eight lengths.",
+  "scope_status": "unchanged",
+  "outcome": "negative",
+  "evidence_level": "author-checked",
+  "not_checked": [
+    "Global optimality beyond the small exhaustive controls",
+    "Completeness of all published or unpublished LABS records",
+    "Published GPU solver speed or state-of-the-art algorithm superiority",
+    "Independent scientific review"
+  ],
+  "next_questions": [
+    {
+      "question": "Can a reviewed stronger unrestricted solver improve held-out near-frontier hit rates at N=92,99,107,119?",
+      "why_it_matters": "Elementary baselines do not reach current published scores.",
+      "first_step": "python3 scripts/check_search.py; then preregister fresh seeds and equal-compute comparisons.",
+      "blocked_by": "No demonstrated stronger CPU baseline in this pilot."
+    },
+    {
+      "question": "Can an independent researcher validate the current witness and encoding pipeline?",
+      "why_it_matters": "Author-written dual checks are not independent review.",
+      "first_step": "Follow docs/VERIFY.md from a fresh clone and record a verification.",
+      "blocked_by": "A consenting independent reviewer and maintainer are not yet assigned."
+    }
+  ],
+  "credit": [
+    "Published witness authors credited per row",
+    "Codex: AI-assisted implementation and author checks"
+  ],
+  "ai_assistance": "Pilot initialized by Codex at user direction; no external human review claimed."
+}

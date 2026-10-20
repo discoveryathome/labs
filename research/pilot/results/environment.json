@@ -1,0 +1,58 @@
+{
+  "config": {
+    "lengths": [
+      92,
+      99,
+      107,
+      119,
+      450,
+      451,
+      518,
+      573
+    ],
+    "seeds": [
+      11,
+      29,
+      47,
+      71,
+      101
+    ],
+    "arms": [
+      [
+        "hill",
+        "random"
+      ],
+      [
+        "tabu",
+        "random"
+      ],
+      [
+        "hill",
+        "published"
+      ],
+      [
+        "tabu",
+        "published"
+      ]
+    ],
+    "evaluations": 2000000,
+    "order_seed": 20261020,
+    "run_timeout_seconds": 60
+  },
+  "config_sha256": "303195cb32a23a8906fcb165e7a4a9f4032551cc240673092523f036d1bf28f5",
+  "started_at": "2026-10-20T06:07:42.772983+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "cpu_count": 8,
+  "load_average_start": [
+    31.640625,
+    22.185546875,
+    17.2880859375
+  ],
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "compiler_flags": "-O3 -std=c++17 -Wall -Wextra -pedantic",
+  "source_sha256": "30b424adc8826d432acba79f0ad34aee11ae227c4fccf613cb3b2158a4336f3a",
+  "binary_sha256": "c675caed0b11f53b03d1771540c88d26217fe700da74417ef0572f1b96f40d80",
+  "frontier_sha256": "2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738"
+}
