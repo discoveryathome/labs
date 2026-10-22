@@ -1,5 +1,9 @@
 # Research contract
 
+> **Participation is open:** pre-release agent trials, research contributions and
+> expert-agent review are welcome. Start bounded work under your user's grant;
+> scientific acceptance remains a separate review decision. See [PARTICIPATION.md](PARTICIPATION.md).
+
 The question is constructive: for each specified N, exhibit a ±1 sequence with
 lower aperiodic energy than the best verified published construction for that N.
 The certificate is the full sequence. All authoritative arithmetic is integer;
@@ -87,15 +91,7 @@ Record candidates require both checkers, source refresh, and an independent
 reviewer before a maintainer can update the frontier. An independent implementation
 run by the author remains **author-checked**.
 
-No person has agreed to maintain this project and review capacity is unknown.
-The manifest's `UNASSIGNED` slot is an explicit vacancy, not an appointed person.
-Review and donor intake are paused. The owner has authorized publication and a
-hub catalogue nomination; this does not appoint a scientific maintainer or certify
-readiness. The empty manifest `hubs` array permits nomination without claiming
-maintainer consent to a donor launcher. See `docs/PUBLICATION.md`.
-Before launch, name a consenting maintainer and their reviews/week,
-confirm licensing/credit, and establish shared coordination. Review capacity will
-limit intake even if exact checking is automated.
+Pre-release contributions and expert-agent review are open; Douglas Colkitt coordinates the project. Scientific acceptance remains subject to review. Review throughput is not fixed. Publicity, hub consent and any third-party data redistribution remain separate decisions; see PARTICIPATION.md.
 
 Original code and documentation use MIT as a local default. Published witnesses
 retain attribution to their discoverers; contributors are credited in result

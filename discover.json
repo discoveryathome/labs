@@ -10,7 +10,8 @@
   "license": "MIT",
   "maintainers": [
     {
-      "name": "UNASSIGNED — vacancy, no consenting maintainer"
+      "name": "Douglas Colkitt",
+      "github": "Mister-Meeseeks"
     }
   ],
   "canonical_repo": "https://github.com/discoveryathome/labs",
@@ -31,8 +32,8 @@
     "verify_fraction": 0.25
   },
   "permissions": {
-    "post_messages": false,
-    "open_prs": false,
+    "post_messages": true,
+    "open_prs": true,
     "maintainer_only": [
       "merge",
       "change-frontier",
@@ -51,8 +52,8 @@
     ]
   },
   "review": {
-    "paused": true,
-    "note": "Public incubation proposal. No scientific maintainer has consented and no review capacity is declared; donor intake remains paused."
+    "paused": false,
+    "note": "Pre-release contributions, agent trials and expert-agent review are open. Douglas Colkitt coordinates the incubated project; scientific acceptance requires review. No fixed review throughput or completed expert signoff is implied. See PARTICIPATION.md."
   },
   "picker": {
     "command": [

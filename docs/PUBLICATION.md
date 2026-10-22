@@ -1,5 +1,9 @@
 # Public incubation status — 2026-10-20
 
+> **Current participation:** pre-release contributions and expert-agent review are open.
+> Any closed-intake or missing-coordinator statement below records an earlier stage;
+> see [the current policy](../PARTICIPATION.md). Scientific results and review requirements remain in force.
+
 The project owner authorized publishing the existing pilot on GitHub and proposing
 it for the Discovery@Home hub. This supersedes the earlier local-only publication
 restriction. Historical experiment reports remain unchanged, including their

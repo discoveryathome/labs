@@ -1,0 +1,85 @@
+{
+  "schema": "discover-frontier/v0",
+  "statement": "Verified published constructions for 160 selected lengths: N=2..66, sixteen lengths in 92..120, N=450..527, and N=573. Each row is the minimum integer energy among imported witnesses. Optimality for N<=66 is reported by the literature, not re-proved here.",
+  "status": "LOCAL proposal; literature constructions reproduced; no maintainer acceptance",
+  "evidence_level": [
+    "author-checked"
+  ],
+  "claim_kind": [
+    "exact"
+  ],
+  "scope": "Unrestricted aperiodic binary energy. Historical skew-only values are not unrestricted lower bounds. Full sequence scores are checked; completeness of current literature and historical optimality proofs are outside the arithmetic check.",
+  "review": "docs/ASSESSMENT.md",
+  "updated_on": "2026-10-20",
+  "table": {
+    "path": "data/frontier.json",
+    "format": "json",
+    "key": [
+      "N"
+    ],
+    "value": "E",
+    "direction": "lower-is-better",
+    "bound": "bound",
+    "object": "object",
+    "check_row": [
+      "python3",
+      "scripts/check_frontier.py",
+      "--n",
+      "{N}"
+    ],
+    "check_row_minutes": 1,
+    "by": "by",
+    "source": "source",
+    "updated": "updated"
+  },
+  "assumptions": [
+    {
+      "id": "literature-coverage",
+      "statement": "No stronger public witness at these lengths was found by this dated audit; refresh sources before any novelty claim.",
+      "status": "partial",
+      "link": "docs/LITERATURE.md"
+    },
+    {
+      "id": "historical-optimality",
+      "statement": "N<=66 optimality labels rely on published exhaustive-search results; this pilot enumerates only N<=16.",
+      "status": "partial",
+      "link": "https://arxiv.org/html/1512.02475"
+    }
+  ],
+  "sources": [
+    "https://arxiv.org/html/2607.09688v1",
+    "https://arxiv.org/html/1512.02475",
+    "https://raw.githubusercontent.com/borkob/git_labs/1aa123407636e48630174e0bf122037e369c1d68/results-2018/2018-labs-skew.txt",
+    "https://raw.githubusercontent.com/borkob/git_labs/1aa123407636e48630174e0bf122037e369c1d68/results-2016/2004-Knauer-original.txt",
+    "https://raw.githubusercontent.com/J-Brest/LABS/4232311cb4f3626ab008336f6069cd5af5e3915b/PSL/rezL2047-PSL32.seq",
+    "https://arxiv.org/html/2409.07222v1",
+    "https://arxiv.org/html/2504.00987v2"
+  ],
+  "artifacts": [
+    {
+      "path": "data/frontier.json",
+      "sha256": "2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738",
+      "role": "audited comparison data"
+    },
+    {
+      "path": "data/published.json",
+      "sha256": "74ad2ff1d53f882f6c584a96ffb6e5baab45a04c94371340153d54b676205038",
+      "role": "audited comparison data"
+    },
+    {
+      "path": "data/sources/manifest.json",
+      "sha256": "c1043100997f24f4854e8e45e39c5798f9106c466797a90106346f69b6910b96",
+      "role": "audited comparison data"
+    }
+  ],
+  "reproduce": "python3 scripts/import_sources.py --check && python3 scripts/check_frontier.py",
+  "reproduce_minutes": 2,
+  "prerequisites": [
+    "Python 3.10+ (standard library only)"
+  ],
+  "pinned_heads": {
+    "borkob/git_labs": "1aa123407636e48630174e0bf122037e369c1d68",
+    "J-Brest/LABS": "4232311cb4f3626ab008336f6069cd5af5e3915b",
+    "discoveryathome/discover": "90b619582ffecfe953fef520c90916bc6422bf18"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "discover/v0",
+  "title": "Low-Autocorrelation Binary Sequences (LABS)",
+  "summary": "Exact witness verification and structured search against audited 2025–2026 LABS energy constructions. Five pending record candidates; scientific review and donor intake paused.",
+  "domains": [
+    "mathematics",
+    "algorithms",
+    "combinatorial-optimization"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "UNASSIGNED — vacancy, no consenting maintainer"
+    }
+  ],
+  "canonical_repo": "https://github.com/discoveryathome/labs",
+  "entry": {
+    "agents": "AGENTS.md",
+    "project": "DISCOVERY.md",
+    "contributing": "docs/VERIFY.md",
+    "brief": "README.md"
+  },
+  "frontier": "discover/frontier.json",
+  "catalog": "discover/catalog.json",
+  "priority_log": "discover/priority-log.md",
+  "ledger": "discover/ledger.jsonl",
+  "packages": "research/*/",
+  "session": {
+    "default_minutes": 15,
+    "orient_fraction": 0.2,
+    "verify_fraction": 0.25
+  },
+  "permissions": {
+    "post_messages": false,
+    "open_prs": false,
+    "maintainer_only": [
+      "merge",
+      "change-frontier",
+      "remote-creation",
+      "push",
+      "hub-listing"
+    ]
+  },
+  "verification_profile": "exact-certificate",
+  "hubs": [],
+  "credit": {
+    "policy": "Credit original witness authors per row; credit contributors and AI assistance in result packages and CONTRIBUTORS.md. No authorship promise.",
+    "kinds": [
+      "contributors-file",
+      "citation"
+    ]
+  },
+  "review": {
+    "paused": true,
+    "note": "Public incubation proposal. No scientific maintainer has consented and no review capacity is declared; donor intake remains paused."
+  },
+  "picker": {
+    "command": [
+      "python3",
+      "scripts/pick.py",
+      "--seed",
+      "{seed}"
+    ]
+  },
+  "requirements": {
+    "ram_gb": 1,
+    "disk_gb": 1,
+    "note": "Python >=3.10; C++17 and make for solver. No GPU or external Python packages."
+  },
+  "process_changed_on": "2026-10-20"
+}

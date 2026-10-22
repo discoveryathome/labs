@@ -1,0 +1,11 @@
+{
+  "base_commit": "6c56fb9afda258c096a714ac9f89d6ddf487b6cd",
+  "changed_at_first_pass": [
+    "AGENTS.md",
+    "DISCOVERY.md",
+    "README.md",
+    "discover.json",
+    "discover/frontier.json"
+  ],
+  "previous_review_note": "Public incubation proposal. No scientific maintainer has consented and no review capacity is declared; donor intake remains paused."
+}

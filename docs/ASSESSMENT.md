@@ -1,5 +1,9 @@
 # Launch-readiness assessment — 2026-10-20
 
+> **Current participation:** pre-release contributions and expert-agent review are open.
+> Any closed-intake or missing-coordinator statement below records an earlier stage;
+> see [the current policy](../PARTICIPATION.md). Scientific results and review requirements remain in force.
+
 **Recommendation: retain LABS as a local incubation project. Do not launch short
 CPU donations with a promise of mathematical records.** Short sessions can
 productively audit sources, verify candidates, and run disciplined algorithm
