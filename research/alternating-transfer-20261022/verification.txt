@@ -1,0 +1,98 @@
+Author-run verification log, 2026-10-22 UTC
+Base: 1e65ddd66191355ba5fd86b9788d6c02e9329a82
+Seed: 5df0b3ec35686ccb18f43aaee9f741e4
+All commands run without Python -O. Paths below are from repository root.
+Command results are transcribed from captured outputs; timings are measurements.
+
+Static screen before execution:
+337 tracked files, 23 code/build files; no active hooks, symlinks, submodules,
+repository MCP configuration, credential paths or suspicious external execution.
+Used import_sources.py only with --check. No accepted-results files changed.
+
+19:42 UTC, card positive control, exit 0:
+$ python3 research/donor-60m-20261020/check_candidate.py --n 119
+PASS N=119: parent N=120 E=824 via delete_last; published E=787 -> candidate E=771; F=14161/1542. Independent novelty review remains pending.
+
+Before search, new domain controls, exit 0 (0.253 wall seconds):
+$ python3 research/alternating-transfer-20261022/sweep.py --self-check
+PASS: 5112 short edit trials, alternating invariance, and false-energy rejection
+
+Cost probe (scoring only, not included in search denominator):
+573 deletions of an alternating N=573 parent: 0.1852644279715605 seconds.
+Linear estimate at this longest length for 168646 attempts: 54.527233367699466 seconds.
+Logging/checking overhead extra. Remaining budget comfortably exceeded estimate.
+
+19:46 UTC, complete preregistered search, exit 0:
+$ python3 research/alternating-transfer-20261022/sweep.py --output research/alternating-transfer-20261022/results --stop-at 2026-10-22T20:23:00Z
+{"below_published":12,"below_threshold":0,"candidate_orbits":0,"cpu_seconds":46.836951006,"exhausted":true,"finished_at":"2026-10-22T19:46:50.585492+00:00","generated_sequences":168646,"groups":261,"reached_lengths":94,"wall_seconds":47.09872368798824}
+
+19:48 UTC, package verification and full replay, exit 0:
+$ python3 research/alternating-transfer-20261022/check.py --self-check --replay
+PASS: 261 groups; 168646 trials; parent reconstruction, both exact checkers, accounting and pinned inputs
+PASS: false energy, incorrect denominator and missing group rejected
+Replay CPU 51.271998678 seconds / wall 51.44304484198801 seconds.
+PASS: full replay matches every ordered trial digest, histogram, certificate and non-timing aggregate
+Replay is verification, not a second experimental sample. Temporary replay files removed.
+
+Repository suite, every command exit 0:
+$ make check
+g++ -O3 -std=c++17 -Wall -Wextra -pedantic src/search.cpp -o build/search
+test_exhaustive (test_verify.VerifyTests.test_exhaustive) ... ok
+test_independent_and_symmetries (test_verify.VerifyTests.test_independent_and_symmetries) ... ok
+test_known (test_verify.VerifyTests.test_known) ... ok
+test_rejection (test_verify.VerifyTests.test_rejection) ... ok
+Ran 4 tests in 1.331s
+OK
+PASS: incremental deltas and updates N=2..128
+PSL control N=2047 E=433843 F=4190209/867686 PSL=32
+PASS: 160 frontier rows; 221 comparison witnesses checked
+Whole make check command: 8.764 seconds.
+
+$ python3 scripts/check_results.py
+PASS: 160 result certificates; 0 distinct frontier improvements
+1.329 seconds. This command validates existing pilot results, not this new package.
+
+$ python3 scripts/import_sources.py --check
+Imported 319 witnesses; 160 frontier lengths
+2.700 seconds. No source files or accepted records rewritten.
+
+$ python3 scripts/independent_check.py
+PASS: independent XOR/popcount checked 479 certificates
+0.144 seconds. "independent" names the checker implementation, not a reviewer.
+
+$ python3 scripts/check_package.py
+PASS: 12 pinned package inputs and config
+0.071 seconds. This command checks the existing pilot package.
+
+19:52 UTC, added predecessor-orbit comparison, exit 0:
+$ python3 research/alternating-transfer-20261022/check.py --self-check
+PASS: 261 groups; 168646 trials; parent reconstruction, both exact checkers, accounting and pinned inputs
+PASS: all 12 below-published attempts are in 8 predecessor candidate orbits; N=518 best is a published symmetry tie
+PASS: false energy, incorrect denominator and missing group rejected
+
+Delegated AI domain review (author-side; not independent scientific review):
+508 short parents of lengths 2..8 and 11768 children: phase-flip identities,
+endpoint orbit overlap and two-orientation completeness against all eight parent
+orientations passed. Explicit new-orbit examples: 0000 -> 0101 -> delete(1) ->
+001, E=1 versus original deletion E=5; 000 -> 010 -> insert(1,1) -> 0110,
+E=6 versus original insertion energies 2 or 14. These auxiliary probes are
+not additional published-parent search attempts and prove no data-set novelty.
+
+19:55 UTC, final delegated AI package review:
+No actionable findings. Read-only reviewer reran check.py --self-check and
+sweep.py --self-check, verified all 13 SOURCES.json hashes, and checked the
+documentation against recorded results. No full replay, repository-wide suite,
+predecessor replay or current-source audit by that reviewer. This remains
+author-side AI review. No files edited by delegated reviewers.
+
+19:55 UTC, pre-submission upstream refresh and overlap check:
+origin/main remains 1e65ddd66191355ba5fd86b9788d6c02e9329a82.
+No other open PRs or coordination comments. The claim body was read back and
+matches claim.md exactly, including the machine-readable discover block.
+git diff --cached --check passed. Scope: new research package and contributor
+credit only; no accepted data, source manifest, existing verifier or solver edits.
+
+Limits:
+No independent scientific acceptance, current-source literature refresh, global
+optimality proof, full predecessor replay, or direct-sum scoring of every
+non-minimum search trial. Timings are host measurements and not certificates.

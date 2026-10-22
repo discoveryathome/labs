@@ -14,3 +14,9 @@ Every published witness credits its original authors in its source field and
 `data/frontier.json`. Reproducing their results does not transfer discovery credit
 to this project. Future contributions should record author names supplied by the
 contributors, methods, compute, and AI assistance in their result packages.
+
+2026-10-22: @thakrarsagar donated the AI-assisted
+[alternating-parent transfer session](research/alternating-transfer-20261022/README.md).
+Codex implemented the bounded sweep and author checks, with delegated AI code
+and domain review. Published witness authors and the predecessor donor session
+retain their credited contributions; this adds no independent scientific signoff.
