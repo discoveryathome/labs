@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "status": "provisional_candidates; no novelty or acceptance determination",
+  "base_commit": "1e65ddd66191355ba5fd86b9788d6c02e9329a82",
+  "source_access_window_utc": [
+    "2026-10-22T20:26:20Z",
+    "2026-10-22T20:32:30Z"
+  ],
+  "objective": {
+    "spins": "s=2*bit-1",
+    "correlation": "C(k)=sum(i=0..N-k-1)s[i]*s[i+k]",
+    "energy": "sum(k=1..N-1)C(k)^2",
+    "merit_factor": "N^2/(2E)",
+    "periodic": false
+  },
+  "local_files": [
+    {
+      "path": "results/candidates.json",
+      "sha256": "0648550eb777853a24b1309fa983092a03ddebae6c59c4a12493b2d39a4028e1"
+    },
+    {
+      "path": "results/summary.json",
+      "sha256": "fe73e1886b99dc9c5614b952e9122404f07273a9dc65ea2502844553fea142d3",
+      "generated_paths": 4808,
+      "below_threshold_paths": 4,
+      "candidate_orbits": 2
+    },
+    {
+      "path": "../../data/published.json",
+      "sha256": "74ad2ff1d53f882f6c584a96ffb6e5baab45a04c94371340153d54b676205038"
+    },
+    {
+      "path": "../donor-60m-20261020/candidates/463.json",
+      "sha256": "6cb2cee9eacc295b5c5aa6e36cabedf1a4d132bae099bc986351e42058c16316"
+    }
+  ],
+  "candidates": [
+    {
+      "N": 114,
+      "E": 761,
+      "F_exact": "6498/761",
+      "PSL": 7,
+      "published_E": 777,
+      "pending_same_length": false,
+      "parent_row_zero_based": 196,
+      "parent_N": 112,
+      "parent_E": 728,
+      "parent_sequence_sha256": "3cc505fdf6a6c3c1279de99c256f5f566235c7f37cb6bc0d6b5bc746765ab216",
+      "operations": [
+        "prepend_1",
+        "prepend_0"
+      ],
+      "intermediate": {
+        "N": 113,
+        "E": 736
+      },
+      "sequence_sha256": "fe9e27b347e1443515e879b2694b0e53ab8caa448ea1ac104762ad91364e1191",
+      "source_reconstruction_matches": true,
+      "direct_and_xor_E_match": true
+    },
+    {
+      "N": 464,
+      "E": 14396,
+      "F_exact": "26912/3599",
+      "PSL": 24,
+      "published_E": 14436,
+      "pending_same_length": false,
+      "parent_row_zero_based": 294,
+      "parent_N": 462,
+      "parent_E": 13811,
+      "parent_sequence_sha256": "421668b1e0714c4acdc21e3875bab0fb534737880cd63325b6f0211dd09da055",
+      "operations": [
+        "prepend_0",
+        "prepend_0"
+      ],
+      "intermediate": {
+        "N": 463,
+        "E": 14047,
+        "sequence_sha256": "efd52fa4bbc9a67877288df8f6ff957328a0ff79b5519bade09dd3d6d2169dab",
+        "equals_prior_donor_candidate": true
+      },
+      "sequence_sha256": "2151a342647af78ca14faf8c8d7c0b023b7d54554286caa5cab10079fb60a68f",
+      "source_reconstruction_matches": true,
+      "direct_and_xor_E_match": true
+    }
+  ],
+  "decoded_source_rows": [
+    {
+      "source": "2504.00987v2 Table 2",
+      "N": 112,
+      "hex": "A0496A493FAECCC8AFC3D50E738F",
+      "remove_right_padding_bits": 0,
+      "E": 728,
+      "F_exact": "112/13",
+      "published_row": 196
+    },
+    {
+      "source": "2504.00987v2 Table 2",
+      "N": 114,
+      "hex": "B6C3648DB19C8C387A9EAA8578000",
+      "remove_right_padding_bits": 2,
+      "E": 777,
+      "F_exact": "2166/259",
+      "PSL": 9,
+      "published_row": 197,
+      "sequence_sha256": "55dd15dc5d5c99ba6424e6feeef955c17b40fa925bec49fcb53ac8a80093701b"
+    },
+    {
+      "source": "2607.09688v1 Table 3",
+      "N": 462,
+      "hex": "3ffffffc001ffe00f878f60f4e1d986d8c7a71ad330f30e64e43b666d8d8e663b46c66d32d330f927a4d8e59896c2d62da5ad56aa9554aaaaaab",
+      "remove_left_padding_bits": 2,
+      "E": 13811,
+      "F_exact": "15246/1973",
+      "published_row": 294
+    },
+    {
+      "source": "2607.09688v1 Table 3",
+      "N": 464,
+      "hex": "fffffff0007fd80787e13f04f0dc393c8e58276cb978e466c3ce727932731a726cb4e646da1bce27586dcb1b48d2c52b16a5a558aa5552aaaaaa",
+      "remove_left_padding_bits": 0,
+      "E": 14436,
+      "F_exact": "26912/3609",
+      "PSL": 22,
+      "published_row": 296,
+      "sequence_sha256": "8a999be19bff85fb7c519f1522976682aa8919d9b37c1e813fe07b407b62bdee"
+    }
+  ],
+  "fetched_sources": [
+    {
+      "url": "https://arxiv.org/abs/2504.00987",
+      "access_utc": "2026-10-22T20:29:19.200248Z",
+      "sha256": "33c1dbe1714a5f180b3ae47246cc348b283f8cc39c5144a1a89fda908b256330",
+      "observation": "Latest listed v2, revised 2025-08-14 18:26:30 UTC."
+    },
+    {
+      "url": "https://arxiv.org/abs/2607.09688",
+      "access_utc": "2026-10-22T20:29:19.175796Z",
+      "sha256": "5710c1bdbadba480cbb819984dec6f19ddb7a456fd6d226bca68cac38c100c92",
+      "observation": "Only v1 listed; returned submission history says 2026-06-17 09:17:04 UTC."
+    },
+    {
+      "url": "https://arxiv.org/html/2504.00987v2",
+      "access_utc": "2026-10-22T20:27:51.548108Z",
+      "sha256": "54ffdfab186b6f44d92511c72001936cb09ea63d6d402ef3dd6f10d27d126476",
+      "bytes": 256557,
+      "matches_pinned": true,
+      "observation": "Table 2 N112 E728 and N114 E777; right-padding convention."
+    },
+    {
+      "url": "https://arxiv.org/html/2607.09688v1",
+      "access_utc": "2026-10-22T20:27:51.514529Z",
+      "sha256": "45d15a14fdfc0cee150b8f94dca0edea7d8dcad0c0340d553a60276504cec31d",
+      "bytes": 329377,
+      "matches_pinned": true,
+      "observation": "Table 3 N462 F7.7273 and N464 F7.4569; left-padding convention; exact energies recomputed."
+    },
+    {
+      "url": "https://arxiv.org/abs/2409.07222",
+      "access_utc": "2026-10-22T20:29:19.190019Z",
+      "sha256": "b34bda65aec450742f8c9be4aabc68ee40b2ed953188e1911cc106fbb496da53",
+      "observation": "Only v1 listed, submitted 2024-09-11."
+    },
+    {
+      "url": "https://arxiv.org/html/2409.07222v1",
+      "access_utc": "2026-10-22T20:30:47.390436Z",
+      "sha256": "b9d13be934696b89d9c3dd30ebfc0147b87b139435fd9af9a450a4cbc4f0ffe3",
+      "pinned_sha256": "8fc9fc7d6ad7562ddcbd3783be816165c9fa5f812338d85b314196d56b30dd10",
+      "article_sha256": "d718a2ba16d040f1f05e561b895507323b33a62caed46e64d537b71722aa5de4",
+      "article_comparison_utc": "2026-10-22T20:31:11.777277Z",
+      "article_matches_pinned": true,
+      "observation": "Site wrapper changed; article identical. Table 2 N464 F7.2617; imported E14824."
+    },
+    {
+      "url": "https://api.github.com/repos/borkob/git_labs/commits?per_page=1",
+      "access_utc": "2026-10-22T20:27:54.898325Z",
+      "sha256": "7abbf12d4f5d04b3f861c29dc0c64c66e57d92e665567b3eba5d7c0f213f6acd",
+      "commit": "1aa123407636e48630174e0bf122037e369c1d68",
+      "observation": "Default head unchanged; commit date 2020-09-15."
+    },
+    {
+      "url": "https://api.github.com/repos/J-Brest/LABS/commits?per_page=1",
+      "access_utc": "2026-10-22T20:27:54.906944Z",
+      "sha256": "e3f185fed805fd3574aacd1f2d682df6b563439623bf4dfa0f660b689d4e21e6",
+      "commit": "4232311cb4f3626ab008336f6069cd5af5e3915b",
+      "observation": "Default head unchanged; commit date 2026-05-12."
+    },
+    {
+      "url": "https://api.github.com/repos/borkob/git_labs/git/trees/1aa123407636e48630174e0bf122037e369c1d68?recursive=1",
+      "access_utc": "2026-10-22T20:30:47.557961Z",
+      "sha256": "a97e628d75e78653700e442e8340511b1b79bc7039c75bb3f47b78be6ebae222",
+      "observation": "146 tree entries, not truncated; results-2016 and results-2018 archives."
+    },
+    {
+      "url": "https://api.github.com/repos/J-Brest/LABS/git/trees/4232311cb4f3626ab008336f6069cd5af5e3915b?recursive=1",
+      "access_utc": "2026-10-22T20:30:47.622120Z",
+      "sha256": "3b2c4234b498691b7a61ceee7040525afcb9fd97f864a33f65c2aa2973e52dd8",
+      "observation": "20 tree entries, not truncated."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/J-Brest/LABS/4232311cb4f3626ab008336f6069cd5af5e3915b/README.md",
+      "access_utc": "2026-10-22T20:29:19.335660Z",
+      "sha256": "18b297ebbb69da5c5972cd8ad2e336a38e0a01534a099bd440f96bc4510ae602",
+      "observation": "Explicitly low PSL sequences, with binary 0 representing -1."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/borkob/git_labs/1aa123407636e48630174e0bf122037e369c1d68/README.md",
+      "access_utc": "2026-10-22T20:29:19.315658Z",
+      "sha256": "e50123478a03ba8b9b969650060690f73c231270d41e9832e9d19bb8b9077f86",
+      "observation": "Fetched archive README; no new witness conclusion based on this README alone."
+    },
+    {
+      "url": "https://api.github.com/repos/ricolalemon/endless-exam/commits?per_page=1",
+      "access_utc": "2026-10-22T20:27:54.988015Z",
+      "sha256": "77ccbcc65183e206658108469960cfd0c08574a8c468a34f1c54d59a5c2fd5a7",
+      "commit": "9fc1ece969c0d9dec056f78ac4e83dbcf2c90a9e",
+      "observation": "Unchanged default head, dated 2026-10-04."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ricolalemon/endless-exam/9fc1ece969c0d9dec056f78ac4e83dbcf2c90a9e/bench/results/published/index.csv",
+      "access_utc": "2026-10-22T20:30:47.365384Z",
+      "sha256": "b08db5b7fd4b18e59bd9a49ae6947e363613a7bd55081599ad99091ae5fc755a",
+      "observation": "Byte-identical to prior audit; 85 LABS rows, five IDs; retained reference params map to N240,280,281,357,375."
+    },
+    {
+      "url": "https://labraj.feri.um.si/dejavnosti/raziskovalna-dejavnost/binarna-zaporedja-z-nizkimi-avtokorelacijami/",
+      "access_utc": "2026-10-22T20:30:44.404735Z",
+      "sha256": "23510ea175ffdb81232cc0707f9712e415285df541f12c94a715988693fe568e",
+      "observation": "Author laboratory links MF to borkob/git_labs, PSL to J-Brest/LABS, and lists 2607.09688 and PSL preprint v2."
+    },
+    {
+      "url": "https://nirajkumar92.github.io/publications.html",
+      "access_utc": "2026-10-22T20:30:43.115531Z",
+      "sha256": "df30a2517f4cb5add26aa8a4dec4682e698b9973e14df9e4261988b048dc947c",
+      "observation": "LABS publication link points to 2504.00987."
+    },
+    {
+      "url": "https://arxiv.org/pdf/2206.12070",
+      "access_utc": "2026-10-22T20:31:49.744433Z",
+      "sha256": "47eb399678445cc5bbd158dfe33eceffb11e6bdacfc7190da9bcc2063fecf02b",
+      "version": "v1 shown on PDF",
+      "observation": "Web PDF text: Table III p9 defines prepend/append/delete operators; Table XI p18 chains three appends for N464, F7.13467656416. Text search found no N114 match."
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.17391",
+      "access_utc": "2026-10-22T20:31:49.834519Z",
+      "sha256": "050be3a81b37584ec8e180a0edd28774c28a5572623ca5ca3a4c474523218db3",
+      "observation": "Latest v2, revised 2026-01-25."
+    },
+    {
+      "url": "https://arxiv.org/html/2506.17391v2",
+      "access_utc": "2026-10-22T20:32:28.122159Z",
+      "sha256": "7b1d6f197cfb7db0c88a1faa7d52a457ba0ef160f642c23e35be702cffa98092",
+      "observation": "Abstract reports exact-solution simulations up to N45; no replacement witness identified for either target."
+    },
+    {
+      "url": "https://arxiv.org/abs/2510.24237",
+      "access_utc": "2026-10-22T20:31:49.742391Z",
+      "sha256": "887b0ea32665094050f1bd6a87612d205c4e67e1880015c0f36be112e6aa3178",
+      "observation": "Only v1 listed, submitted 2025-10-28."
+    },
+    {
+      "url": "https://arxiv.org/html/2510.24237v1",
+      "access_utc": "2026-10-22T20:32:28.133948Z",
+      "sha256": "ce5262210fc1dc768f7e5ab6bb71739949d7e463bc6ae46141c12c00c4b00661",
+      "observation": "LABS experiment states 5<=N<=99, ten trials per N, 60 seconds."
+    }
+  ],
+  "web_only_sources": [
+    {
+      "url": "https://www.preprints.org/manuscript/202605.0907/v2",
+      "resolved_url": "https://www.preprints.org/manuscript/202605.0907",
+      "access_window_utc": [
+        "2026-10-22T20:30:49Z",
+        "2026-10-22T20:31:12Z"
+      ],
+      "sha256": null,
+      "observation": "Web reader accessible: latest v2 posted 2026-07-28; PSL focus; direct HTTPS body retrieval was forbidden."
+    }
+  ],
+  "failed_requests": [
+    {
+      "url": "https://www.preprints.org/manuscript/202605.0907/v2",
+      "access_utc": "2026-10-22T20:31:49.787163Z",
+      "error": "HTTP Error 403: Forbidden",
+      "fallback": "web tool reading succeeded"
+    },
+    {
+      "urls": [
+        "https://arxiv.org/html/2504.00987v2",
+        "https://arxiv.org/html/2607.09688v1",
+        "https://arxiv.org/html/2409.07222v1"
+      ],
+      "access_window_utc": [
+        "2026-10-22T20:26:20Z",
+        "2026-10-22T20:27:51Z"
+      ],
+      "stage": "context HTML conversion",
+      "error": "Cannot find module 'turndown'",
+      "fallback": "direct public HTTPS + standard-library parsing succeeded"
+    }
+  ],
+  "extraction_failures": [
+    {
+      "error": "ModuleNotFoundError: No module named 'bs4'",
+      "effect": "Initial parsing script stopped before network requests; replaced with standard-library extraction."
+    },
+    {
+      "url": "https://arxiv.org/pdf/2206.12070",
+      "error": "[Errno 2] No such file or directory: 'pdftotext'",
+      "effect": "PDF fetched; local text conversion unavailable; web PDF reader used."
+    }
+  ],
+  "representative_search_queries": [
+    "\"low autocorrelation binary sequences\" \"114\" \"761\"",
+    "\"low autocorrelation binary sequences\" \"464\" \"14396\"",
+    "\"Prioritizing Search Space Regions\" github",
+    "\"New Improvements\" \"Memetic Tabu\" github",
+    "\"low autocorrelation\" \"2026\" \"114\"",
+    "\"low autocorrelation\" \"2026\" \"464\"",
+    "\"LABS\" \"114\" \"761\" merit",
+    "\"LABS\" \"464\" \"14396\"",
+    "\"low autocorrelation binary sequences\" \"merit\" 2026 site:arxiv.org OR site:github.com",
+    "\"Pšeničnik\" \"LABS\" github",
+    "\"low autocorrelation\" \"114\" \"record\"",
+    "\"low autocorrelation\" \"464\" \"record\""
+  ],
+  "limitations": [
+    "Bounded search; no novelty guarantee or scientific acceptance.",
+    "Public search terms and public source reads only; no credentials/private data transmitted.",
+    "No stronger verified target-length witness identified; unindexed/unpublished results remain possible.",
+    "Default repository heads and trees checked, not every branch, fork, issue or discussion.",
+    "Dual-step journal version and prior ROADEF abstract not separately reacquired.",
+    "No all-trial replay in this audit; denominator read from summary; parent verifier claims not represented as an independent researcher review.",
+    "Some tool-failure timestamps are bounded by a window rather than individually recorded.",
+    "Source bodies were processed in memory; no full paper redistribution, code execution, external posting, or accepted-data changes."
+  ]
+}

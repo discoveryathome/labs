@@ -1,0 +1,23 @@
+{
+  "base": "1e65ddd66191355ba5fd86b9788d6c02e9329a82",
+  "files": [
+    {"path":"research/two-endpoint-20261022/sweep.py","sha256":"4eea2b74e06d42893a2bdef6c462a5a5d3e55ce102732db61d9bc852b40c8b22"},
+    {"path":"research/two-endpoint-20261022/PREREGISTRATION.md","sha256":"b421074bfe7c5ac0a14a3ee979ba7fa5c69d29f2b397529e2d3e3bef72214025"},
+    {"path":"research/donor-60m-20261020/transfer.py","sha256":"96ae679aeaa89bc701f2e94e5131fef8ba2dd9ebb3a32bab731671ebf9ee33b0"},
+    {"path":"research/donor-60m-20261020/candidate-table.json","sha256":"f5a70ba531cd1062967de5b15eb3b43f501f541c944267e2fadbcad89dd355d2"},
+    {"path":"data/published.json","sha256":"74ad2ff1d53f882f6c584a96ffb6e5baab45a04c94371340153d54b676205038"},
+    {"path":"data/frontier.json","sha256":"2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738"},
+    {"path":"data/sources/manifest.json","sha256":"219b6db07e923022f61e3774e55c535327ef3d693bf85ea433cf3544904f760f"},
+    {"path":"src/verify.py","sha256":"469ca1fd30511cd3799ef2ef98f662820e171c59d22cf252365c349950603272"},
+    {"path":"scripts/independent_check.py","sha256":"af6f626f2408e522dee8abff8da0a67fdef0576e51dc7c6d2d36ba704210cdeb"},
+    {"path":"research/donor-60m-20261020/candidates/108.json","sha256":"8ef672edf5fcf49649b4c7eb3eb5f1adf7edf937c8cd546ae2b6e8daeb1d32c1"},
+    {"path":"research/donor-60m-20261020/candidates/118.json","sha256":"2f3f4764507fea2c706962938dcea28df283c2557489ee2acb4e5f6305278b51"},
+    {"path":"research/donor-60m-20261020/candidates/119.json","sha256":"83848d1d69c2d39b3d44e739095ff3372e20b73e75886056a94357eace494936"},
+    {"path":"research/donor-60m-20261020/candidates/463.json","sha256":"6cb2cee9eacc295b5c5aa6e36cabedf1a4d132bae099bc986351e42058c16316"},
+    {"path":"research/donor-60m-20261020/candidates/485.json","sha256":"08208aa5db1f78c88a75e22d2cab91aa3e68cb6f72f716022184d579aa0bcc82"},
+    {"path":"research/two-endpoint-20261022/check.py","sha256":"324cc18430a39a043c14141e57c776b8da8c16f67cd4ed565449cc3192634cf5"},
+    {"path":"research/two-endpoint-20261022/PREDECESSORS.json","sha256":"40e5b26c21b496a6951a367fe5c086bac3f88e7c86a2c61625453f69b4d6d659"},
+    {"path":"research/donor-60m-20261020/transfer/best.json","sha256":"6d04987f4de1970a6749c67476cd9f96683d704bad2186e4624762fb580eb8b2"},
+    {"path":"research/donor-60m-20261020/transfer/candidates.json","sha256":"3324215664539cee5003d9048661ecd4f415cade4725449ea57d0e81c141f715"}
+  ]
+}

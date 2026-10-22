@@ -1,0 +1,103 @@
+Author-run verification log, 2026-10-22 UTC
+Base: 1e65ddd66191355ba5fd86b9788d6c02e9329a82
+Seed: 93610b14cdb3c9d4f2373623b04b0933 (one OS-random draw)
+Commands below run from repository root, without Python -O.
+Outputs transcribed from captured tool results; no failed search trials removed.
+
+Entry checks:
+Fresh isolated clone matches the previously screened base; no repository hook,
+MCP or execution configuration files. Required orientation docs byte-identical
+to the read first-session copy. Current playbook fetched with curl; SHA256
+e9a03f50975d42d4b50088a6c6f67c467149fc150535e9f7962427e64a542267.
+Open PR6 concerns a distinct single-edit family; its two-edit handoff was unclaimed.
+
+$ python3 scripts/pick.py --seed 93610b14cdb3c9d4f2373623b04b0933
+track=refinement task=published-refinement suggested_length=119 run_seed=2957707571
+
+$ python3 research/donor-60m-20261020/check_candidate.py --n 119
+PASS N=119: parent N=120 E=824 via delete_last; published E=787 -> candidate E=771; F=14161/1542. Independent novelty review remains pending.
+Exit 0.
+
+$ python3 research/two-endpoint-20261022/sweep.py --self-check
+PASS: 4320 short ordered paths; direct/XOR scores, list-edit reconstruction and all-eight-parent-symmetry closure
+Exit 0. Unsupported operation rejection also passed.
+
+Pre-search domain and timing probe:
+324 parent rows, 148 contributing parents; 4808 retained paths into 95 lengths.
+All 36 paths of a longest N=573 parent scored by both implementations in
+0.70650452200789 seconds. Linear longest-parent estimate for 4808 paths:
+94.35760393927598 seconds, before logging overhead. Probe is not a search sample.
+
+$ python3 research/two-endpoint-20261022/sweep.py --output research/two-endpoint-20261022/results --stop-at 2026-10-22T21:02:32Z
+{"below_published":56,"below_threshold":4,"candidate_orbits":2,"completed_parent_rows":324,"cpu_seconds":58.42048214,"exhausted":true,"finished_at":"2026-10-22T20:24:56.465637+00:00","generated_paths":4808,"reached_lengths":95,"wall_seconds":58.566493368009105}
+Exit 0. Every retained attempt scored by direct sums and XOR/popcount.
+
+First package replay, exit 0:
+$ python3 research/two-endpoint-20261022/check.py --self-check
+PASS: independent deque replay of 4808 paths / 395 parent-length groups; every correlation and E checked by both implementations
+PASS: 324 parent certificates and five pending-parent ancestor reconstructions; thresholds, exact witnesses, ordered coverage and hashes
+PASS: 2 improving orbits differ from every pinned published and predecessor candidate orbit
+PASS: 7 corruption controls (score, parent, operation order, missing/duplicate trial, incomplete run, missing candidate)
+The separately written enumerator is still author-run, not an independent reviewer.
+
+Repository suite, all exit 0:
+$ make check
+g++ -O3 -std=c++17 -Wall -Wextra -pedantic src/search.cpp -o build/search
+test_exhaustive (test_verify.VerifyTests.test_exhaustive) ... ok
+test_independent_and_symmetries (test_verify.VerifyTests.test_independent_and_symmetries) ... ok
+test_known (test_verify.VerifyTests.test_known) ... ok
+test_rejection (test_verify.VerifyTests.test_rejection) ... ok
+Ran 4 tests in 1.136s; OK.
+PASS: incremental deltas and updates N=2..128
+PSL control N=2047 E=433843 F=4190209/867686 PSL=32
+PASS: 160 frontier rows; 221 comparison witnesses checked
+Whole command 7.836 seconds.
+
+$ python3 scripts/check_results.py
+PASS: 160 result certificates; 0 distinct frontier improvements
+1.213 seconds; validates existing pilot results.
+
+$ python3 scripts/import_sources.py --check
+Imported 319 witnesses; 160 frontier lengths
+1.964 seconds; no source/accepted-data rewrite.
+
+$ python3 scripts/independent_check.py
+PASS: independent XOR/popcount checked 479 certificates
+0.132 seconds; implementation name does not imply independent scientific review.
+
+$ python3 scripts/check_package.py
+PASS: 12 pinned package inputs and config
+0.058 seconds; validates existing pilot package.
+
+Predecessor comparison:
+Read PR6 best.json,candidates.json,summary.json at pinned head
+752a17026f40d1adc860c76d2cb090973d07ed6b via GitHub API. Decoded-byte SHA256
+and extracted rows retained in PREDECESSORS.json. Its candidates list is empty;
+best N114 E785 and N464 E14436 are worse than these new candidate energies.
+New candidates differ from all eight old candidate orbits and all published ones.
+
+Intermediate provenance checks:
+N114 passes through N113 E736, already in donor transfer/best.json, equal-energy
+but a different orbit from imported published N113. N464 passes through N463
+E14047, exactly the prior pending candidate orbit. These are predecessor credit.
+
+Delegated AI domain review independently obtained 4808 paths and 395 groups;
+length-only counts and a deque enumerator agreed. Short multiset symmetry checks
+passed 448 comparisons for binary parents of lengths 3..5. No new energy search
+was run by that design reviewer. Full endpoint family costs 486217096 direct
+pair products, an estimate separate from measured CPU time.
+
+Limitations:
+Final package replay with added predecessor checks passed: both intermediate
+orbits match the original donor's saved results, and both candidates beat the
+recorded PR6 results at its pinned head. All seven corruption controls passed.
+The bounded source audit refreshed the primary paper versions and decoded both
+parents/comparators; found no superseding verified same-length witness. See
+AUDIT.md and source-audit.json for exact requests, hashes and retrieval limits.
+The user shortened the remaining work to two minutes at20:36UTC; publication
+proceeded with completed checks and source audit. Final delegated code review
+may still be pending at publication; no independent scientific acceptance.
+
+No independent scientific acceptance, global optimality proof, full predecessor
+replay or adaptive extension. Current-source audit and its retrieval limitations
+are recorded separately in AUDIT.md. Scientific novelty remains provisional.

@@ -1,0 +1,23 @@
+{
+  "profile": "exact-certificate",
+  "working_directory": "repository root",
+  "network_required": false,
+  "prerequisites": ["Python >=3.10 without -O", "C++17 and make for repository solver checks"],
+  "commands": [
+    {"argv":["python3","research/donor-60m-20261020/check_candidate.py","--n","119"],"timeout_seconds":30},
+    {"argv":["python3","research/two-endpoint-20261022/sweep.py","--self-check"],"timeout_seconds":120},
+    {"argv":["python3","research/two-endpoint-20261022/check.py","--self-check"],"timeout_seconds":600},
+    {"argv":["make","check"],"timeout_seconds":180},
+    {"argv":["python3","scripts/check_results.py"],"timeout_seconds":60},
+    {"argv":["python3","scripts/import_sources.py","--check"],"timeout_seconds":60},
+    {"argv":["python3","scripts/independent_check.py"],"timeout_seconds":60},
+    {"argv":["python3","scripts/check_package.py"],"timeout_seconds":60}
+  ],
+  "full_replay": {
+    "argv":["python3","research/two-endpoint-20261022/check.py","--self-check"],
+    "timeout_seconds":600,
+    "expected":"Separate deque enumerator reconstructs all4808 paths/395 groups; every correlation and energy matches, exact candidate/minimum records agree, hashes match and corruption controls fail as expected."
+  },
+  "scope_note":"Repository result/package checks cover the existing pilot. Package-local check.py validates this new experiment, including all parent chains and every retained path. Source-audit network requests are documented separately in AUDIT.md.",
+  "review_status":"author-checked; independent scientific and novelty review required"
+}

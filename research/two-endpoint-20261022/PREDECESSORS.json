@@ -1,0 +1,41 @@
+{
+  "donor_package": {
+    "base": "1e65ddd66191355ba5fd86b9788d6c02e9329a82",
+    "path": "research/donor-60m-20261020",
+    "candidate_orbit_inventory": "research/donor-60m-20261020/transfer/candidates.json",
+    "sha256": "3324215664539cee5003d9048661ecd4f415cade4725449ea57d0e81c141f715",
+    "candidate_orbits": 8,
+    "note": "The five-row pending table contains only best energies; all eight saved candidate orbits were checked for overlap."
+  },
+  "alternating_package": {
+    "pr": "https://github.com/discoveryathome/labs/pull/6",
+    "head": "752a17026f40d1adc860c76d2cb090973d07ed6b",
+    "status_at_access": "open, unmerged",
+    "accessed_at": "2026-10-22T20:29:08Z",
+    "handoff": "https://github.com/discoveryathome/labs/discussions/2#discussioncomment-19131784",
+    "files": [
+      {
+        "path": "research/alternating-transfer-20261022/results/best.json",
+        "url": "https://github.com/thakrarsagar/labs/blob/752a17026f40d1adc860c76d2cb090973d07ed6b/research/alternating-transfer-20261022/results/best.json",
+        "sha256": "a7dcea1b8050909eeb205d09bea046e7c388d68aedb2a74589dde6438717f2fa",
+        "selected_rows": [
+          {"N":114,"E":785,"canonical_sha256":"8b8b21107c617cc6f1fc69d2db83f7d9a4c10c67826647f16119dcc5aab848b3"},
+          {"N":464,"E":14436,"canonical_sha256":"184a2bc850a00677119c0d5846e821370ed53f4ec259cd1b25caf23bf0f75ed1"}
+        ]
+      },
+      {
+        "path": "research/alternating-transfer-20261022/results/candidates.json",
+        "url": "https://github.com/thakrarsagar/labs/blob/752a17026f40d1adc860c76d2cb090973d07ed6b/research/alternating-transfer-20261022/results/candidates.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "value": []
+      },
+      {
+        "path": "research/alternating-transfer-20261022/results/summary.json",
+        "url": "https://github.com/thakrarsagar/labs/blob/752a17026f40d1adc860c76d2cb090973d07ed6b/research/alternating-transfer-20261022/results/summary.json",
+        "sha256": "48c78b453edc24501d5755dff70e95e866ef02fea0c6e4a6e09354916250c054",
+        "selected_fields": {"candidate_orbits":0,"below_threshold":0,"exhausted":true}
+      }
+    ],
+    "note": "Fetched the three pinned files via the GitHub API and hashed decoded bytes. No dependency on the unmerged branch is needed to replay this package; remote evidence is recorded here for comparison and credit."
+  }
+}
