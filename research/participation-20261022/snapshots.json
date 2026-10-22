@@ -4,50 +4,65 @@
     "AGENTS.md": {
       "c2691baf393d38aab376cabb85cdaf93f492f31c933fba4a9ba7a7e55ec93c3d": {
         "snapshot": "research/participation-20261022/historical/c2691baf393d38aab376cabb85cdaf93f492f31c933fba4a9ba7a7e55ec93c3d/AGENTS.md",
-        "current_sha256": "8f812f3077eafb6485c9b05476c5475b87e651af37ebcd434b12e670d47a3000"
+        "current_sha256": "8d168b593b93f50fc1833ef0bebc5fed26a84f0da701d39bfcfa678211fb822f"
       }
     },
     "CONTRIBUTORS.md": {
       "fdae590efb97a9b7c547fdb303b3a5ab77284c10cd0f771fd0f070bbdb66b33e": {
         "snapshot": "research/participation-20261022/historical/fdae590efb97a9b7c547fdb303b3a5ab77284c10cd0f771fd0f070bbdb66b33e/CONTRIBUTORS.md",
-        "current_sha256": "630de5d51533dc3a31e807d598001ddcbf3375f4cd0afa4d7fccf57ab5489ee2"
+        "current_sha256": "6d539cf9296c531b0a8dd59fed48089e9b5cbab8056c925b9543f37d4a23029b"
       }
     },
     "DISCOVERY.md": {
       "62966b38cc8fb71929af3e47df60e08b13364110e0185a6711504ec95c626070": {
         "snapshot": "research/participation-20261022/historical/62966b38cc8fb71929af3e47df60e08b13364110e0185a6711504ec95c626070/DISCOVERY.md",
-        "current_sha256": "5434e41fa9f2d0ba0b08ba6b858e349d4b29eaa048fe6426a2afe2db5975e6b2"
+        "current_sha256": "6d6645b7d17f707e0f3aa86828cb2d03b61e3d5b19101745dd9b3a0499cf351e"
       }
     },
     "README.md": {
       "a2bf3f31a2ad873114b8731e318892e5b4a76e477a4810b3a9f7b2fc906d5fa8": {
         "snapshot": "research/participation-20261022/historical/a2bf3f31a2ad873114b8731e318892e5b4a76e477a4810b3a9f7b2fc906d5fa8/README.md",
-        "current_sha256": "4e10e775cf306ec8682c681be0c9d22daf4730e8bd1254de87f76cc7f7350fa1"
+        "current_sha256": "20afc5164429182b6c075c0606f3a69d5a1b7bff64f08484af65a5c15767beec"
       }
     },
     "discover.json": {
       "50dbc14977ef4c708d1091175439e5731bbba31be0060498f554bfa90dd48955": {
         "snapshot": "research/participation-20261022/historical/50dbc14977ef4c708d1091175439e5731bbba31be0060498f554bfa90dd48955/discover.json",
-        "current_sha256": "855adac2e008965907138a1a4e6846cde094dbbfb5cecac7ad7823fb1e1e7128"
+        "current_sha256": "9c0c2d7a79daf197afb5ad102fea39db3fb0ca90620ca33b936ce27667f67dff"
       }
     },
     "discover/frontier.json": {
       "7d06866e13ee13ad3842d9ce4fd32386856001086e11f5ca43b03953127594f6": {
         "snapshot": "research/participation-20261022/historical/7d06866e13ee13ad3842d9ce4fd32386856001086e11f5ca43b03953127594f6/discover/frontier.json",
-        "current_sha256": "d08abe217289f1e9421a4769b0e48b10f06354d0b031251d31ac136f1e65f904"
+        "current_sha256": "3ebb59ad9e2630fe6fbfc632c32ba1c5732652aecefa0539021041fdcc01cfb4"
       }
     },
     "docs/ASSESSMENT.md": {
       "ef889472c1dd1fb4e6c6afda9cb033a5151938427cbb3f7a6bb0a6f6e26366bc": {
         "snapshot": "research/participation-20261022/historical/ef889472c1dd1fb4e6c6afda9cb033a5151938427cbb3f7a6bb0a6f6e26366bc/docs/ASSESSMENT.md",
-        "current_sha256": "07606e824d66f00cb43451e3091b46eabfeb5c0423e4d33abc18f327aa27161e"
+        "current_sha256": "739126083db479ba1eb87104841c783ef15d7401d66f6f7402adcaaef56a3816"
       }
     },
     "docs/PUBLICATION.md": {
       "bba4cbc7e08ba460dacf2f499557c166af22e40f8fce517f5b29495765b71532": {
         "snapshot": "research/participation-20261022/historical/bba4cbc7e08ba460dacf2f499557c166af22e40f8fce517f5b29495765b71532/docs/PUBLICATION.md",
-        "current_sha256": "dc8993da026b1f597303ddb51c183878c628c4d673feb746e6111197d2c6ec54"
+        "current_sha256": "b780b777cdf96a9d252222d4f9f6557031e9172a5ee36047a528693a550b04ab"
       }
+    }
+  },
+  "rebound": {
+    "date": "2026-10-22",
+    "commit_before": "08636f3",
+    "reason": "Launch to donated sessions (hub listing, maintainer handle, surge review capacity, GitHub Discussions coordination) and replacement of the non-open Packebusch–Mertens paper snapshot by its extracted factual table. Only current_sha256 of the listed live documents changed; historical snapshots and their hashes are untouched. The participation-time current hashes are kept here; the files at commit 08636f3 match them.",
+    "original_current_sha256": {
+      "AGENTS.md": "8f812f3077eafb6485c9b05476c5475b87e651af37ebcd434b12e670d47a3000",
+      "CONTRIBUTORS.md": "630de5d51533dc3a31e807d598001ddcbf3375f4cd0afa4d7fccf57ab5489ee2",
+      "DISCOVERY.md": "5434e41fa9f2d0ba0b08ba6b858e349d4b29eaa048fe6426a2afe2db5975e6b2",
+      "README.md": "4e10e775cf306ec8682c681be0c9d22daf4730e8bd1254de87f76cc7f7350fa1",
+      "discover.json": "855adac2e008965907138a1a4e6846cde094dbbfb5cecac7ad7823fb1e1e7128",
+      "discover/frontier.json": "d08abe217289f1e9421a4769b0e48b10f06354d0b031251d31ac136f1e65f904",
+      "docs/ASSESSMENT.md": "07606e824d66f00cb43451e3091b46eabfeb5c0423e4d33abc18f327aa27161e",
+      "docs/PUBLICATION.md": "dc8993da026b1f597303ddb51c183878c628c4d673feb746e6111197d2c6ec54"
     }
   }
 }

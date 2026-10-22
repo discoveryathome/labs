@@ -15,6 +15,8 @@ def main():
     p.add_argument("--n", type=int)
     a = p.parse_args()
     for item in json.loads((ROOT/"data/sources/manifest.json").read_text()):
+        if not item.get("stored", True):
+            continue  # cited by URL and hash only; its extracted data is hashed
         assert hashlib.sha256((ROOT/item["path"]).read_bytes()).hexdigest() == item["sha256"]
     records = json.loads((ROOT/"data/published.json").read_text())
     rows = json.loads((ROOT/"data/frontier.json").read_text())

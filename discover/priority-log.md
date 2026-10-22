@@ -30,3 +30,13 @@ Next checkpoint: independent candidate/novelty review plus a fresh-agent session
 testing a distinct transform family from the updated provisional thresholds.
 Do not extrapolate this finite initial cleanup into a sustainable hit rate.
 Evidence: research/donor-60m-20261020/README.md.
+
+## Launch — 22 October 2026
+
+Donor intake opened with @Mister-Meeseeks as maintainer (review capacity `surge`) and
+listing consent for the Discovery@Home hub; coordination moved to GitHub Discussions
+([Handoffs](https://github.com/discoveryathome/labs/discussions/2)). Weights unchanged from revision 2: sources 15, verification 25,
+algorithms 10, structured refinement 50. The five endpoint-derived candidates remain
+pending comparison thresholds until independently reviewed; no result is accepted
+because its checks pass. The Packebusch–Mertens paper snapshot was replaced by its
+extracted factual table (identical imported witnesses); the frontier is unchanged.

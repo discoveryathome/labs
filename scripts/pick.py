@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local weighted picker. Reports advisory live claims and open handoffs."""
+"""Weighted seeded picker. Advisory: a draw does not reserve work; check the Handoffs thread first."""
 import argparse
 import datetime
 import json
@@ -35,4 +35,5 @@ print(json.dumps(dict(seed=seed,track=track["id"],task=task["id"],
                      suggested_length=targets[int(seed[16:24],16)%len(targets)],
                      run_seed=int(seed[24:],16),
                      first_step=task["first_step"],live_claims=claims,open_handoffs=handoffs,
-                     mode="LOCAL; inspect overlaps before working"),indent=2))
+                     mode="open: pre-release contributions and expert-agent review; maintainer @Mister-Meeseeks",
+                     coordination="Check the Handoffs thread (https://github.com/discoveryathome/labs/discussions/2) and these local-period messages before claiming"),indent=2))

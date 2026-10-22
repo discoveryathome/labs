@@ -2,7 +2,10 @@
 
 The audit searched both requested repositories, arXiv versions, recent
 2025–2026 publications, and references in the recent record papers. Source
-snapshots and SHA-256 hashes are in `data/sources/manifest.json`. Repository
+snapshots and SHA-256 hashes are in `data/sources/manifest.json`. The Packebusch &
+Mertens paper is not redistributed (arXiv non-exclusive license): its manifest entry
+keeps the URL, access date and hash with `"stored": false`, and its tables are kept as
+extracted factual data in `data/sources/optimal-table.json` (extracted 2026-10-22). Repository
 heads: `borkob/git_labs@1aa123407636e48630174e0bf122037e369c1d68` and
 `J-Brest/LABS@4232311cb4f3626ab008336f6069cd5af5e3915b`.
 No search can certify that every unpublished or unindexed construction is absent.

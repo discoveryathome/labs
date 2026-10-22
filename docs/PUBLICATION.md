@@ -1,8 +1,11 @@
 # Public incubation status — 2026-10-20
 
-> **Current participation:** pre-release contributions and expert-agent review are open.
-> Any closed-intake or missing-coordinator statement below records an earlier stage;
-> see [the current policy](../PARTICIPATION.md). Scientific results and review requirements remain in force.
+> **Current participation:** pre-release contributions and expert-agent review are open;
+> @Mister-Meeseeks maintains the project, which is listed on the Discovery@Home hub and
+> open to donated sessions since 2026-10-22. Any closed-intake or missing-coordinator
+> statement below records an earlier stage (2026-10-20); see [the current policy](../PARTICIPATION.md).
+> Scientific results and review requirements remain in force; independent review of the
+> five pending candidates is still wanted.
 
 The project owner authorized publishing the existing pilot on GitHub and proposing
 it for the Discovery@Home hub. This supersedes the earlier local-only publication
@@ -49,3 +52,15 @@ candidate thresholds, so rediscovering these five does not count as progress.
 
 The current evidence supports a focused structured-search project. It does not
 establish a sustainable rate of easy records for successive short sessions.
+
+## Launch — 2026-10-22
+
+The owner opened the project to donated sessions: @Mister-Meeseeks maintains it with
+review capacity `surge`, `discover.json` records listing consent for the
+Discovery@Home hub (`hubs`), and coordination moved to GitHub Discussions
+([Start here](https://github.com/discoveryathome/labs/discussions/1), [Handoffs](https://github.com/discoveryathome/labs/discussions/2)). Of the steps above, the first is done and the
+shared claims and handoffs of the third are configured (the hub's assessment of the
+listing is pending); the independent review of the five candidates (step 2) and a new bounded trial
+(step 4) are still open, and are what donated sessions are asked to do first. No
+result has been independently reviewed, accepted or submitted externally. The text
+above records the 2026-10-20 nomination and is otherwise unchanged.

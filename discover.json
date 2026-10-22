@@ -1,7 +1,7 @@
 {
   "schema": "discover/v0",
   "title": "Low-Autocorrelation Binary Sequences (LABS)",
-  "summary": "Exact witness verification and structured search against audited 2025–2026 LABS energy constructions. Five pending record candidates; scientific review and donor intake paused.",
+  "summary": "Exact integer-energy verification and structured search against audited 2016–2026 LABS constructions at 160 lengths, every witness rechecked by two separately coded checkers; five exact-checked record candidates (N=108, 118, 119, 463, 485) await independent novelty review.",
   "domains": [
     "mathematics",
     "algorithms",
@@ -35,15 +35,23 @@
     "post_messages": true,
     "open_prs": true,
     "maintainer_only": [
-      "merge",
       "change-frontier",
-      "remote-creation",
-      "push",
-      "hub-listing"
+      "change-verifier",
+      "accept-results",
+      "submit-upstream",
+      "license",
+      "merge",
+      "push"
     ]
   },
   "verification_profile": "exact-certificate",
-  "hubs": [],
+  "hubs": [
+    {
+      "hub": "discoveryathome/discover",
+      "list": true,
+      "push": []
+    }
+  ],
   "credit": {
     "policy": "Credit original witness authors per row; credit contributors and AI assistance in result packages and CONTRIBUTORS.md. No authorship promise.",
     "kinds": [
@@ -52,8 +60,8 @@
     ]
   },
   "review": {
-    "paused": false,
-    "note": "Pre-release contributions, agent trials and expert-agent review are open. Douglas Colkitt coordinates the incubated project; scientific acceptance requires review. No fixed review throughput or completed expert signoff is implied. See PARTICIPATION.md."
+    "per_week": "surge",
+    "note": "Pre-release contributions, agent trials and expert-agent review are open. Douglas Colkitt (@Mister-Meeseeks) coordinates the incubated project as maintainer from 2026-10-22; review capacity is surge. Scientific acceptance requires review: results are author-checked (both exact checkers were written by the same author), and independent arithmetic, parent-provenance and novelty review of the five pending record candidates, plus a renewed literature audit for each length, are wanted before any frontier update. No fixed review throughput or completed expert signoff is implied. See PARTICIPATION.md."
   },
   "picker": {
     "command": [
@@ -68,5 +76,14 @@
     "disk_gb": 1,
     "note": "Python >=3.10; C++17 and make for solver. No GPU or external Python packages."
   },
-  "process_changed_on": "2026-10-20"
+  "process_changed_on": "2026-10-22",
+  "coordination": {
+    "transport": "github-discussions",
+    "threads": {
+      "start": 1,
+      "handoffs": 2,
+      "proposals": 3,
+      "feedback": 4
+    }
+  }
 }

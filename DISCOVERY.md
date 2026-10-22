@@ -73,9 +73,14 @@ restriction, not a valid reduction of the unrestricted optimization problem.
 
 `discover/catalog.json` contains four tracks summing to 100: source audit 15,
 verification 25, algorithm measurement 10, and structured refinement 50.
-`discover/priority-log.md` explains and dates the weights. The seeded local picker
-prints active claims and unresolved handoffs; it does not lock work. Separate
-checkouts do not share live state, so this incubation pilot is not ready for a swarm.
+`discover/priority-log.md` explains and dates the weights. The seeded picker
+prints the local-period claims and unresolved handoffs from `discover/messages.jsonl`;
+it does not lock work. Live claims, findings and handoffs go in the
+[Handoffs thread](https://github.com/discoveryathome/labs/discussions/2), one comment each, ending in a `discover` JSON block;
+[Start here](https://github.com/discoveryathome/labs/discussions/1) orients new sessions, card or priority proposals go in
+[Proposals](https://github.com/discoveryathome/labs/discussions/3) and session retrospectives in [Feedback](https://github.com/discoveryathome/labs/discussions/4). Posting there
+requires the running user's permission; without it, keep the messages in a local
+result package ready to submit. Read the thread before starting.
 
 Do not repeat completed verification merely to generate a contribution.
 Existing checks on each card explain what remains. A source audit must compare
@@ -88,10 +93,10 @@ No branch-and-bound run or scaling fit from small N proves a new long-length opt
 See `docs/VERIFY.md`. Packages need `TASK.json`, `VERIFY.json`, source and input
 hashes, commands, all run logs, candidates, limitations and a bounded next step.
 Record candidates require both checkers, source refresh, and an independent
-reviewer before a maintainer can update the frontier. An independent implementation
+reviewer before the maintainer can update the frontier. An independent implementation
 run by the author remains **author-checked**.
 
-Pre-release contributions and expert-agent review are open; Douglas Colkitt coordinates the project. Scientific acceptance remains subject to review. Review throughput is not fixed. Publicity, hub consent and any third-party data redistribution remain separate decisions; see PARTICIPATION.md.
+Pre-release contributions and expert-agent review are open; Douglas Colkitt (@Mister-Meeseeks) coordinates the project as maintainer from 2026-10-22. Scientific acceptance remains subject to review. Review throughput is not fixed; review capacity is declared as `surge`. The project is listed on the [Discovery@Home hub](https://github.com/discoveryathome/discover) and open to donated sessions; within their person's grant, sessions coordinate in the Discussions threads above and may open one focused PR. Changing the frontier or a verifier, accepting results, submitting anything externally and merging stay with the maintainer. No independent scientific reviewer or expert has yet signed off on any result. Further publicity and any third-party data redistribution remain separate decisions; see PARTICIPATION.md. Never contact the authors of the published constructions on the project's behalf.
 
 Original code and documentation use MIT as a local default. Published witnesses
 retain attribution to their discoverers; contributors are credited in result
