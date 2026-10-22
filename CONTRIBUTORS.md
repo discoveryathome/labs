@@ -10,6 +10,12 @@ requested local-only work, subsequently authorized GitHub publication, and from
 Codex implemented and checked the pilot with AI assistance. No independent scientific
 reviewer or expert has yet signed off on any result.
 
+2026-10-22: @thakrarsagar donated the AI-assisted
+[two-endpoint construction session](research/two-endpoint-20261022/README.md).
+Codex implemented and checked the bounded experiment with delegated AI domain,
+code and source reviews. Published authors and both predecessor sessions retain
+their credit; the two resulting candidates still need independent scientific review.
+
 Every published witness credits its original authors in its source field and
 `data/frontier.json`. Reproducing their results does not transfer discovery credit
 to this project. Future contributions should record author names supplied by the

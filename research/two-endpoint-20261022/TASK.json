@@ -1,0 +1,45 @@
+{
+  "card": "published-refinement",
+  "track": "refinement",
+  "base": "1e65ddd66191355ba5fd86b9788d6c02e9329a82",
+  "seed": "93610b14cdb3c9d4f2373623b04b0933",
+  "seed_source": "Python secrets.token_hex(16), OS randomness, one draw",
+  "suggested_length": 119,
+  "run_seed": 2957707571,
+  "budget_minutes": 60,
+  "started_at": "2026-10-22T20:17:32Z",
+  "new_work_cutoff": "2026-10-22T21:02:32Z",
+  "claim": "https://github.com/discoveryathome/labs/discussions/2#discussioncomment-19132135",
+  "responds_to": "https://github.com/discoveryathome/labs/discussions/2#discussioncomment-19131784",
+  "scope": "Exactly two ordered endpoint operations from each of 319 published and five pending parents; retain final lengths in the 95 unbounded frontier rows; no adaptive extension.",
+  "scope_status": "refined",
+  "scope_change_reason": "Follow the open handoff's bounded family rather than only suggested N=119; report N=119 separately.",
+  "success_test": "Strict E improvement over both accepted published and best pending energy, exact reconstruction, two scorer checks, canonical deduplication and refreshed primary-source comparison.",
+  "outcome": "positive",
+  "evidence_level": "author-checked",
+  "result": "4808 paths in 395 parent-length groups; two provisional candidates: N114 E761 versus777, N464 E14396 versus14436. N119 ties pendingE771.",
+  "candidate_status": "Provisional; current-source audit is bounded and independent scientific and novelty review remain required.",
+  "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+  "not_checked": [
+    "Independent scientific acceptance or exhaustive coverage of unpublished and poorly indexed records",
+    "Global optimality",
+    "Full predecessor search replay",
+    "Interior edits, heuristic search, rotation-then-edit or extensions from new candidates"
+  ],
+  "next_questions": [
+    {
+      "question": "Do N114 E761 and N464 E14396 survive another researcher's source, arithmetic, provenance and novelty review?",
+      "first_step": "Run check.py --self-check, inspect both full certificates and AUDIT.md, and independently review current primary-source records before any frontier change.",
+      "success_test": "Reviewer records identity, checked commit, exact scores, source encodings, comparator coverage and remaining novelty limitations.",
+      "track": "verification",
+      "est_minutes": 60
+    }
+  ],
+  "credit": [
+    "Published parents: Zhang, Shen, Kumar and Pistoia; Pšeničnik, Bošković, Popič and Brest; all other parent authors retained per source row.",
+    "Original donor package: transfer code, N113 E736 intermediate tie and N463 E14047 pending candidate.",
+    "PR6 at752a17026f40d1adc860c76d2cb090973d07ed6b: alternate-orientation evidence and two-endpoint-edit handoff.",
+    "Endpoint editing and chaining are established, including Dimitrov's work; no method novelty claimed."
+  ],
+  "ai_assistance": "Codex at thakrarsagar's direction, with delegated AI domain, code and source review; all author-side, no independent scientific signoff."
+}
