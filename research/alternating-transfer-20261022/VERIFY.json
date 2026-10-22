@@ -1,0 +1,23 @@
+{
+  "profile": "exact-certificate",
+  "working_directory": "repository root",
+  "network_required": false,
+  "prerequisites": ["Python >=3.10 without -O", "C++17 compiler and make for repository checks"],
+  "commands": [
+    {"argv": ["python3", "research/donor-60m-20261020/check_candidate.py", "--n", "119"], "timeout_seconds": 30},
+    {"argv": ["python3", "research/alternating-transfer-20261022/sweep.py", "--self-check"], "timeout_seconds": 60},
+    {"argv": ["python3", "research/alternating-transfer-20261022/check.py", "--self-check", "--replay"], "timeout_seconds": 600},
+    {"argv": ["make", "check"], "timeout_seconds": 180},
+    {"argv": ["python3", "scripts/check_results.py"], "timeout_seconds": 60},
+    {"argv": ["python3", "scripts/import_sources.py", "--check"], "timeout_seconds": 60},
+    {"argv": ["python3", "scripts/independent_check.py"], "timeout_seconds": 60},
+    {"argv": ["python3", "scripts/check_package.py"], "timeout_seconds": 60}
+  ],
+  "full_replay": {
+    "argv": ["python3", "research/alternating-transfer-20261022/check.py", "--self-check", "--replay"],
+    "timeout_seconds": 600,
+    "expected": "261 groups and 168646 trials match byte-for-byte for ordered digests, histograms, certificates; all non-timing aggregates match; corrupt evidence is rejected."
+  },
+  "scope_note": "Generic check_results.py and check_package.py validate existing pilot evidence; the package-local check.py validates this contribution. Replay is the same enumerator, not an independent implementation.",
+  "review_status": "author-checked; delegated AI review is not independent scientific review"
+}

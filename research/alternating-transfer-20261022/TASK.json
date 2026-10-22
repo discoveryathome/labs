@@ -1,0 +1,43 @@
+{
+  "card": "published-refinement",
+  "track": "refinement",
+  "base": "1e65ddd66191355ba5fd86b9788d6c02e9329a82",
+  "seed": "5df0b3ec35686ccb18f43aaee9f741e4",
+  "suggested_length": 518,
+  "run_seed": 3925295588,
+  "budget_minutes": 60,
+  "started_at": "2026-10-22T19:38:39Z",
+  "new_work_cutoff": "2026-10-22T20:23:00Z",
+  "scope": "Alternating orientations of all 319 pinned published rows; every one-bit insertion/deletion into the 95 eligible open lengths; 139 contributing parents, 94 reachable lengths, 261 groups, 168646 attempts; no stochastic search.",
+  "scope_status": "refined",
+  "scope_change_reason": "Preregistered the finite allowed family instead of only suggested N=518; report N=518 separately. N=573 has no eligible adjacent parent.",
+  "claim": "https://github.com/discoveryathome/labs/discussions/2#discussioncomment-19131491",
+  "predecessor": "research/donor-60m-20261020/TASK.json: alternate-orientation next question",
+  "overlap_check": "No live comments or open PRs at selection; local protocol handoffs were on verification. Predecessor original-orientation sweep excluded this family.",
+  "success_test": "E strictly below both the accepted published energy and the best pending energy; exact certificate and canonical symmetry checks.",
+  "outcome": "negative",
+  "evidence_level": "author-checked",
+  "result": "Complete domain; zero improvements over combined thresholds; all 12 below-published attempts reproduce eight predecessor candidate orbits. N=518 best E=18463 is a published symmetry tie.",
+  "bottleneck_link": "DISCOVERY.md#frontier-and-bottleneck",
+  "not_checked": [
+    "Current literature/source refresh or independent scientific and novelty review",
+    "Global optimality or sequences outside the pinned finite family",
+    "Two-edit paths, pending candidates as parents, rotation-then-edit and heuristic refinement",
+    "Full replay of predecessor search or direct-sum checking of every non-minimum trial"
+  ],
+  "next_questions": [
+    {
+      "question": "Can two endpoint edits from published and pending parents beat both current comparison thresholds?",
+      "first_step": "Preregister and price the finite endpoint-edit domain; test edits on exhaustive short strings before evaluating it.",
+      "success_test": "Strict improvement over published and pending E, canonical deduplication against both packages, both exact checks and renewed source audit; otherwise report complete bounded negative result.",
+      "track": "refinement",
+      "est_minutes": 60
+    }
+  ],
+  "credit": [
+    "Published parents: Zhang, Shen, Kumar and Pistoia; Pšeničnik, Bošković, Popič and Brest; Pšeničnik, Mlinarič, Brest and Bošković; Bošković, Brglez and Brest archive.",
+    "Prior Codex donor-60m-20261020 session: transfer machinery, pending candidates and alternate-orientation follow-up.",
+    "Endpoint transformations are established methods, including prior work by Dimitrov."
+  ],
+  "ai_assistance": "Codex at thakrarsagar's direction; delegated AI static safety and domain/code review; no independent human or scientific acceptance review."
+}

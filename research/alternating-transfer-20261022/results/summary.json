@@ -1,0 +1,12 @@
+{
+  "below_published": 12,
+  "below_threshold": 0,
+  "candidate_orbits": 0,
+  "cpu_seconds": 46.836951006,
+  "exhausted": true,
+  "finished_at": "2026-10-22T19:46:50.585492+00:00",
+  "generated_sequences": 168646,
+  "groups": 261,
+  "reached_lengths": 94,
+  "wall_seconds": 47.09872368798824
+}

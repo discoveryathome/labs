@@ -1,0 +1,18 @@
+{
+  "base": "1e65ddd66191355ba5fd86b9788d6c02e9329a82",
+  "files": [
+    {"path":"research/alternating-transfer-20261022/sweep.py","sha256":"1c992fc27853b0a70428dc14ebe6c41d8d9095d0a0a401adbba3f8e4657370be"},
+    {"path":"research/alternating-transfer-20261022/PREREGISTRATION.md","sha256":"2cfbfbefcdbb2709833a4f28097447a74eec0d6b8ee8a0a9ec0b676c65e2b39f"},
+    {"path":"research/donor-60m-20261020/transfer.py","sha256":"96ae679aeaa89bc701f2e94e5131fef8ba2dd9ebb3a32bab731671ebf9ee33b0"},
+    {"path":"research/donor-60m-20261020/candidate-table.json","sha256":"f5a70ba531cd1062967de5b15eb3b43f501f541c944267e2fadbcad89dd355d2"},
+    {"path":"src/verify.py","sha256":"469ca1fd30511cd3799ef2ef98f662820e171c59d22cf252365c349950603272"},
+    {"path":"scripts/independent_check.py","sha256":"af6f626f2408e522dee8abff8da0a67fdef0576e51dc7c6d2d36ba704210cdeb"},
+    {"path":"data/published.json","sha256":"74ad2ff1d53f882f6c584a96ffb6e5baab45a04c94371340153d54b676205038"},
+    {"path":"data/frontier.json","sha256":"2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738"},
+    {"path":"data/sources/manifest.json","sha256":"219b6db07e923022f61e3774e55c535327ef3d693bf85ea433cf3544904f760f"},
+    {"path":"research/alternating-transfer-20261022/check.py","sha256":"f2fc3c90f8fd4d6443b58504651edc5381a9b10fb646e34fa3355c7da604f381"},
+    {"path":"research/donor-60m-20261020/transfer/candidates.json","sha256":"3324215664539cee5003d9048661ecd4f415cade4725449ea57d0e81c141f715"},
+    {"path":"research/donor-60m-20261020/transfer/summary.json","sha256":"32945287074c6fdcb4ace82906489d54b1b2cd12823d0c23d2512ca526ccc62f"},
+    {"path":"research/donor-60m-20261020/transfer/groups.jsonl","sha256":"f3d519566c60ded41c637490f77a333afc6aedda4fc841b9c2e2363e72cd1221"}
+  ]
+}
