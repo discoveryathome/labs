@@ -39,8 +39,9 @@ optima. Randomized full-correlation comparisons extend through N=573.
 
 `check_frontier.py` verifies raw input hashes, reconstructs each row's witness,
 and checks that its energy is the minimum of all imported alternatives for N.
-`import_sources.py --check` independently re-extracts the HTML/text tables and
-compares the complete derived files byte for byte. Neither proves that a
+`import_sources.py --check` independently re-extracts the HTML/text tables (and
+reads the extracted Packebusch–Mertens table, whose paper is cited by hash but not
+stored) and compares the complete derived files byte for byte. Neither proves that a
 construction is globally optimal nor that the bibliography is complete.
 
 To test the protocol's per-row probe, use a recorded random seed to select three
@@ -82,8 +83,8 @@ job coverage; timing values are recorded measurements, not mathematical certific
    tie may be cataloguing work only.
 5. Have another researcher replay the checks and record their identity, commit,
    command, output and limitations in `research/<name>/verifications/`.
-6. A consenting maintainer reviews novelty, credit and scope before updating the
-   frontier. The pilot currently has none.
+6. The maintainer (@Mister-Meeseeks) reviews novelty, credit and scope before
+   updating the frontier, after the independent replay in step 5.
 
 Do not label the two checkers as two independent reviewers. All initialization
-results are author-checked and local-only; an external person has not reviewed them.
+results are author-checked; an external person has not reviewed them.

@@ -8,9 +8,14 @@ data/sources/2018-skew.txt and 2004.txt:
   Repository license retained in data/sources/git_labs.LICENSE (GPL-2.0).
   The 2004 table is retained as background only; not used as a current frontier.
 
-data/sources/optimal.html and optimal.txt:
+data/sources/optimal-table.json:
+  Factual table data (N, E, F_N, run-length sequences, skew mark) extracted from
   Tom Packebusch and Stephan Mertens, Low Autocorrelation Binary Sequences,
-  arXiv:1512.02475. Original license/attribution is embedded in the HTML.
+  arXiv:1512.02475, https://arxiv.org/html/1512.02475 (accessed 2026-10-20,
+  SHA-256 8e1e744110d63d1c5a6e20621c6a47b45b13945922117698ec719a614396a7b7).
+  The paper carries only arXiv's non-exclusive distribution license, so it is not
+  redistributed here ("stored": false in data/sources/manifest.json); witnesses
+  derived from it keep data/sources/optimal.html as their citation path.
 data/sources/memetic2025.html:
   Zhiwei Zhang, Jiayu Shen, Niraj Kumar and Marco Pistoia,
   arXiv:2504.00987v2, CC BY 4.0.
@@ -27,6 +32,7 @@ data/sources/psl2047.seq:
 Third-party paper snapshots are research reference materials, not relicensed by
 the pilot's MIT license. Check their original license before redistribution.
 The .txt files are mechanical text extractions of their respective HTML sources.
+Papers without an open license are cited by URL, date and hash, not stored.
 
 protocol/: Discovery@Home specification and playbook snapshot, with upstream
 LICENSE and PIN.json. This pilot does not represent Discovery@Home endorsement.

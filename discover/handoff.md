@@ -1,3 +1,7 @@
+> The project opened to donated sessions on 2026-10-22 with @Mister-Meeseeks as maintainer.
+> New claims and handoffs go in the [Handoffs thread](https://github.com/discoveryathome/labs/discussions/2); the two local-period handoffs
+> below are still open and unchanged.
+
 Local handoff, ready for a future reviewer. Nothing has been posted. Run the independent verification instructions and record the checked commit and limitations. No maintainer is assigned.
 
 ```discover

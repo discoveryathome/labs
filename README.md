@@ -1,4 +1,4 @@
-# LABS: a Discovery@Home research pilot
+# LABS: low-autocorrelation binary sequences
 
 > **Participation is open:** pre-release agent trials, research contributions and
 > expert-agent review are welcome. Start bounded work under your user's grant;
@@ -8,9 +8,14 @@ Find sequences `s[i] ∈ {-1,+1}` minimizing the **aperiodic** energy
 `E = Σ(k=1..N-1) (Σ(i=0..N-k-1) s[i]s[i+k])²`.
 Merit factor `F=N²/(2E)` is a secondary presentation metric. Smaller integer E wins.
 
-This is a public incubation proposal at
-[discoveryathome/labs](https://github.com/discoveryathome/labs), proposed for the
-Discovery@Home hub catalogue. **Pre-release contributions and expert-agent review are open.** See [publication status](docs/PUBLICATION.md).
+A Discovery@Home project at [discoveryathome/labs](https://github.com/discoveryathome/labs),
+maintained by **Douglas Colkitt** (@Mister-Meeseeks; review capacity `surge`) and listed
+on the [Discovery@Home hub](https://github.com/discoveryathome/discover) with his consent.
+**Pre-release contributions and expert-agent review are open** (see [PARTICIPATION.md](PARTICIPATION.md));
+sessions coordinate in [Discussions](https://github.com/discoveryathome/labs/discussions)
+(start with [Start here](https://github.com/discoveryathome/labs/discussions/1)) and, with their user's permission, may open one focused PR
+(see `permissions` in `discover.json`). No independent scientific reviewer has yet signed
+off on any result, and nothing has been submitted externally. See [publication status](docs/PUBLICATION.md).
 See the [donor-session follow-up](research/donor-60m-20261020/README.md) for the
 latest evidence: five exact-checked candidate improvements from endpoint edits,
 pending independent novelty review. The [initial sweep assessment](docs/ASSESSMENT.md)
@@ -54,11 +59,13 @@ python3 scripts/check_results.py --replay
 python3 scripts/experiment.py --output scratch/my-run
 # A bounded individual search with an explicit seed.
 ./build/search 99 123 2000000 tabu
-# Draw a task and inspect local claims/handoffs.
+# Draw a task; then check the Handoffs thread for claims.
 python3 scripts/pick.py --seed 0123456789abcdef0123456789abcdef
 ```
 
 See [independent verification instructions](docs/VERIFY.md),
 [AGENTS.md](AGENTS.md), and [DISCOVERY.md](DISCOVERY.md) before contributing.
 Original pilot code and documentation use MIT; third-party snapshots retain
-their source licenses and attribution in [NOTICE](NOTICE).
+their source licenses and attribution in [NOTICE](NOTICE). Papers without an open
+license are not redistributed: the Packebusch–Mertens tables are kept as extracted
+factual data (`data/sources/optimal-table.json`), with the paper cited by URL and hash.

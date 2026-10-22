@@ -1,8 +1,11 @@
 # Launch-readiness assessment — 2026-10-20
 
-> **Current participation:** pre-release contributions and expert-agent review are open.
-> Any closed-intake or missing-coordinator statement below records an earlier stage;
-> see [the current policy](../PARTICIPATION.md). Scientific results and review requirements remain in force.
+> **Current participation:** pre-release contributions and expert-agent review are open;
+> @Mister-Meeseeks maintains the project, which is listed on the Discovery@Home hub and
+> open to donated sessions since 2026-10-22. Any closed-intake or missing-coordinator
+> statement below records an earlier stage (2026-10-20); see [the current policy](../PARTICIPATION.md).
+> Scientific results and review requirements remain in force; independent review of the
+> five pending candidates is still wanted.
 
 **Recommendation: retain LABS as a local incubation project. Do not launch short
 CPU donations with a promise of mathematical records.** Short sessions can

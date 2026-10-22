@@ -19,8 +19,8 @@
     },
     {
       "path": "scripts/import_sources.py",
-      "sha256": "5f46662dc8ec0e9e8239b168e740034ae66db5c8882a8d8bee7102be90aa40cc",
-      "git_blob": "3391d2de7ad11ac7dc304356f2532ee4a7dea2e1"
+      "sha256": "5d2cad0fce47210a72496d004fb90e5864fc7353dd82664b667a33ea7e9afadd",
+      "git_blob": "223cd6db80e46c779459c8d14d63acd5c8ac17bc"
     },
     {
       "path": "scripts/independent_check.py",
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/sources/manifest.json",
-      "sha256": "c1043100997f24f4854e8e45e39c5798f9106c466797a90106346f69b6910b96",
-      "git_blob": "8a6757326cb00209ebbd0ded578ebf8f36c704e0"
+      "sha256": "219b6db07e923022f61e3774e55c535327ef3d693bf85ea433cf3544904f760f",
+      "git_blob": "eb29ad7f600471fd2bf479a60b920f5b2a8a15d1"
     },
     {
       "path": "research/pilot/config.json",
@@ -67,5 +67,20 @@
     "borkob/git_labs": "1aa123407636e48630174e0bf122037e369c1d68",
     "J-Brest/LABS": "4232311cb4f3626ab008336f6069cd5af5e3915b",
     "discoveryathome/discover": "90b619582ffecfe953fef520c90916bc6422bf18"
+  },
+  "rebound": {
+    "date": "2026-10-22",
+    "commit_before": "08636f3",
+    "reason": "Launch: the non-open Packebusch–Mertens paper snapshot (arXiv:1512.02475) was removed and its factual table extracted to data/sources/optimal-table.json; the manifest marks the paper \"stored\": false and import_sources.py reads the extracted table. The imported witnesses, data/published.json and data/frontier.json are byte-identical, so this package's results are unaffected. The original hashes are kept here; the files at commit 08636f3 match them.",
+    "original": {
+      "scripts/import_sources.py": {
+        "sha256": "5f46662dc8ec0e9e8239b168e740034ae66db5c8882a8d8bee7102be90aa40cc",
+        "git_blob": "3391d2de7ad11ac7dc304356f2532ee4a7dea2e1"
+      },
+      "data/sources/manifest.json": {
+        "sha256": "c1043100997f24f4854e8e45e39c5798f9106c466797a90106346f69b6910b96",
+        "git_blob": "8a6757326cb00209ebbd0ded578ebf8f36c704e0"
+      }
+    }
   }
 }

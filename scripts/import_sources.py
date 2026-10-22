@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild certificates from pinned, offline primary-source snapshots."""
+"""Rebuild certificates from pinned, offline primary-source snapshots and extracted tables."""
 import hashlib
 import argparse
 import json
@@ -24,8 +24,12 @@ def build(check=False):
     urls = {}
     for item in sources:
         p = ROOT / item["path"]
-        assert hashlib.sha256(p.read_bytes()).hexdigest() == item["sha256"], p
+        # "stored": false entries are cited by URL and hash only; their factual
+        # data is read from the extracted file that names them in "extracted_from".
+        if item.get("stored", True):
+            assert hashlib.sha256(p.read_bytes()).hexdigest() == item["sha256"], p
         urls[p.name] = item["url"]
+    cited = {item["path"]: item for item in sources}
     records = []
 
     def add(n, sequence, name, by, date, energy=None, f=None, optimum=False):
@@ -44,22 +48,22 @@ def build(check=False):
                             by=by, updated=date, optimum=optimum))
 
     add(2, "01", "optimal.html", "Elementary parity bound", "2016-04-01", 1, optimum=True)
-    tables = Tables((ROOT/"data/sources/optimal.html").read_text()).tables
+    # Factual table rows extracted from arXiv:1512.02475; the paper is not stored.
+    optimal = json.loads((ROOT/"data/sources/optimal-table.json").read_text())
+    assert optimal["source"]["sha256"] == cited["data/sources/optimal.html"]["sha256"]
+    assert optimal["columns"] == ["N", "E", "FN", "sequences", "skew"]
     seen = set()
-    for table in tables:
-        if not table or table[0] != ["N", "E", "FN", "sequences", "skew"]:
+    for r in optimal["rows"]:
+        if len(r) < 4 or not r[0].isdigit():
             continue
-        for r in table[1:]:
-            if len(r) < 4 or not r[0].isdigit():
-                continue
-            n = int(r[0])
-            if n in seen:
-                continue
-            seen.add(n)
-            s = "".join(("1" if i % 2 == 0 else "0") * int(c, 36)
-                        for i, c in enumerate(r[3]))
-            add(n, s, "optimal.html", "Packebusch and Mertens", "2016-04-01",
-                int(r[1]), optimum=True)
+        n = int(r[0])
+        if n in seen:
+            continue
+        seen.add(n)
+        s = "".join(("1" if i % 2 == 0 else "0") * int(c, 36)
+                    for i, c in enumerate(r[3]))
+        add(n, s, "optimal.html", "Packebusch and Mertens", "2016-04-01",
+            int(r[1]), optimum=True)
     for line in (ROOT/"data/sources/2018-skew.txt").read_text().splitlines()[1:]:
         r = line.split()
         if len(r) == 4:

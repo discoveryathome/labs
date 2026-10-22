@@ -9,7 +9,16 @@
     "path": "data/sources/optimal.html",
     "url": "https://arxiv.org/html/1512.02475",
     "sha256": "8e1e744110d63d1c5a6e20621c6a47b45b13945922117698ec719a614396a7b7",
-    "accessed": "2026-10-20"
+    "accessed": "2026-10-20",
+    "stored": false,
+    "note": "Not redistributed (arXiv non-exclusive distribution license). Factual table rows are in data/sources/optimal-table.json; witness source_file fields keep this path as the citation."
+  },
+  {
+    "path": "data/sources/optimal-table.json",
+    "url": "https://arxiv.org/html/1512.02475",
+    "sha256": "7a99c7d4288ac6405fcfeefecf0b9c78e853b7f49e03990b1184db752d0708a8",
+    "accessed": "2026-10-22",
+    "extracted_from": "data/sources/optimal.html"
   },
   {
     "path": "data/sources/2018-skew.txt",

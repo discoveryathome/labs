@@ -1,7 +1,7 @@
 {
   "schema": "discover-frontier/v0",
   "statement": "Verified published constructions for 160 selected lengths: N=2..66, sixteen lengths in 92..120, N=450..527, and N=573. Each row is the minimum integer energy among imported witnesses. Optimality for N<=66 is reported by the literature, not re-proved here.",
-  "status": "Open to pre-release contributions and expert-agent review; scientific evidence retains its recorded review status and requires acceptance review.",
+  "status": "Open to pre-release contributions and expert-agent review since 2026-10-22; maintainer @Mister-Meeseeks. Author-checked literature constructions; five pending record candidates are not in this table until independently reviewed; frontier changes are a maintainer decision.",
   "evidence_level": [
     "author-checked"
   ],
