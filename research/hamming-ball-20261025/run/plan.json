@@ -1,0 +1,110 @@
+{
+ "parents": 326,
+ "parent_kinds": {
+  "published": 319,
+  "pending-donor": 5,
+  "pending-pr7": 2
+ },
+ "starts": 964,
+ "ops": {
+  "prepend_0": 138,
+  "prepend_1": 138,
+  "append_0": 138,
+  "append_1": 138,
+  "identity": 142,
+  "delete_first": 135,
+  "delete_last": 135
+ },
+ "lengths_covered": 95,
+ "open_lengths": 95,
+ "missing": [],
+ "sequences": 15366696575,
+ "radius3_starts": 964,
+ "inner_ops_estimate": "7.48e+12",
+ "gap_min": 0,
+ "gap_p10": 0,
+ "gap_median": 184,
+ "starts_gap_le_50": 301,
+ "starts_gap_le_0": 226,
+ "closest": [
+  [
+   92,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   92,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   98,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   104,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   106,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   110,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   112,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   113,
+   "prepend_1",
+   "published",
+   0
+  ],
+  [
+   116,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   120,
+   "identity",
+   "published",
+   0
+  ],
+  [
+   119,
+   "delete_last",
+   "published",
+   0
+  ],
+  [
+   99,
+   "identity",
+   "published",
+   0
+  ]
+ ],
+ "sha256": {
+  "repo/data/published.json": "74ad2ff1d53f882f6c584a96ffb6e5baab45a04c94371340153d54b676205038",
+  "repo/data/frontier.json": "2dd353a277cb86e305590b9f65318726b4ad68f59ff2e8c39f8a64689bae5738",
+  "repo/research/donor-60m-20261020/candidate-table.json": "f5a70ba531cd1062967de5b15eb3b43f501f541c944267e2fadbcad89dd355d2",
+  "inputs/pr7-candidates.json": "0648550eb777853a24b1309fa983092a03ddebae6c59c4a12493b2d39a4028e1",
+  "mine/build_starts.py": "9f07873e4d4336d1a53f030d671c9f4402f85db74ac59d060217dd062d9138ef"
+ }
+}

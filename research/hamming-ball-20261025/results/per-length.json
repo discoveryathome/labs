@@ -1,0 +1,1905 @@
+[
+ {
+  "N": 92,
+  "threshold_E": 490,
+  "best_E_in_domain": 490,
+  "gap": 0,
+  "best": {
+   "E": 490,
+   "start": 73,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 92
+  },
+  "starts": 6,
+  "evaluated": 779154,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 98,
+  "threshold_E": 529,
+  "best_E_in_domain": 529,
+  "gap": 0,
+  "best": {
+   "E": 529,
+   "start": 75,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 98
+  },
+  "starts": 9,
+  "evaluated": 1412532,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 99,
+  "threshold_E": 553,
+  "best_E_in_domain": 553,
+  "gap": 0,
+  "best": {
+   "E": 553,
+   "start": 113,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 99
+  },
+  "starts": 6,
+  "evaluated": 970800,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 104,
+  "threshold_E": 600,
+  "best_E_in_domain": 600,
+  "gap": 0,
+  "best": {
+   "E": 600,
+   "start": 80,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 104
+  },
+  "starts": 7,
+  "evaluated": 1312955,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 106,
+  "threshold_E": 645,
+  "best_E_in_domain": 645,
+  "gap": 0,
+  "best": {
+   "E": 645,
+   "start": 81,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 106
+  },
+  "starts": 9,
+  "evaluated": 1787328,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 107,
+  "threshold_E": 645,
+  "best_E_in_domain": 645,
+  "gap": 0,
+  "best": {
+   "E": 645,
+   "start": 116,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 107
+  },
+  "starts": 10,
+  "evaluated": 2042640,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 108,
+  "threshold_E": 666,
+  "best_E_in_domain": 666,
+  "gap": 0,
+  "best": {
+   "E": 666,
+   "start": 124,
+   "flips": [],
+   "op": "delete_first",
+   "parent_kind": "published",
+   "parent_N": 109
+  },
+  "starts": 14,
+  "evaluated": 2940602,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 109,
+  "threshold_E": 658,
+  "best_E_in_domain": 658,
+  "gap": 0,
+  "best": {
+   "E": 658,
+   "start": 123,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 109
+  },
+  "starts": 12,
+  "evaluated": 2591160,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 110,
+  "threshold_E": 707,
+  "best_E_in_domain": 707,
+  "gap": 0,
+  "best": {
+   "E": 707,
+   "start": 93,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 110
+  },
+  "starts": 11,
+  "evaluated": 2441186,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 112,
+  "threshold_E": 728,
+  "best_E_in_domain": 728,
+  "gap": 0,
+  "best": {
+   "E": 728,
+   "start": 96,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 112
+  },
+  "starts": 9,
+  "evaluated": 2108241,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 113,
+  "threshold_E": 736,
+  "best_E_in_domain": 736,
+  "gap": 0,
+  "best": {
+   "E": 736,
+   "start": 97,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 112
+  },
+  "starts": 10,
+  "evaluated": 2405780,
+  "ties": 4,
+  "tie_orbits_recorded": 2,
+  "tie_orbits_not_previously_known": 1
+ },
+ {
+  "N": 114,
+  "threshold_E": 761,
+  "best_E_in_domain": 761,
+  "gap": 0,
+  "best": {
+   "E": 761,
+   "start": 954,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "pending-pr7",
+   "parent_N": 114
+  },
+  "starts": 12,
+  "evaluated": 2964240,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 116,
+  "threshold_E": 802,
+  "best_E_in_domain": 802,
+  "gap": 0,
+  "best": {
+   "E": 802,
+   "start": 104,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 116
+  },
+  "starts": 7,
+  "evaluated": 1821729,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 118,
+  "threshold_E": 799,
+  "best_E_in_domain": 799,
+  "gap": 0,
+  "best": {
+   "E": 799,
+   "start": 138,
+   "flips": [],
+   "op": "delete_first",
+   "parent_kind": "published",
+   "parent_N": 119
+  },
+  "starts": 12,
+  "evaluated": 3287256,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 119,
+  "threshold_E": 771,
+  "best_E_in_domain": 771,
+  "gap": 0,
+  "best": {
+   "E": 771,
+   "start": 112,
+   "flips": [],
+   "op": "delete_last",
+   "parent_kind": "published",
+   "parent_N": 120
+  },
+  "starts": 13,
+  "evaluated": 3652480,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 120,
+  "threshold_E": 824,
+  "best_E_in_domain": 824,
+  "gap": 0,
+  "best": {
+   "E": 824,
+   "start": 110,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 120
+  },
+  "starts": 15,
+  "evaluated": 4321515,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 450,
+  "threshold_E": 13009,
+  "best_E_in_domain": 13009,
+  "gap": 0,
+  "best": {
+   "E": 13009,
+   "start": 684,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 450
+  },
+  "starts": 10,
+  "evaluated": 151878760,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 451,
+  "threshold_E": 12625,
+  "best_E_in_domain": 12625,
+  "gap": 0,
+  "best": {
+   "E": 12625,
+   "start": 685,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 450
+  },
+  "starts": 14,
+  "evaluated": 214050928,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 452,
+  "threshold_E": 13074,
+  "best_E_in_domain": 13074,
+  "gap": 0,
+  "best": {
+   "E": 13074,
+   "start": 692,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 451
+  },
+  "starts": 12,
+  "evaluated": 184695348,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 453,
+  "threshold_E": 13338,
+  "best_E_in_domain": 13338,
+  "gap": 0,
+  "best": {
+   "E": 13338,
+   "start": 161,
+   "flips": [
+    85,
+    452
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 452
+  },
+  "starts": 11,
+  "evaluated": 170430238,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 454,
+  "threshold_E": 13319,
+  "best_E_in_domain": 13319,
+  "gap": 0,
+  "best": {
+   "E": 13319,
+   "start": 166,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 453
+  },
+  "starts": 9,
+  "evaluated": 140368410,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 455,
+  "threshold_E": 13043,
+  "best_E_in_domain": 13043,
+  "gap": 0,
+  "best": {
+   "E": 13043,
+   "start": 703,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 455
+  },
+  "starts": 10,
+  "evaluated": 156997760,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 456,
+  "threshold_E": 13288,
+  "best_E_in_domain": 13288,
+  "gap": 0,
+  "best": {
+   "E": 13288,
+   "start": 706,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 455
+  },
+  "starts": 14,
+  "evaluated": 221249238,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 457,
+  "threshold_E": 13532,
+  "best_E_in_domain": 13532,
+  "gap": 0,
+  "best": {
+   "E": 13532,
+   "start": 715,
+   "flips": [
+    456
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 456
+  },
+  "starts": 14,
+  "evaluated": 222707996,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 458,
+  "threshold_E": 13837,
+  "best_E_in_domain": 13837,
+  "gap": 0,
+  "best": {
+   "E": 13837,
+   "start": 720,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 457
+  },
+  "starts": 14,
+  "evaluated": 224173152,
+  "ties": 6,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 459,
+  "threshold_E": 14101,
+  "best_E_in_domain": 14101,
+  "gap": 0,
+  "best": {
+   "E": 14101,
+   "start": 729,
+   "flips": [
+    458
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 458
+  },
+  "starts": 14,
+  "evaluated": 225644720,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 460,
+  "threshold_E": 13870,
+  "best_E_in_domain": 13870,
+  "gap": 0,
+  "best": {
+   "E": 13870,
+   "start": 738,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 460
+  },
+  "starts": 14,
+  "evaluated": 227122714,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 461,
+  "threshold_E": 13574,
+  "best_E_in_domain": 13574,
+  "gap": 0,
+  "best": {
+   "E": 13574,
+   "start": 743,
+   "flips": [
+    460
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 460
+  },
+  "starts": 14,
+  "evaluated": 228607148,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 462,
+  "threshold_E": 13811,
+  "best_E_in_domain": 13811,
+  "gap": 0,
+  "best": {
+   "E": 13811,
+   "start": 748,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 461
+  },
+  "starts": 16,
+  "evaluated": 262969184,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 463,
+  "threshold_E": 14047,
+  "best_E_in_domain": 14047,
+  "gap": 0,
+  "best": {
+   "E": 14047,
+   "start": 755,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 462
+  },
+  "starts": 17,
+  "evaluated": 281222976,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 464,
+  "threshold_E": 14396,
+  "best_E_in_domain": 14396,
+  "gap": 0,
+  "best": {
+   "E": 14396,
+   "start": 943,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "pending-donor",
+   "parent_N": 463
+  },
+  "starts": 19,
+  "evaluated": 316348955,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 465,
+  "threshold_E": 14336,
+  "best_E_in_domain": 14336,
+  "gap": 0,
+  "best": {
+   "E": 14336,
+   "start": 771,
+   "flips": [
+    87,
+    377,
+    464
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 464
+  },
+  "starts": 16,
+  "evaluated": 268125216,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 466,
+  "threshold_E": 14649,
+  "best_E_in_domain": 14649,
+  "gap": 0,
+  "best": {
+   "E": 14649,
+   "start": 250,
+   "flips": [
+    0,
+    203
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 465
+  },
+  "starts": 11,
+  "evaluated": 185527892,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 467,
+  "threshold_E": 14713,
+  "best_E_in_domain": 14713,
+  "gap": 0,
+  "best": {
+   "E": 14713,
+   "start": 259,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 466
+  },
+  "starts": 7,
+  "evaluated": 118824888,
+  "ties": 6,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 468,
+  "threshold_E": 14586,
+  "best_E_in_domain": 14586,
+  "gap": 0,
+  "best": {
+   "E": 14586,
+   "start": 268,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 468
+  },
+  "starts": 7,
+  "evaluated": 119589841,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 469,
+  "threshold_E": 14626,
+  "best_E_in_domain": 14626,
+  "gap": 0,
+  "best": {
+   "E": 14626,
+   "start": 273,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 468
+  },
+  "starts": 7,
+  "evaluated": 120358070,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 470,
+  "threshold_E": 14759,
+  "best_E_in_domain": 14759,
+  "gap": 0,
+  "best": {
+   "E": 14759,
+   "start": 280,
+   "flips": [
+    469
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 469
+  },
+  "starts": 7,
+  "evaluated": 121129582,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 471,
+  "threshold_E": 14683,
+  "best_E_in_domain": 14683,
+  "gap": 0,
+  "best": {
+   "E": 14683,
+   "start": 285,
+   "flips": [
+    0,
+    265
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 470
+  },
+  "starts": 7,
+  "evaluated": 121904384,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 472,
+  "threshold_E": 15088,
+  "best_E_in_domain": 15088,
+  "gap": 0,
+  "best": {
+   "E": 15088,
+   "start": 292,
+   "flips": [
+    0,
+    266
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 471
+  },
+  "starts": 7,
+  "evaluated": 122682483,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 473,
+  "threshold_E": 14932,
+  "best_E_in_domain": 14932,
+  "gap": 0,
+  "best": {
+   "E": 14932,
+   "start": 303,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 473
+  },
+  "starts": 7,
+  "evaluated": 123463886,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 474,
+  "threshold_E": 15125,
+  "best_E_in_domain": 15125,
+  "gap": 0,
+  "best": {
+   "E": 15125,
+   "start": 306,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 473
+  },
+  "starts": 9,
+  "evaluated": 159748200,
+  "ties": 6,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 475,
+  "threshold_E": 15197,
+  "best_E_in_domain": 15197,
+  "gap": 0,
+  "best": {
+   "E": 15197,
+   "start": 780,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 475
+  },
+  "starts": 10,
+  "evaluated": 178623760,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 476,
+  "threshold_E": 15110,
+  "best_E_in_domain": 15110,
+  "gap": 0,
+  "best": {
+   "E": 15110,
+   "start": 783,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 475
+  },
+  "starts": 14,
+  "evaluated": 251655978,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 477,
+  "threshold_E": 15022,
+  "best_E_in_domain": 15022,
+  "gap": 0,
+  "best": {
+   "E": 15022,
+   "start": 792,
+   "flips": [
+    476
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 476
+  },
+  "starts": 14,
+  "evaluated": 253245356,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 478,
+  "threshold_E": 15115,
+  "best_E_in_domain": 15115,
+  "gap": 0,
+  "best": {
+   "E": 15115,
+   "start": 801,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 478
+  },
+  "starts": 14,
+  "evaluated": 254841412,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 479,
+  "threshold_E": 15007,
+  "best_E_in_domain": 15007,
+  "gap": 0,
+  "best": {
+   "E": 15007,
+   "start": 806,
+   "flips": [
+    478
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 478
+  },
+  "starts": 14,
+  "evaluated": 256444160,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 480,
+  "threshold_E": 15160,
+  "best_E_in_domain": 15160,
+  "gap": 0,
+  "best": {
+   "E": 15160,
+   "start": 813,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 479
+  },
+  "starts": 14,
+  "evaluated": 258053614,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 481,
+  "threshold_E": 15016,
+  "best_E_in_domain": 15016,
+  "gap": 0,
+  "best": {
+   "E": 15016,
+   "start": 820,
+   "flips": [
+    480
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 480
+  },
+  "starts": 14,
+  "evaluated": 259669788,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 482,
+  "threshold_E": 15169,
+  "best_E_in_domain": 15169,
+  "gap": 0,
+  "best": {
+   "E": 15169,
+   "start": 825,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 481
+  },
+  "starts": 14,
+  "evaluated": 261292696,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 483,
+  "threshold_E": 15321,
+  "best_E_in_domain": 15321,
+  "gap": 0,
+  "best": {
+   "E": 15321,
+   "start": 834,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 482
+  },
+  "starts": 14,
+  "evaluated": 262922352,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 484,
+  "threshold_E": 15646,
+  "best_E_in_domain": 15646,
+  "gap": 0,
+  "best": {
+   "E": 15646,
+   "start": 839,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 483
+  },
+  "starts": 14,
+  "evaluated": 264558770,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 485,
+  "threshold_E": 15970,
+  "best_E_in_domain": 15970,
+  "gap": 0,
+  "best": {
+   "E": 15970,
+   "start": 848,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 484
+  },
+  "starts": 12,
+  "evaluated": 228173112,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 486,
+  "threshold_E": 16119,
+  "best_E_in_domain": 16119,
+  "gap": 0,
+  "best": {
+   "E": 16119,
+   "start": 394,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 486
+  },
+  "starts": 11,
+  "evaluated": 210455102,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 487,
+  "threshold_E": 15927,
+  "best_E_in_domain": 15927,
+  "gap": 0,
+  "best": {
+   "E": 15927,
+   "start": 399,
+   "flips": [
+    486
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 486
+  },
+  "starts": 7,
+  "evaluated": 134754368,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 488,
+  "threshold_E": 16032,
+  "best_E_in_domain": 16032,
+  "gap": 0,
+  "best": {
+   "E": 16032,
+   "start": 406,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 487
+  },
+  "starts": 7,
+  "evaluated": 135586171,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 489,
+  "threshold_E": 15796,
+  "best_E_in_domain": 15796,
+  "gap": 0,
+  "best": {
+   "E": 15796,
+   "start": 411,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 488
+  },
+  "starts": 9,
+  "evaluated": 175398930,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 490,
+  "threshold_E": 16005,
+  "best_E_in_domain": 16005,
+  "gap": 0,
+  "best": {
+   "E": 16005,
+   "start": 850,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 490
+  },
+  "starts": 10,
+  "evaluated": 196085760,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 491,
+  "threshold_E": 15957,
+  "best_E_in_domain": 15957,
+  "gap": 0,
+  "best": {
+   "E": 15957,
+   "start": 853,
+   "flips": [
+    0,
+    262
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 490
+  },
+  "starts": 12,
+  "evaluated": 236746464,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 492,
+  "threshold_E": 15822,
+  "best_E_in_domain": 15822,
+  "gap": 0,
+  "best": {
+   "E": 15822,
+   "start": 432,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 491
+  },
+  "starts": 11,
+  "evaluated": 218346249,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 493,
+  "threshold_E": 15622,
+  "best_E_in_domain": 15622,
+  "gap": 0,
+  "best": {
+   "E": 15622,
+   "start": 439,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 492
+  },
+  "starts": 9,
+  "evaluated": 179738442,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 494,
+  "threshold_E": 15955,
+  "best_E_in_domain": 15955,
+  "gap": 0,
+  "best": {
+   "E": 15955,
+   "start": 864,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 494
+  },
+  "starts": 10,
+  "evaluated": 200927100,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 495,
+  "threshold_E": 16155,
+  "best_E_in_domain": 16155,
+  "gap": 0,
+  "best": {
+   "E": 16155,
+   "start": 867,
+   "flips": [
+    0,
+    266
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 494
+  },
+  "starts": 14,
+  "evaluated": 283009664,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 496,
+  "threshold_E": 16308,
+  "best_E_in_domain": 16308,
+  "gap": 0,
+  "best": {
+   "E": 16308,
+   "start": 874,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 495
+  },
+  "starts": 14,
+  "evaluated": 284728318,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 497,
+  "threshold_E": 16568,
+  "best_E_in_domain": 16568,
+  "gap": 0,
+  "best": {
+   "E": 16568,
+   "start": 883,
+   "flips": [
+    496
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 496
+  },
+  "starts": 14,
+  "evaluated": 286453916,
+  "ties": 8,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 498,
+  "threshold_E": 16825,
+  "best_E_in_domain": 16825,
+  "gap": 0,
+  "best": {
+   "E": 16825,
+   "start": 888,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 497
+  },
+  "starts": 12,
+  "evaluated": 247016976,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 499,
+  "threshold_E": 16925,
+  "best_E_in_domain": 16925,
+  "gap": 0,
+  "best": {
+   "E": 16925,
+   "start": 481,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 498
+  },
+  "starts": 11,
+  "evaluated": 227799000,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 500,
+  "threshold_E": 17026,
+  "best_E_in_domain": 17026,
+  "gap": 0,
+  "best": {
+   "E": 17026,
+   "start": 490,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 499
+  },
+  "starts": 7,
+  "evaluated": 145836257,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 501,
+  "threshold_E": 16946,
+  "best_E_in_domain": 16946,
+  "gap": 0,
+  "best": {
+   "E": 16946,
+   "start": 495,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 500
+  },
+  "starts": 7,
+  "evaluated": 146713014,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 502,
+  "threshold_E": 17039,
+  "best_E_in_domain": 17039,
+  "gap": 0,
+  "best": {
+   "E": 17039,
+   "start": 506,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 502
+  },
+  "starts": 7,
+  "evaluated": 147593278,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 503,
+  "threshold_E": 16987,
+  "best_E_in_domain": 16987,
+  "gap": 0,
+  "best": {
+   "E": 16987,
+   "start": 509,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 502
+  },
+  "starts": 7,
+  "evaluated": 148477056,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 504,
+  "threshold_E": 17236,
+  "best_E_in_domain": 17236,
+  "gap": 0,
+  "best": {
+   "E": 17236,
+   "start": 520,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 504
+  },
+  "starts": 7,
+  "evaluated": 149364355,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 505,
+  "threshold_E": 16996,
+  "best_E_in_domain": 16996,
+  "gap": 0,
+  "best": {
+   "E": 16996,
+   "start": 527,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 505
+  },
+  "starts": 7,
+  "evaluated": 150255182,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 506,
+  "threshold_E": 17301,
+  "best_E_in_domain": 17301,
+  "gap": 0,
+  "best": {
+   "E": 17301,
+   "start": 530,
+   "flips": [
+    0,
+    361
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 505
+  },
+  "starts": 7,
+  "evaluated": 151149544,
+  "ties": 14,
+  "tie_orbits_recorded": 2,
+  "tie_orbits_not_previously_known": 1
+ },
+ {
+  "N": 507,
+  "threshold_E": 17517,
+  "best_E_in_domain": 17517,
+  "gap": 0,
+  "best": {
+   "E": 17517,
+   "start": 537,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 506
+  },
+  "starts": 7,
+  "evaluated": 152047448,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 508,
+  "threshold_E": 17698,
+  "best_E_in_domain": 17698,
+  "gap": 0,
+  "best": {
+   "E": 17698,
+   "start": 548,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 508
+  },
+  "starts": 7,
+  "evaluated": 152948901,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 509,
+  "threshold_E": 17358,
+  "best_E_in_domain": 17358,
+  "gap": 0,
+  "best": {
+   "E": 17358,
+   "start": 553,
+   "flips": [
+    508
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 508
+  },
+  "starts": 7,
+  "evaluated": 153853910,
+  "ties": 4,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 510,
+  "threshold_E": 17787,
+  "best_E_in_domain": 17787,
+  "gap": 0,
+  "best": {
+   "E": 17787,
+   "start": 558,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 509
+  },
+  "starts": 7,
+  "evaluated": 154762482,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 511,
+  "threshold_E": 17887,
+  "best_E_in_domain": 17887,
+  "gap": 0,
+  "best": {
+   "E": 17887,
+   "start": 569,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 511
+  },
+  "starts": 7,
+  "evaluated": 155674624,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 512,
+  "threshold_E": 17996,
+  "best_E_in_domain": 17996,
+  "gap": 0,
+  "best": {
+   "E": 17996,
+   "start": 572,
+   "flips": [
+    0,
+    143,
+    377
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 511
+  },
+  "starts": 7,
+  "evaluated": 156590343,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 513,
+  "threshold_E": 18264,
+  "best_E_in_domain": 18264,
+  "gap": 0,
+  "best": {
+   "E": 18264,
+   "start": 581,
+   "flips": [
+    135,
+    143,
+    512
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 512
+  },
+  "starts": 7,
+  "evaluated": 157509646,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 514,
+  "threshold_E": 18249,
+  "best_E_in_domain": 18249,
+  "gap": 0,
+  "best": {
+   "E": 18249,
+   "start": 590,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 514
+  },
+  "starts": 7,
+  "evaluated": 158432540,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 515,
+  "threshold_E": 18265,
+  "best_E_in_domain": 18265,
+  "gap": 0,
+  "best": {
+   "E": 18265,
+   "start": 593,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 514
+  },
+  "starts": 9,
+  "evaluated": 204890184,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 516,
+  "threshold_E": 18278,
+  "best_E_in_domain": 18278,
+  "gap": 0,
+  "best": {
+   "E": 18278,
+   "start": 899,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 516
+  },
+  "starts": 10,
+  "evaluated": 228984470,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 517,
+  "threshold_E": 18150,
+  "best_E_in_domain": 18150,
+  "gap": 0,
+  "best": {
+   "E": 18150,
+   "start": 904,
+   "flips": [
+    516
+   ],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 516
+  },
+  "starts": 14,
+  "evaluated": 322445676,
+  "ties": 8,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 518,
+  "threshold_E": 18463,
+  "best_E_in_domain": 18463,
+  "gap": 0,
+  "best": {
+   "E": 18463,
+   "start": 909,
+   "flips": [
+    0
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 517
+  },
+  "starts": 12,
+  "evaluated": 277988856,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 519,
+  "threshold_E": 18483,
+  "best_E_in_domain": 18483,
+  "gap": 0,
+  "best": {
+   "E": 18483,
+   "start": 625,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 519
+  },
+  "starts": 11,
+  "evaluated": 256301760,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 520,
+  "threshold_E": 18680,
+  "best_E_in_domain": 18680,
+  "gap": 0,
+  "best": {
+   "E": 18680,
+   "start": 628,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 519
+  },
+  "starts": 7,
+  "evaluated": 164045707,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 521,
+  "threshold_E": 18876,
+  "best_E_in_domain": 18876,
+  "gap": 0,
+  "best": {
+   "E": 18876,
+   "start": 637,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 520
+  },
+  "starts": 7,
+  "evaluated": 164993934,
+  "ties": 3,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 522,
+  "threshold_E": 18829,
+  "best_E_in_domain": 18829,
+  "gap": 0,
+  "best": {
+   "E": 18829,
+   "start": 646,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 522
+  },
+  "starts": 7,
+  "evaluated": 165945808,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 523,
+  "threshold_E": 18917,
+  "best_E_in_domain": 18917,
+  "gap": 0,
+  "best": {
+   "E": 18917,
+   "start": 653,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 523
+  },
+  "starts": 7,
+  "evaluated": 166901336,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 524,
+  "threshold_E": 19230,
+  "best_E_in_domain": 19230,
+  "gap": 0,
+  "best": {
+   "E": 19230,
+   "start": 656,
+   "flips": [],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 523
+  },
+  "starts": 7,
+  "evaluated": 167860525,
+  "ties": 5,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 525,
+  "threshold_E": 18934,
+  "best_E_in_domain": 18934,
+  "gap": 0,
+  "best": {
+   "E": 18934,
+   "start": 667,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 525
+  },
+  "starts": 7,
+  "evaluated": 168823382,
+  "ties": 2,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 526,
+  "threshold_E": 19123,
+  "best_E_in_domain": 19123,
+  "gap": 0,
+  "best": {
+   "E": 19123,
+   "start": 670,
+   "flips": [
+    0,
+    421
+   ],
+   "op": "prepend_0",
+   "parent_kind": "published",
+   "parent_N": 525
+  },
+  "starts": 7,
+  "evaluated": 169789914,
+  "ties": 7,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ },
+ {
+  "N": 527,
+  "threshold_E": 19343,
+  "best_E_in_domain": 19343,
+  "gap": 0,
+  "best": {
+   "E": 19343,
+   "start": 679,
+   "flips": [],
+   "op": "append_0",
+   "parent_kind": "published",
+   "parent_N": 526
+  },
+  "starts": 5,
+  "evaluated": 121971520,
+  "ties": 9,
+  "tie_orbits_recorded": 2,
+  "tie_orbits_not_previously_known": 1
+ },
+ {
+  "N": 573,
+  "threshold_E": 22558,
+  "best_E_in_domain": 22558,
+  "gap": 0,
+  "best": {
+   "E": 22558,
+   "start": 920,
+   "flips": [],
+   "op": "identity",
+   "parent_kind": "published",
+   "parent_N": 573
+  },
+  "starts": 1,
+  "evaluated": 31355898,
+  "ties": 1,
+  "tie_orbits_recorded": 1,
+  "tie_orbits_not_previously_known": 0
+ }
+]
