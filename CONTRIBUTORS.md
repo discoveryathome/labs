@@ -10,6 +10,10 @@ requested local-only work, subsequently authorized GitHub publication, and from
 Codex implemented and checked the pilot with AI assistance. No independent scientific
 reviewer or expert has yet signed off on any result.
 
+Cody Harris donated the `research/hamming-ball-20261025/` session. Claude (Anthropic,
+Claude Code) designed, implemented and checked that bounded negative result. Published
+authors and the predecessor sessions keep their credit.
+
 Every published witness credits its original authors in its source field and
 `data/frontier.json`. Reproducing their results does not transfer discovery credit
 to this project. Future contributions should record author names supplied by the

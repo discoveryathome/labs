@@ -1,0 +1,37 @@
+{
+ "results": 964,
+ "starts": 964,
+ "evaluated": 15366696575,
+ "accounting_problems": [],
+ "corruption_controls_rejected": 2,
+ "rescored_both_checkers": 5784,
+ "rescored_independent_only": 8676,
+ "below_threshold": 0,
+ "below_threshold_new_orbits": 0,
+ "lengths": 95,
+ "lengths_tied": 95,
+ "lengths_below": 0,
+ "suggested_N451": [
+  {
+   "N": 451,
+   "threshold_E": 12625,
+   "best_E_in_domain": 12625,
+   "gap": 0,
+   "best": {
+    "E": 12625,
+    "start": 685,
+    "flips": [
+     0
+    ],
+    "op": "prepend_0",
+    "parent_kind": "published",
+    "parent_N": 450
+   },
+   "starts": 14,
+   "evaluated": 214050928,
+   "ties": 4,
+   "tie_orbits_recorded": 1,
+   "tie_orbits_not_previously_known": 0
+  }
+ ]
+}
